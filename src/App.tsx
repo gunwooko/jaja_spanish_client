@@ -1,10 +1,33 @@
+import ClassGuide from 'pages/ClassGuide';
+import CompanyIntro from 'pages/CompanyIntro';
+import SocialLogIn from 'pages/SocialLogIn';
+import Faq from 'pages/Faq';
+import Home from 'pages/Home';
+import LogIn from 'pages/LogIn';
+import PrivacyPolicy from 'pages/PrivacyPolicy';
+import Review from 'pages/Review';
+import SignUp from 'pages/SignUp';
+import Teachers from 'pages/Teachers';
+import TermsPolicy from 'pages/TermsPolicy';
+import MyPage from 'pages/MyPage';
 import React from 'react';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
-const App = () => (
+const App: React.FunctionComponent = () => (
   <BrowserRouter>
     <Switch>
-      <Route></Route>
+      <Route path="/" exact component={Home}></Route>
+      <Route path="/company" component={CompanyIntro}></Route>
+      <Route path="/guide" component={ClassGuide}></Route>
+      <Route path="/teachers" component={Teachers}></Route>
+      <Route path="/review" component={Review}></Route>
+      <Route path="/fqa" component={Faq}></Route>
+      <Route path="/login" component={LogIn}></Route>
+      <Route path="/sociallogin" component={SocialLogIn}></Route>
+      <Route path="/signup" component={SignUp}></Route>
+      <Route path="/mypage" component={MyPage}></Route>
+      <Route path="/policy/privacy" component={PrivacyPolicy}></Route>
+      <Route path="/policy/terms" component={TermsPolicy}></Route>
     </Switch>
   </BrowserRouter>
 );
