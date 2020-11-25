@@ -1,9 +1,16 @@
+import Footer from 'components/organims/Footer';
+import Nav from 'components/organims/Nav';
+import RestFirstView from 'components/organims/RestFirstView';
+import ReviewMainView from 'components/organims/ReviewMainView';
 import React from 'react';
 
 const Review: React.FunctionComponent = () => (
-  <div>
-    <h2>Review</h2>
-  </div>
+  <>
+    <Nav></Nav>
+    <RestFirstView></RestFirstView>
+    <ReviewMainView></ReviewMainView>
+    <Footer></Footer>
+  </>
 );
 
 export default Review;

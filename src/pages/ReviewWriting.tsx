@@ -1,16 +1,16 @@
-import CompanyMainView from 'components/organims/CompanyMainView';
 import Footer from 'components/organims/Footer';
 import Nav from 'components/organims/Nav';
 import RestFirstView from 'components/organims/RestFirstView';
+import ReviewWritingView from 'components/organims/ReviewWritingView';
 import React from 'react';
 
-const CompanyIntro: React.FunctionComponent = () => (
+const ReviewWriting: React.FunctionComponent = () => (
   <>
     <Nav></Nav>
     <RestFirstView></RestFirstView>
-    <CompanyMainView></CompanyMainView>
+    <ReviewWritingView></ReviewWritingView>
     <Footer></Footer>
   </>
 );
 
-export default CompanyIntro;
+export default ReviewWriting;
