@@ -1,9 +1,14 @@
+import Footer from 'components/organims/Footer';
+import LogInView from 'components/organims/LogInView';
+import Nav from 'components/organims/Nav';
 import React from 'react';
 
 const LogIn: React.FunctionComponent = () => (
-  <div>
-    <h2>LogIn</h2>
-  </div>
+  <>
+    <Nav></Nav>
+    <LogInView></LogInView>
+    <Footer></Footer>
+  </>
 );
 
 export default LogIn;

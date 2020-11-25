@@ -1,11 +1,11 @@
 import ClassGuide from 'pages/ClassGuide';
 import CompanyIntro from 'pages/CompanyIntro';
-import SocialLogIn from 'pages/SocialLogIn';
 import Faq from 'pages/Faq';
 import Home from 'pages/Home';
 import LogIn from 'pages/LogIn';
 import PrivacyPolicy from 'pages/PrivacyPolicy';
 import Review from 'pages/Review';
+import ReviewWriting from 'pages/ReviewWriting';
 import SignUp from 'pages/SignUp';
 import Teachers from 'pages/Teachers';
 import TermsPolicy from 'pages/TermsPolicy';
@@ -21,9 +21,9 @@ const App: React.FunctionComponent = () => (
       <Route path="/guide" component={ClassGuide}></Route>
       <Route path="/teachers" component={Teachers}></Route>
       <Route path="/review" component={Review}></Route>
+      <Route path="/review/writing" component={ReviewWriting}></Route>
       <Route path="/fqa" component={Faq}></Route>
       <Route path="/login" component={LogIn}></Route>
-      <Route path="/sociallogin" component={SocialLogIn}></Route>
       <Route path="/signup" component={SignUp}></Route>
       <Route path="/mypage" component={MyPage}></Route>
       <Route path="/policy/privacy" component={PrivacyPolicy}></Route>
