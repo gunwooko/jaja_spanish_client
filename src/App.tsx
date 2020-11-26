@@ -20,7 +20,7 @@ const App: React.FunctionComponent = () => (
       <Route path="/company" component={CompanyIntro}></Route>
       <Route path="/guide" component={ClassGuide}></Route>
       <Route path="/teachers" component={Teachers}></Route>
-      <Route path="/review" component={Review}></Route>
+      <Route path="/review" exact component={Review}></Route>
       <Route path="/review/writing" component={ReviewWriting}></Route>
       <Route path="/fqa" component={Faq}></Route>
       <Route path="/login" component={LogIn}></Route>
