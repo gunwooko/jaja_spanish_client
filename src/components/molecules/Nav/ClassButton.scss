@@ -1,0 +1,14 @@
+$backgroundColor: #42175d;
+
+.classButton {
+    button {
+        color: $backgroundColor;
+        background-color: yellow;
+        border: 0;
+        border-radius: 100px;
+        font-weight: bold;
+        outline: none;
+        font-size: medium;
+        padding: 5px 15px;
+    }
+}

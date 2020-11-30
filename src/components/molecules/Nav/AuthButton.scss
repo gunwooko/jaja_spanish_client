@@ -1,0 +1,17 @@
+.authButton {
+    border: 1px solid yellow;
+    border-radius: 100px;
+    margin: 0px 15px 0px 50px;
+    padding: 5px 15px;
+
+    p,
+    button {
+        display: inline;
+        border: 0;
+        background-color: transparent;
+        color: yellow;
+        font-weight: bold;
+        outline: none;
+        font-size: medium;
+    }
+}

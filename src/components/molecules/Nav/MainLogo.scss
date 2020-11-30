@@ -1,6 +1,10 @@
-$backgroundColor: #42175d;
-
 .mainLogoComponent {
-    display: flex;
-    background-color: $backgroundColor;
+    margin-right: 270px;
+    label {
+        img {
+            width: '250px';
+            height: '50px';
+            color: #ffffff;
+        }
+    }
 }
