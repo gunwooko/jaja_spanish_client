@@ -1,7 +1,8 @@
 import React from 'react';
+import './NavMenu.scss';
 
 const NavMenu: React.FunctionComponent = () => (
-  <div>
+  <div className="navMenu">
     <p>회사소개</p>
     <p>수업안내</p>
     <p>강사소개</p>
