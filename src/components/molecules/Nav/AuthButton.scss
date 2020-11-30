@@ -1,8 +1,22 @@
+@import '../../styles/mixin';
+
 .authButton {
     border: 1px solid yellow;
     border-radius: 100px;
-    margin: 0px 15px 0px 50px;
     padding: 5px 15px;
+
+    @include large {
+        margin: 0px 15px 0px 50px;
+    }
+    @include medium {
+        margin: 0px 15px 0px 15px;
+    }
+    @include small {
+        margin: 0px 10px 0px 0px;
+    }
+    @include extra-small {
+        // 햄버거 버튼 만들기
+    }
 
     p,
     button {

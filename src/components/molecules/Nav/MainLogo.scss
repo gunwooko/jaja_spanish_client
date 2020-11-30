@@ -1,5 +1,19 @@
+@import '../../styles/mixin';
+
 .mainLogoComponent {
-    margin-right: 270px;
+    @include large {
+        margin-right: 270px;
+    }
+    @include medium {
+        margin-right: 90px;
+    }
+    @include small {
+        margin-right: 10px;
+    }
+    @include extra-small {
+        // 햄버거 버튼 만들기
+    }
+
     label {
         img {
             width: '250px';
