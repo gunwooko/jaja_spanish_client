@@ -8,7 +8,7 @@ import Nav from 'components/organims/Nav';
 import React from 'react';
 
 const Home: React.FunctionComponent = () => (
-  <>
+  <div>
     <Nav></Nav>
     <HomeFirstView></HomeFirstView>
     <HomeSecondView></HomeSecondView>
@@ -16,7 +16,7 @@ const Home: React.FunctionComponent = () => (
     <HomeFourthView></HomeFourthView>
     <HomeFifthView></HomeFifthView>
     <Footer></Footer>
-  </>
+  </div>
 );
 
 export default Home;
