@@ -1,0 +1,67 @@
+@import '../../styles/mixin';
+
+.footerList {
+    font-weight: bold;
+    margin: 0px 20px 20px 20px;
+
+    @include large {
+        font-size: 20px;
+    }
+    @include medium {
+        font-size: 16px;
+    }
+    @include small {
+    }
+    @include extra-small {
+        // 햄버거 버튼 만들기
+        font-size: 14px;
+        margin: 0px 10px 20px 10px;
+    }
+}
+
+.footerList_BL {
+    font-weight: bold;
+    margin: 81px 20px 20px 0px;
+
+    @include large {
+        font-size: 20px;
+    }
+    @include medium {
+        font-size: 16px;
+    }
+    @include small {
+    }
+    @include extra-small {
+        // 햄버거 버튼 만들기
+    }
+}
+.footerList_BL_detail {
+    margin-bottom: 68px;
+}
+
+.div_footer_Info {
+    margin-left: 15px;
+    margin-bottom: 15px;
+    @include large {
+        font-size: 18px;
+    }
+    @include medium {
+    }
+    @include small {
+        font-size: 15px;
+    }
+    @include extra-small {
+        // 햄버거 버튼 만들기
+        font-size: 13px;
+    }
+}
+
+.kakao {
+    width: 24px;
+    height: 22px;
+    @include extra-small {
+        // 햄버거 버튼 만들기
+        width: 19px;
+        height: 17px;
+    }
+}

@@ -1,0 +1,18 @@
+@import '../../styles/mixin';
+
+.FooterList {
+    display: flex;
+    flex-direction: row;
+    margin-top: 124px;
+    flex-wrap: wrap;
+
+    @include large {
+    }
+    @include medium {
+    }
+    @include small {
+    }
+    @include extra-small {
+        // 햄버거 버튼 만들기
+    }
+}
