@@ -1,0 +1,41 @@
+$backgroundColor: #42175d;
+
+.HomeFirstView {
+    background-color: $backgroundColor;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    background-image: url('https://media.vlpt.us/images/gunwooko/post/b30ca04b-5536-4bc0-aff8-30d5b4924c54/%EC%A7%80%EB%8F%84@2x.png');
+    // background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 66% 61%;
+
+    .home_first_main_phrase {
+        font-size: 50px;
+        color: #ffffff;
+        font-weight: bold;
+        padding: 159px 0px 26px 0px;
+
+        .home_first_phrase {
+            color: #fff337;
+        }
+    }
+
+    .home_first_sub_phrase {
+        font-size: 22px;
+        color: #ffffff;
+    }
+
+    .home_first_btn {
+        font-size: 22px;
+        color: $backgroundColor;
+        background-color: yellow;
+        border: 0;
+        border-radius: 37px;
+        width: 264px;
+        height: 74px;
+        font-weight: bold;
+        outline: none;
+        opacity: 1;
+        margin: 119px 0px 310px 0px;
+    }
+}
