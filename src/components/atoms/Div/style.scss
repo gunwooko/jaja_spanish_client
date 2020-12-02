@@ -118,3 +118,70 @@
         color: #a637ea;
     }
 }
+
+.fourth_vw_28min {
+    margin: 162px 20px 144px 0px;
+    height: 1118px;
+    width: 586px;
+
+    @include extra-small {
+        margin: 102px 10px 10px 10px;
+    }
+}
+
+.fourth_vw_58min {
+    margin: 162px 0px 144px 20px;
+    height: 1118px;
+    width: 586px;
+
+    @include extra-small {
+        margin: 10px 10px 10px 10px;
+    }
+}
+
+.fourth_vw_title {
+    background-color: #42175d;
+    color: #ffffff;
+    font-size: 55px;
+    font-weight: bold;
+    padding: 85px 287px 45px 40px;
+    border-radius: 20px 20px 0px 0px;
+
+    @include extra-small {
+        font-size: 35px;
+        padding: 85px 40px 45px 40px;
+    }
+
+    span {
+        color: #fff337;
+    }
+}
+
+.fourth_vw_price {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .fourth_vw_price_title_1 {
+        font-size: 30px;
+        margin: 50px 0px 181px 40px;
+        @include extra-small {
+            font-size: 20px;
+        }
+    }
+
+    .fourth_vw_price_title_2 {
+        font-size: 30px;
+        margin: 50px 0px 90px 40px;
+        @include extra-small {
+            font-size: 20px;
+        }
+    }
+
+    .fourth_vw_price_disc_box_1 {
+        margin-top: 240px;
+    }
+    .fourth_vw_price_disc_box_2 {
+        margin-top: 240px;
+    }
+}

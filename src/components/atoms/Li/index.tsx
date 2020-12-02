@@ -2,12 +2,16 @@ import React from 'react';
 import './style.scss';
 
 interface IProps {
-  text: string;
-  className: string;
+  text?: string;
+  children?: React.ReactChild[] | React.ReactChild;
+  className?: string;
 }
 
-const Li: React.FunctionComponent<IProps> = ({ text, className }: IProps): React.ReactElement => (
-  <li className={className}>{text}</li>
+const Li: React.FunctionComponent<IProps> = ({ text, className, children }: IProps): React.ReactElement => (
+  <li className={className}>
+    {text}
+    {children}
+  </li>
 );
 
 export default Li;
