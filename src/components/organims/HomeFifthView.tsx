@@ -1,9 +1,10 @@
+import FifthViewDiv from 'components/molecules/Home/FifthViewDiv';
 import React from 'react';
 
 const HomeFifthView: React.FunctionComponent = () => (
-  <div>
-    <h2>HomeFifthView</h2>
-  </div>
+  <>
+    <FifthViewDiv></FifthViewDiv>
+  </>
 );
 
 export default HomeFifthView;
