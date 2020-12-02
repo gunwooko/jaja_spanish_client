@@ -1,0 +1,65 @@
+@import '../../styles/mixin';
+
+.SecondViewDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 128px;
+    margin-bottom: 128px;
+
+    @include small {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 128px;
+        margin-bottom: 128px;
+    }
+    @include extra-small {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 128px;
+        margin-bottom: 128px;
+    }
+}
+
+.SecondViewDiv2 {
+    margin-left: 102px;
+}
+
+.SecondViewDiv3 {
+    margin-right: 124px;
+    width: 557px;
+
+    @include small {
+        margin-left: 102px;
+        width: 557px;
+    }
+    @include extra-small {
+        margin-left: 102px;
+        width: 557px;
+    }
+}
+
+.home_second_view_img_1 {
+    width: 473px;
+}
+
+.home_second_view_img_2 {
+    width: 403px;
+    height: 431px;
+}
+
+.home_second_view_img_3 {
+    width: 422px;
+    height: 353px;
+}
+
+.second_vw_btn_content {
+    display: block;
+    font-size: 20px;
+    color: #a637ea;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+}
