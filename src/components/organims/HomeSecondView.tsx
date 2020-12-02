@@ -1,6 +1,5 @@
 import SecondViewDiv from 'components/molecules/Home/SecondViewDiv';
 import React from 'react';
-import './HomeSecondView.scss';
 
 const HomeSecondView: React.FunctionComponent = () => (
   <>
@@ -18,7 +17,7 @@ const HomeSecondView: React.FunctionComponent = () => (
       title="다양한 국적의 스페인어 악센트를 경험할 기회"
       content="스페인어는 오늘날 총 21개국에서 모국어로 사용하고 있습니다."
       content2="그만큼 다양한 억양이 존재하기에, 실전 상황에서 당황하지 않으려면 다양한 악센트를 경험하는 것이 매우 중요합니다."
-      btn_content="수업과정 알아보기"
+      btn_content="수업과정 알아보기 >"
     ></SecondViewDiv>
     <SecondViewDiv
       second_vw_className="home_second_view_img_3"
@@ -26,7 +25,7 @@ const HomeSecondView: React.FunctionComponent = () => (
       title="제 2외국어라서 비싸다? NO! 합리적인 가격의 화상수업"
       content="한 분이라도 더 많은 분에게 스페인어의 매력을 경험하도록 하는 것이 깔깔스페인어의 비전입니다."
       content2="따라서, 저희는 부수적인 비용을 줄이고 최대한 합리적인 가격을 제공하기 위해 노력하고 있습니다."
-      btn_content="수강료 알아보기"
+      btn_content="수강료 알아보기 >"
     ></SecondViewDiv>
   </>
 );

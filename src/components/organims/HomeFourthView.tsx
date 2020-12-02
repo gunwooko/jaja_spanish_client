@@ -1,9 +1,10 @@
+import FourthViewDiv from 'components/molecules/Home/FourthViewDiv';
 import React from 'react';
 
 const HomeFourthView: React.FunctionComponent = () => (
-  <div>
-    <h2>HomeFourthView</h2>
-  </div>
+  <>
+    <FourthViewDiv></FourthViewDiv>
+  </>
 );
 
 export default HomeFourthView;
