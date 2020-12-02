@@ -1,9 +1,10 @@
+import ThirdViewDiv from 'components/molecules/Home/ThirdViewDiv';
 import React from 'react';
 
 const HomeThirdView: React.FunctionComponent = () => (
-  <div>
-    <h2>HomeThirdView</h2>
-  </div>
+  <>
+    <ThirdViewDiv></ThirdViewDiv>
+  </>
 );
 
 export default HomeThirdView;
