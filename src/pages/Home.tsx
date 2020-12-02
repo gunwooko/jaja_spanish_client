@@ -1,9 +1,9 @@
 import Footer from 'components/organims/Footer';
-import HomeFifthView from 'components/organims/HomeFifthView';
-import HomeFirstView from 'components/organims/HomeFirstView';
-import HomeFourthView from 'components/organims/HomeFourthView';
-import HomeSecondView from 'components/organims/HomeSecondView';
-import HomeThirdView from 'components/organims/HomeThirdView';
+import HomeFifthView from 'components/organims/Home/HomeFifthView';
+import HomeFirstView from 'components/organims/Home/HomeFirstView';
+import HomeFourthView from 'components/organims/Home/HomeFourthView';
+import HomeSecondView from 'components/organims/Home/HomeSecondView';
+import HomeThirdView from 'components/organims/Home/HomeThirdView';
 import Nav from 'components/organims/Nav';
 import React from 'react';
 
