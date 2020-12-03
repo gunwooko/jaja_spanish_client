@@ -1,5 +1,6 @@
 import Div from 'components/atoms/Div';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './HomeFirstView.scss';
 
 const HomeFirstView: React.FunctionComponent = () => (
@@ -14,7 +15,9 @@ const HomeFirstView: React.FunctionComponent = () => (
         한번 배워보시겠어요?
       </Div>
       <Div className="home_first_sub_phrase">제대로 배우자, 1:1 화상 스페인어</Div>
-      <button className="home_first_btn">지금 시작하기</button>
+      <Link to="/">
+        <button className="home_first_btn">지금 시작하기</button>
+      </Link>
     </div>
     <div></div>
   </div>

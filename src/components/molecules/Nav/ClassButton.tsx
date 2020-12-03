@@ -1,9 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './ClassButton.scss';
 
 const ClassButton: React.FunctionComponent = () => (
   <div className="classButton">
-    <button>수업신청</button>
+    <Link to="/" style={{ textDecoration: 'none' }}>
+      <button>수업신청</button>
+    </Link>
   </div>
 );
 

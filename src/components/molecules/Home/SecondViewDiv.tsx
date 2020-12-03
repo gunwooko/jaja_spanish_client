@@ -1,5 +1,6 @@
 import Div from 'components/atoms/Div';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './SecondViewDiv.scss';
 
 interface IProps {
@@ -28,7 +29,23 @@ const SecondViewDiv: React.FunctionComponent<IProps> = ({
           <Div className="second_vw_content1" text={content}></Div>
           <Div className="second_vw_content2" text={content2}></Div>
         </Div>
-        <button className="second_vw_btn_content">{btn_content}</button>
+        {second_vw_className === 'home_second_view_img_1' ? (
+          <Link to="/teachers" style={{ textDecoration: 'none' }}>
+            <button className="second_vw_btn_content">{btn_content}</button>
+          </Link>
+        ) : (
+          <button
+            className="second_vw_btn_content"
+            onClick={() => {
+              const priceLocation = document.getElementsByClassName('FourthViewDiv')[0].getBoundingClientRect().top;
+              const scrolledTopLength = window.pageYOffset;
+              const absoluteTop = priceLocation + scrolledTopLength;
+              window.scrollTo({ top: absoluteTop, behavior: 'smooth' });
+            }}
+          >
+            {btn_content}
+          </button>
+        )}
       </div>
     </div>
   ) : (
@@ -39,7 +56,9 @@ const SecondViewDiv: React.FunctionComponent<IProps> = ({
           <Div className="second_vw_content1" text={content}></Div>
           <Div className="second_vw_content2" text={content2}></Div>
         </Div>
-        <button className="second_vw_btn_content">{btn_content}</button>
+        <Link to="/guide" style={{ textDecoration: 'none' }}>
+          <button className="second_vw_btn_content">{btn_content}</button>
+        </Link>
       </div>
       <img className={second_vw_className} src={imgUrl} alt="imgUrl" />
     </div>
