@@ -7,7 +7,7 @@ import React from 'react';
 const CompanyIntro: React.FunctionComponent = () => (
   <>
     <Nav></Nav>
-    <RestFirstView></RestFirstView>
+    <RestFirstView name="Company"></RestFirstView>
     <CompanyMainView></CompanyMainView>
     <Footer></Footer>
   </>

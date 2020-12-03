@@ -7,7 +7,7 @@ import React from 'react';
 const Faq: React.FunctionComponent = () => (
   <>
     <Nav></Nav>
-    <RestFirstView></RestFirstView>
+    <RestFirstView name="Faq"></RestFirstView>
     <FaqMainView></FaqMainView>
     <Footer></Footer>
   </>
