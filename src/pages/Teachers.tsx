@@ -7,7 +7,7 @@ import React from 'react';
 const Teachers: React.FunctionComponent = () => (
   <>
     <Nav></Nav>
-    <RestFirstView></RestFirstView>
+    <RestFirstView name="Teachers"></RestFirstView>
     <TeachersMainView></TeachersMainView>
     <Footer></Footer>
   </>
