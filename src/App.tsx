@@ -11,7 +11,7 @@ import Teachers from 'pages/Teachers';
 import TermsPolicy from 'pages/TermsPolicy';
 import MyPage from 'pages/MyPage';
 import React from 'react';
-import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
 
 const App: React.FunctionComponent = () => (
   <BrowserRouter>
@@ -28,6 +28,7 @@ const App: React.FunctionComponent = () => (
       <Route path="/mypage" component={MyPage}></Route>
       <Route path="/policy/privacy" component={PrivacyPolicy}></Route>
       <Route path="/policy/terms" component={TermsPolicy}></Route>
+      <Redirect path="*" to="/" />
     </Switch>
   </BrowserRouter>
 );

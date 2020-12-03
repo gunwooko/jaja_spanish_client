@@ -1,6 +1,7 @@
 import Div from 'components/atoms/Div';
 import Li from 'components/atoms/Li';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './FourthViewDiv.scss';
 
 const FourthViewDiv: React.FunctionComponent = ({}) => (
@@ -37,7 +38,7 @@ const FourthViewDiv: React.FunctionComponent = ({}) => (
               <span>184,000</span>원
             </Li>
             <Li className="fourth_vw_price_list">
-              <span>122,000</span>원
+              <span>220,000</span>원
             </Li>
           </Div>
           <Div className="fourth_vw_price_disc_box_1">
@@ -47,7 +48,9 @@ const FourthViewDiv: React.FunctionComponent = ({}) => (
           </Div>
         </Div>
         <div className="fourth_vw_btn_0">
-          <button className="fourth_vw_btn_1">수업 상담하기</button>
+          <Link to="/">
+            <button className="fourth_vw_btn_1">수업 상담하기</button>
+          </Link>
         </div>
       </div>
     </Div>
@@ -100,7 +103,9 @@ const FourthViewDiv: React.FunctionComponent = ({}) => (
           </Div>
         </Div>
         <div className="fourth_vw_btn_0">
-          <button className="fourth_vw_btn_1">수업 상담하기</button>
+          <Link to="/">
+            <button className="fourth_vw_btn_1">수업 상담하기</button>
+          </Link>
         </div>
       </div>
     </Div>

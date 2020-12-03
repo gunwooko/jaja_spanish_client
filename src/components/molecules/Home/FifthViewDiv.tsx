@@ -1,5 +1,6 @@
 import Div from 'components/atoms/Div';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './FifthViewDiv.scss';
 
 const FifthViewDiv: React.FunctionComponent = ({}) => (
@@ -13,7 +14,9 @@ const FifthViewDiv: React.FunctionComponent = ({}) => (
       <br />
       1:1 화상 스페인어
     </Div>
-    <button className="fifth_vw_btn">지금 시작하기</button>
+    <Link to="/guide">
+      <button className="fifth_vw_btn">지금 시작하기</button>
+    </Link>
   </div>
 );
 export default FifthViewDiv;
