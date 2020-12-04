@@ -6,7 +6,7 @@ import React from 'react';
 
 const ClassGuide: React.FunctionComponent = () => (
   <>
-    <Nav></Nav>
+    <Nav cl_name="guide"></Nav>
     <RestFirstView name="Guide"></RestFirstView>
     <ClassGuideMainView></ClassGuideMainView>
     <Footer></Footer>
