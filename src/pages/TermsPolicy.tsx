@@ -1,12 +1,12 @@
 import Footer from 'components/organims/Footer';
 import Nav from 'components/organims/Nav';
-import PolicyMainView from 'components/organims/PolicyMainView';
+import PolicyTermsView from 'components/organims/PolicyTermsView';
 import React from 'react';
 
 const TermsPolicy: React.FunctionComponent = () => (
   <>
     <Nav></Nav>
-    <PolicyMainView></PolicyMainView>
+    <PolicyTermsView></PolicyTermsView>
     <Footer></Footer>
   </>
 );

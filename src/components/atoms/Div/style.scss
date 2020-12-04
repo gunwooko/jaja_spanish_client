@@ -296,6 +296,35 @@
     font-weight: bold;
 }
 
+.teachersDetail {
+    .teachersName {
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 2px;
+    }
+    .teachersPais {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 27px;
+    }
+    .teachersDesc {
+        font-size: 20px;
+        margin-bottom: 40px;
+        margin-right: 91px;
+    }
+
+    @include extra-small {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .teachersDesc {
+            margin-right: 40px;
+            margin-left: 40px;
+        }
+    }
+}
+
 // Review
 .rest_first_vw_review_0 {
     height: 491px;
@@ -310,6 +339,51 @@
 }
 
 .rest_first_vw_review_1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    font-size: 50px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+// Policy
+.policy_vw_title {
+    display: grid;
+    grid-template-columns: 5fr 6fr;
+    font-size: 40px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 120px;
+}
+.policy_vw_content {
+    display: grid;
+    grid-template-columns: 1.5fr 6fr 1.5fr;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    text-align: left;
+}
+
+// FAQ
+.rest_first_vw_faq_0 {
+    height: 491px;
+    background-image: url(https://media.vlpt.us/images/gunwooko/post/4eef4e22-a1bb-477b-a858-0fe1e7672a1c/pexels-ann-h-2789781.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 50% 55%;
+    background-size: cover;
+    opacity: 0.8;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+.rest_first_vw_faq_1 {
     display: flex;
     flex-direction: row;
     align-items: center;
