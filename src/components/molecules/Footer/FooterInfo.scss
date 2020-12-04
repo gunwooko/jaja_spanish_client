@@ -2,6 +2,7 @@
 
 .FooterInfo {
     margin: 124px 0px 0px 170px;
+
     @include large {
     }
     @include medium {
@@ -15,6 +16,7 @@
     }
 
     .footerLogo {
+        cursor: pointer;
         @include large {
             width: 269px;
             height: 53px;

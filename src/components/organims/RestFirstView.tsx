@@ -50,7 +50,15 @@ const RestFirstView: React.FunctionComponent<Props> = ({ name }: Props): React.R
   ) : name === 'ReviewWriting' ? (
     <div>ReviewWriting</div>
   ) : (
-    <div>FAQ</div>
+    <Div className="rest_first_vw_faq_0">
+      <div></div>
+      <Div className="rest_first_vw_faq_1">
+        무엇을 도와드릴까요?
+        <br />
+        자주 묻는 질문을 확인해보세요
+      </Div>
+      <div></div>
+    </Div>
   );
 
 export default RestFirstView;
