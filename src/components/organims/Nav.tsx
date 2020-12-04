@@ -5,8 +5,12 @@ import NavMenu from 'components/molecules/Nav/NavMenu';
 import React from 'react';
 import './Nav.scss';
 
-const Nav: React.FunctionComponent = () => (
-  <div className="Nav">
+interface Props {
+  cl_name?: string;
+}
+
+const Nav: React.FunctionComponent<Props> = ({ cl_name }: Props) => (
+  <div className={`Nav ${cl_name}`}>
     <MainLogo></MainLogo>
     <NavMenu></NavMenu>
     <AuthButton></AuthButton>
