@@ -1,7 +1,7 @@
 import Footer from 'components/organims/Footer';
 import Nav from 'components/organims/Nav';
 import RestFirstView from 'components/organims/RestFirstView';
-import ReviewWritingView from 'components/organims/ReviewWritingView';
+import ReviewWritingView from 'components/organims/Review/ReviewWritingView';
 import React from 'react';
 
 const ReviewWriting: React.FunctionComponent = () => (
