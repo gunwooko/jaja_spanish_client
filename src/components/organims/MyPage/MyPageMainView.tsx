@@ -5,6 +5,9 @@ import MyDetails from './MyDetails';
 import MyPaymentDetails from './MyPaymentDetails';
 import PostponedClassDetail from './PostponedClassDetail';
 
+// test data
+import user from 'testData/userData';
+
 const MyPageMainView: React.FunctionComponent = () => (
   <div>
     <MyDetails></MyDetails>
