@@ -1,25 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './AuthButton.scss';
+import auth from 'containers/Auth';
 
-interface Props {
-  isLoggedIn: boolean;
-}
-
-const AuthButton: React.FunctionComponent<Props> = ({ isLoggedIn }: Props) =>
-  isLoggedIn ? (
-    <>
-      <div className="authButton">
-        <Link to="/signup" style={{ textDecoration: 'none' }}>
-          <button>회원가입</button>
-        </Link>
-        <p>/</p>
-        <Link to="/login" style={{ textDecoration: 'none' }}>
-          <button>로그인</button>
-        </Link>
-      </div>
-    </>
-  ) : (
+const AuthButton: React.FunctionComponent = () => {
+  const isLoggedIn = auth();
+  return isLoggedIn ? (
     <>
       <div className="authButton">
         <Link to="/" style={{ textDecoration: 'none' }}>
@@ -31,6 +17,19 @@ const AuthButton: React.FunctionComponent<Props> = ({ isLoggedIn }: Props) =>
         </Link>
       </div>
     </>
+  ) : (
+    <>
+      <div className="authButton">
+        <Link to="/signup" style={{ textDecoration: 'none' }}>
+          <button>회원가입</button>
+        </Link>
+        <p>/</p>
+        <Link to="/login" style={{ textDecoration: 'none' }}>
+          <button>로그인</button>
+        </Link>
+      </div>
+    </>
   );
+};
 
 export default AuthButton;

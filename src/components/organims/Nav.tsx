@@ -13,7 +13,7 @@ const Nav: React.FunctionComponent<Props> = ({ cl_name }: Props) => (
   <div className={`Nav ${cl_name}`}>
     <MainLogo></MainLogo>
     <NavMenu></NavMenu>
-    <AuthButton isLoggedIn={false}></AuthButton>
+    <AuthButton></AuthButton>
     <ClassButton></ClassButton>
   </div>
 );

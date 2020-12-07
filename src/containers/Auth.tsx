@@ -1,5 +1,13 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 
-const Auth: React.FunctionComponent = () => <div></div>;
+const auth = (): boolean => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-export default Auth;
+  useEffect(() => {
+    setIsLoggedIn(false);
+  });
+
+  return isLoggedIn;
+};
+
+export default auth;
