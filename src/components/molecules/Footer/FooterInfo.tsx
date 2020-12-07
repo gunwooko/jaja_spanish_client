@@ -1,7 +1,6 @@
 import Div from 'components/atoms/Div';
 import Label from 'components/atoms/Label';
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './FooterInfo.scss';
 
 const FooterInfo: React.FunctionComponent = () => (
