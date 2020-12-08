@@ -12,9 +12,6 @@ import TermsPolicy from 'pages/TermsPolicy';
 import MyPage from 'pages/MyPage';
 import React from 'react';
 import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
-import firebase from '../firebase';
-
-console.log(firebase);
 
 const App: React.FunctionComponent = () => (
   <BrowserRouter>

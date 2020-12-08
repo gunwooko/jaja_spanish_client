@@ -1,13 +1,15 @@
 import Footer from 'components/organims/Footer';
-import LogInView from 'components/organims/LogInView';
 import Nav from 'components/organims/Nav';
 import React from 'react';
+import AuthForm from 'containers/Auth/AuthForm';
+import SocialLogIn from 'containers/Auth/SocialLogIn';
 
 const LogIn: React.FunctionComponent = () => (
   <>
-    <Nav></Nav>
-    <LogInView></LogInView>
-    <Footer></Footer>
+    <Nav />
+    <AuthForm />
+    <SocialLogIn />
+    <Footer />
   </>
 );
 

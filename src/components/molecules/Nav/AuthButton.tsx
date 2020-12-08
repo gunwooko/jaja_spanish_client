@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './AuthButton.scss';
-import auth from 'containers/Auth';
+import useLoggedInCheck from 'Hooks/useLoggedInCheck';
 
 const AuthButton: React.FunctionComponent = () => {
-  const isLoggedIn = auth();
+  const isLoggedIn = useLoggedInCheck();
   return isLoggedIn ? (
     <>
       <div className="authButton">
