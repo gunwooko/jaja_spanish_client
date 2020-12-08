@@ -1,11 +1,8 @@
 import { useEffect, useState } from 'react';
 import { authService } from 'fbase';
 
-// interface User {
-//   isLoggedIn: boolean | null;
-// }
-
 const useLoggedInCheck = (): typeof authService.currentUser | null | boolean => {
+  // const [init, setInit] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
@@ -15,8 +12,9 @@ const useLoggedInCheck = (): typeof authService.currentUser | null | boolean => 
       } else {
         setIsLoggedIn(false);
       }
+      // setInit(true);
     });
-  });
+  }, []);
 
   return isLoggedIn;
 };

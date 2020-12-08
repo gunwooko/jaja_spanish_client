@@ -39,6 +39,14 @@ const profes = [
     description:
       '쏨 선생님은 5년의 수업 경력이 있는 프로페셔널한 선생님이세요. 심리상담가로 활동하신 경력이 있으시고, 교정과 피드백을 꼼꼼하게 해주시는 친절한 선생님입니다.~ ',
   },
+  {
+    key: 6,
+    foto: 'https://media.vlpt.us/images/gunwooko/post/58a58238-b536-4f6d-a03c-a36cdfd16338/profesfoto3.png',
+    nombre: 'Som',
+    pais: '🇰🇷 한국',
+    description:
+      '쏨 선생님은 5년의 수업 경력이 있는 프로페셔널한 선생님이세요. 심리상담가로 활동하신 경력이 있으시고, 교정과 피드백을 꼼꼼하게 해주시는 친절한 선생님입니다.~ ',
+  },
 ];
 
 export default profes;

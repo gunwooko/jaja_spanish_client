@@ -1,11 +1,7 @@
 import { authService } from 'fbase';
 import React, { useState } from 'react';
 
-// type MyFormProps = {
-//   onSubmit: (form: { email: string; password: string }) => void;
-// };
-
-const AuthForm: React.FunctionComponent = () => {
+const AuthForm: React.FunctionComponent = (): React.ReactElement => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [newAccount, setNewAccount] = useState(true);
@@ -44,13 +40,20 @@ const AuthForm: React.FunctionComponent = () => {
   return (
     <>
       <form onSubmit={onSubmit}>
-        <input name="email" type="text" placeholder="Email" required value={email} onChange={onChange} />
-        <input name="password" type="password" placeholder="Password" required value={password} onChange={onChange} />
-        <input type="submit" value={newAccount ? 'Create Account' : 'Log In'} />
+        <input name="email" type="text" placeholder="이메일" required value={email} onChange={onChange} />
+        <input
+          name="password"
+          type="password"
+          placeholder="비밀번호(8자이상)"
+          required
+          value={password}
+          onChange={onChange}
+        />
+        <input type="submit" value={newAccount ? '회원가입' : '로그인'} />
         {error && <span className="authError">{error}</span>}
       </form>
       <span onClick={toggleAccount} className="authSwitch">
-        {newAccount ? 'Sign In' : 'Create Account'}
+        {newAccount ? '로그인' : '회원가입'}
       </span>
     </>
   );
