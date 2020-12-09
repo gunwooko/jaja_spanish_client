@@ -373,12 +373,13 @@
 // FAQ
 .rest_first_vw_faq_0 {
     height: 491px;
-    background-image: url(https://media.vlpt.us/images/gunwooko/post/4eef4e22-a1bb-477b-a858-0fe1e7672a1c/pexels-ann-h-2789781.jpg);
+    background-color: #f4eff7;
+    background-image: url(https://media.vlpt.us/images/gunwooko/post/819586d1-938b-4f8d-a8eb-407574870dd3/undraw_respond_8wjt@2x.png);
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-position: 50% 55%;
-    background-size: cover;
-    opacity: 0.8;
+    background-position: 75% 30%;
+    // background-size: cover;
+    // opacity: 0.8;
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
 }
@@ -388,10 +389,85 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    div {
+        font-size: 50px;
+        color: #42175d;
+        font-weight: bold;
+    }
+}
 
-    font-size: 50px;
-    color: #ffffff;
-    font-weight: bold;
+.FaqPage {
+    .faq_btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 20px;
+        button {
+            background-color: transparent;
+            border: 0;
+            border-bottom: 1px solid black;
+            outline: none;
+            font-size: larger;
+            padding: 5px 15px;
+            cursor: pointer;
+            margin: 0px 5px;
+
+            &:hover {
+                font-weight: bold;
+                border-color: #42175d;
+                border-bottom: 1px solid black;
+            }
+            &:active {
+                font-weight: bold;
+                border-color: #42175d;
+                border-bottom: 1px;
+            }
+        }
+    }
+}
+
+.faq_main_vw {
+    display: block;
+    width: 80%;
+    margin: 0px auto;
+
+    .faq_main_vw_li {
+        border-top: 2px solid gray;
+        margin: 40px 0px;
+    }
+    .faq_main_vw_title {
+        font-size: 25px;
+        font-weight: bold;
+        padding: 20px 0px;
+    }
+    .faq_main_vw_content {
+        font-size: 19px;
+        line-height: 40px;
+    }
+}
+
+.FaqLastView {
+    height: 115px;
+    background-color: #ece4f0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .faq_last_vw_content_1 {
+        font-size: 20px;
+        color: #42175d;
+    }
+    .faq_last_vw_content_2 {
+        font-size: 30px;
+        color: #42175d;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    img {
+        width: 133px;
+        height: 103px;
+    }
 }
 
 // MyPage
