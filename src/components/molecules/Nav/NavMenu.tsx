@@ -17,7 +17,7 @@ const NavMenu: React.FunctionComponent = () => (
       <p>수업후기</p>
     </Link>
     <Link to="/fqa" style={{ textDecoration: 'none' }}>
-      <p>FAQ</p>
+      <p>커뮤니티</p>
     </Link>
   </div>
 );

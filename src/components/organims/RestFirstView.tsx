@@ -4,9 +4,10 @@ import './RestFirstView.scss';
 
 interface Props {
   name: string;
+  notice?: boolean;
 }
 
-const RestFirstView: React.FunctionComponent<Props> = ({ name }: Props): React.ReactElement =>
+const RestFirstView: React.FunctionComponent<Props> = ({ name, notice }: Props): React.ReactElement =>
   name === 'Company' ? (
     <Div className="rest_first_vw_company_0">
       <div></div>
@@ -53,9 +54,19 @@ const RestFirstView: React.FunctionComponent<Props> = ({ name }: Props): React.R
     <Div className="rest_first_vw_faq_0">
       <div></div>
       <Div className="rest_first_vw_faq_1">
-        무엇을 도와드릴까요?
-        <br />
-        자주 묻는 질문을 확인해보세요
+        {notice ? (
+          <div>
+            무엇을 도와드릴까요?
+            <br />
+            자주 묻는 질문을 확인해보세요
+          </div>
+        ) : (
+          <div>
+            깔깔스페인어의
+            <br />
+            새로운 소식을 알려드릴께요
+          </div>
+        )}
       </Div>
       <div></div>
     </Div>
