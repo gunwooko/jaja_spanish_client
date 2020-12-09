@@ -1,15 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import './AuthButton.scss';
 import useLoggedInCheck from 'Hooks/useLoggedInCheck';
+import { authService } from 'fbase';
 
 const AuthButton: React.FunctionComponent = () => {
   const isLoggedIn = useLoggedInCheck();
+  const history = useHistory();
+
+  const onLogOut = () => {
+    authService.signOut();
+    history.push('/');
+  };
+
   return isLoggedIn ? (
     <>
       <div className="authButton">
         <Link to="/" style={{ textDecoration: 'none' }}>
-          <button>로그아웃</button>
+          <button onClick={onLogOut}>로그아웃</button>
         </Link>
         <p>/</p>
         <Link to="/mypage" style={{ textDecoration: 'none' }}>
@@ -20,7 +28,7 @@ const AuthButton: React.FunctionComponent = () => {
   ) : (
     <>
       <div className="authButton">
-        <Link to="/signup" style={{ textDecoration: 'none' }}>
+        <Link to="/login" style={{ textDecoration: 'none' }}>
           <button>회원가입</button>
         </Link>
         <p>/</p>
