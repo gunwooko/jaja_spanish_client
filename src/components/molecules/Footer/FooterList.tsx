@@ -31,6 +31,9 @@ const FooterList: React.FunctionComponent = () => (
       <Link to="/fqa" style={{ textDecoration: 'none' }}>
         <Li className="footer_li_style" text="FAQ"></Li>
       </Link>
+      <Link to="/fqa" style={{ textDecoration: 'none' }}>
+        <Li className="footer_li_style" text="공지사항"></Li>
+      </Link>
       <a
         href="mailto:contact.jajaspanish@gmail.com"
         title="Send Email"
