@@ -6,12 +6,12 @@ import LogIn from 'pages/LogIn';
 import PrivacyPolicy from 'pages/PrivacyPolicy';
 import Review from 'pages/Review';
 import ReviewWriting from 'pages/ReviewWriting';
-import SignUp from 'pages/SignUp';
 import Teachers from 'pages/Teachers';
 import TermsPolicy from 'pages/TermsPolicy';
 import MyPage from 'pages/MyPage';
 import React from 'react';
 import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
+import ClassApp from 'pages/ClassApp';
 
 const App: React.FunctionComponent = () => (
   <BrowserRouter>
@@ -28,6 +28,7 @@ const App: React.FunctionComponent = () => (
       <Route path="/mypage" component={MyPage}></Route>
       <Route path="/policy/privacy" component={PrivacyPolicy}></Route>
       <Route path="/policy/terms" component={TermsPolicy}></Route>
+      <Route path="/class" component={ClassApp}></Route>
       <Redirect path="*" to="/" />
     </Switch>
   </BrowserRouter>
