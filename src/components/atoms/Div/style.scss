@@ -470,6 +470,27 @@
     }
 }
 
+// Notice View
+.notice_main_vw {
+    display: block;
+    width: 80%;
+    margin: 0px auto;
+
+    .notice_main_vw_li {
+        border-top: 2px solid gray;
+        margin: 40px 0px;
+    }
+    .notice_main_vw_title {
+        font-size: 25px;
+        font-weight: bold;
+        padding: 20px 0px;
+    }
+    .notice_main_vw_content {
+        font-size: 19px;
+        line-height: 40px;
+    }
+}
+
 // MyPage
 .MyDetails {
     display: flex;
