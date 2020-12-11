@@ -5,7 +5,7 @@ import './ClassButton.scss';
 const ClassButton: React.FunctionComponent = () => {
   return (
     <div className="classButton">
-      <Link to="/" style={{ textDecoration: 'none' }}>
+      <Link to="/submitclass" style={{ textDecoration: 'none' }}>
         <button>수업신청</button>
       </Link>
     </div>

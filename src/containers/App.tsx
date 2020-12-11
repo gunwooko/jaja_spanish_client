@@ -28,7 +28,7 @@ const App: React.FunctionComponent = () => (
       <Route path="/mypage" component={MyPage}></Route>
       <Route path="/policy/privacy" component={PrivacyPolicy}></Route>
       <Route path="/policy/terms" component={TermsPolicy}></Route>
-      <Route path="/class" component={ClassApp}></Route>
+      <Route path="/submitclass" component={ClassApp}></Route>
       <Redirect path="*" to="/" />
     </Switch>
   </BrowserRouter>
