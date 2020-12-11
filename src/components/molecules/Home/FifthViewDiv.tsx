@@ -14,7 +14,7 @@ const FifthViewDiv: React.FunctionComponent = ({}) => (
       <br />
       1:1 화상 스페인어
     </Div>
-    <Link to="/guide">
+    <Link to="/submitclass">
       <button className="fifth_vw_btn">지금 시작하기</button>
     </Link>
   </div>
