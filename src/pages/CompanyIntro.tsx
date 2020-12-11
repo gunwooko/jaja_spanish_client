@@ -1,4 +1,4 @@
-import CompanyMainView from 'components/organims/CompanyMainView';
+import CompanyMainView from 'components/organims/Company/CompanyMainView';
 import Footer from 'components/organims/Footer';
 import Nav from 'components/organims/Nav';
 import RestFirstView from 'components/organims/RestFirstView';

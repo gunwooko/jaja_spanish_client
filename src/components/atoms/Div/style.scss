@@ -569,3 +569,117 @@
         }
     }
 }
+
+// Login - auth
+.authBtns {
+    display: flex;
+    flex-direction: column;
+    // width: 100%;
+    // max-width: 320px;
+
+    .authBtn_facebook {
+        font-size: 19px;
+        font-weight: 900px;
+        background-color: #2f4d8a;
+        color: #ffffff;
+        height: 55px;
+        width: 480px;
+        max-width: 480px;
+        border-radius: 3px;
+        border: 1px solid #dddddf;
+        cursor: pointer;
+        outline: none;
+        margin-top: 15px;
+    }
+    .authBtn_google {
+        font-size: 19px;
+        font-weight: 900px;
+        background-color: transparent;
+        height: 55px;
+        width: 480px;
+        max-width: 480px;
+        border-radius: 3px;
+        border: 1px solid #dddddf;
+        cursor: pointer;
+        outline: none;
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    i {
+        margin-right: 10px;
+    }
+    img {
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+    }
+}
+
+.authForm {
+    display: flex;
+    flex-direction: column;
+
+    .authInput {
+        width: 480px;
+        max-width: 480px;
+        height: 55px;
+        border-radius: 3px;
+        border: 1px solid #dddddf;
+        margin-bottom: 10px;
+        font-size: 19px;
+    }
+
+    .authSubmit {
+        font-size: 19px;
+        font-weight: 500;
+        height: 55px;
+        width: 480px;
+        max-width: 480px;
+        border-radius: 3px;
+        border: 0;
+        background: #a637ea;
+        color: white;
+        margin-top: 10;
+        cursor: pointer;
+        outline: none;
+    }
+}
+.authError {
+    color: tomato;
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 12px;
+}
+.authSwitch {
+    color: #04aaff;
+    cursor: pointer;
+    margin-top: 13px;
+    margin-bottom: 30px;
+    font-size: 16px;
+
+    .authSwitch_msj {
+        color: #333333;
+    }
+
+    .authSwich_btn {
+        text-decoration: underline;
+        margin-left: 5px;
+    }
+}
+.authLine {
+    font-size: 14px;
+    color: #707070;
+}
+.authPolicy {
+    font-size: 15px;
+    color: #b2b2b2;
+    margin-bottom: 19px;
+    a {
+        color: #707070;
+        text-decoration: underline;
+    }
+}
