@@ -1,6 +1,7 @@
 import Footer from 'components/organims/Footer';
 import Nav from 'components/organims/Nav';
-import PolicyTermsView from 'components/organims/PolicyTermsView';
+import PolicyTermsView from 'components/organims/Policy/PolicyTermsView';
+
 import React from 'react';
 
 const TermsPolicy: React.FunctionComponent = () => (
