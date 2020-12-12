@@ -630,6 +630,26 @@
         border: 1px solid #dddddf;
         margin-bottom: 10px;
         font-size: 19px;
+        &.is-valid {
+            border: 1px solid #2aa646;
+            box-shadow: 1px 1px 1px #2aa646;
+        }
+        &.is-valid:focus {
+            outline: none;
+        }
+        &.is-invalid {
+            border: 1px solid #d85350;
+            box-shadow: 3px 3px 10px #d85350;
+        }
+        &.is-invalid:focus {
+            outline: none;
+        }
+    }
+    .authInput:focus {
+        outline: 0.6px solid gray;
+    }
+    .invalid-feedback {
+        color: #d85350;
     }
 
     .authSubmit {
