@@ -1,6 +1,6 @@
 import { authService } from 'fbase';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const AuthForm: React.FunctionComponent = (): React.ReactElement => {
   const [email, setEmail] = useState('');
@@ -74,6 +74,7 @@ const AuthForm: React.FunctionComponent = (): React.ReactElement => {
     }
   };
 
+  const history = useHistory();
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
@@ -81,11 +82,15 @@ const AuthForm: React.FunctionComponent = (): React.ReactElement => {
       if (newAccount) {
         // create account
         data = await authService.createUserWithEmailAndPassword(email, password);
+        data.user?.sendEmailVerification();
+        alert('인증메일이 발송되었습니다.');
+        authService.signOut();
+        history.push('/');
       } else {
         // Log In
         data = await authService.signInWithEmailAndPassword(email, password);
       }
-      console.log(data);
+      // console.log(data);
     } catch (error) {
       setError(error.message);
     }
@@ -120,7 +125,7 @@ const AuthForm: React.FunctionComponent = (): React.ReactElement => {
             <input
               name="password"
               type="password"
-              placeholder="   비밀번호(8자이상, 숫자/특수문자 포함)"
+              placeholder="   비밀번호(영문, 숫자, 특수문자 포함 8자이상)"
               required
               value={password}
               onChange={onChange}
@@ -159,7 +164,7 @@ const AuthForm: React.FunctionComponent = (): React.ReactElement => {
             <input
               name="password"
               type="password"
-              placeholder="   비밀번호(8자이상)"
+              placeholder="   비밀번호(영문, 숫자, 특수문자 포함 8자이상)"
               required
               value={password}
               onChange={onChange}

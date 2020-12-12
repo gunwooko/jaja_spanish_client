@@ -1,7 +1,6 @@
 import Div from 'components/atoms/Div';
 import Li from 'components/atoms/Li';
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './FourthViewDiv.scss';
 
 const FourthViewDiv: React.FunctionComponent = ({}) => {
@@ -53,11 +52,9 @@ const FourthViewDiv: React.FunctionComponent = ({}) => {
             </Div>
           </Div>
           <div className="fourth_vw_btn_0">
-            {/* <Link to="/"> */}
             <button className="fourth_vw_btn_1" onClick={alertClassApp}>
               수업 상담하기
             </button>
-            {/* </Link> */}
           </div>
         </div>
       </Div>
