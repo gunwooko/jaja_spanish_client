@@ -1,5 +1,6 @@
 import Div from 'components/atoms/Div';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ClassGuideMainView: React.FunctionComponent = () => (
   <Div className="classGuide_vw_container">
@@ -12,7 +13,9 @@ const ClassGuideMainView: React.FunctionComponent = () => (
           아이디를 만들어서 <br /> 신청서에 적어주세요.
         </div>
         <div className="classGuide_vw_btn_div">
-          <button className="classGuide_vw_btn">스카이프 아이디 개설</button>
+          <a href="https://skype.daesung.com/download/downloadMain.asp" target="blank">
+            <button className="classGuide_vw_btn">스카이프 아이디 개설</button>
+          </a>
         </div>
       </Div>
       <img
@@ -36,7 +39,9 @@ const ClassGuideMainView: React.FunctionComponent = () => (
           이름과 이메일로 간편가입!!
         </div>
         <div className="classGuide_vw_btn_div_2">
-          <button className="classGuide_vw_btn_2">무료회원가입</button>
+          <Link to="/login" style={{ textDecoration: 'none' }}>
+            <button className="classGuide_vw_btn_2">무료회원가입</button>
+          </Link>
         </div>
       </Div>
     </Div>
@@ -49,7 +54,9 @@ const ClassGuideMainView: React.FunctionComponent = () => (
           <br /> 신청서에 쓰인 내용을 바탕으로 <br /> 최적의 선생님을 매칭해 드립니다.
         </div>
         <div className="classGuide_vw_btn_div">
-          <button className="classGuide_vw_btn">수강신청</button>
+          <Link to="/submitclass" style={{ textDecoration: 'none' }}>
+            <button className="classGuide_vw_btn">수강신청</button>
+          </Link>
         </div>
       </Div>
       <img
@@ -66,9 +73,9 @@ const ClassGuideMainView: React.FunctionComponent = () => (
           수강과 관련된 안내를 해드리고
           <br /> 선생님 매칭 후 시작일을 확정합니다. <br /> ** 수강료는 수업 하루 전까지 입금해주셔야합니다.
         </div>
-        <div className="classGuide_vw_btn_div">
+        {/* <div className="classGuide_vw_btn_div">
           <button className="classGuide_vw_btn">수강료입금</button>
-        </div>
+        </div> */}
       </Div>
       <img
         className="classGuide_vw_img"
