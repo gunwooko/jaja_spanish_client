@@ -703,3 +703,118 @@
         text-decoration: underline;
     }
 }
+
+// ClassGuide
+.classGuide_vw_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 60px 0px 60px 0px;
+
+    .classGuide_vw_box {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 60px 0px 60px 0px;
+        flex-wrap: wrap;
+
+        .classGuide_vw_step {
+            margin: 0px 60px 30px 60px;
+
+            .classGuide_vw_title {
+                color: #f88686;
+                font-style: italic;
+                font-weight: normal;
+                font-size: 80px;
+                line-height: 94px;
+                text-align: right;
+            }
+            .classGuide_vw_subtitle {
+                color: #808080;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 50px;
+                line-height: 59px;
+                text-align: right;
+            }
+            .classGuide_vw_contents {
+                color: #9f9f9f;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 25px;
+                line-height: 40px;
+                text-align: right;
+                span {
+                    font-weight: bold;
+                }
+            }
+            .classGuide_vw_btn_div {
+                text-align: right;
+            }
+            .classGuide_vw_btn {
+                background-color: #7427a4;
+                color: #ffffff;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 17px;
+                line-height: 35px;
+                text-align: right;
+                border: 0;
+                outline: none;
+                border-radius: 10px;
+                cursor: pointer;
+                margin-top: 35px;
+                padding: 6px 8px;
+            }
+
+            .classGuide_vw_title_2 {
+                color: #f88686;
+                font-style: italic;
+                font-weight: normal;
+                font-size: 80px;
+                line-height: 94px;
+                text-align: left;
+            }
+            .classGuide_vw_subtitle_2 {
+                color: #808080;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 50px;
+                line-height: 59px;
+                text-align: left;
+            }
+            .classGuide_vw_contents_2 {
+                color: #9f9f9f;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 25px;
+                line-height: 40px;
+                text-align: left;
+            }
+            .classGuide_vw_btn_div_2 {
+                text-align: left;
+            }
+            .classGuide_vw_btn_2 {
+                background-color: #7427a4;
+                color: #ffffff;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 17px;
+                line-height: 35px;
+                border: 0;
+                outline: none;
+                border-radius: 10px;
+                cursor: pointer;
+                margin-top: 35px;
+                padding: 6px 8px;
+            }
+        }
+        .classGuide_vw_img {
+            width: 540px;
+            height: 450px;
+            margin: 0px 60px 0px 60px;
+        }
+    }
+}
