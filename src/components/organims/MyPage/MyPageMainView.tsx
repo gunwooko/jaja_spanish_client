@@ -8,6 +8,8 @@ import PostponedClassDetail from './PostponedClassDetail';
 // test data
 import user from 'testData/userData';
 import classData from 'testData/classData';
+import postponedClass from 'testData/postponedClassData';
+// import postponedClass from 'testData/postponedClassData';
 
 const MyPageMainView: React.FunctionComponent = () => (
   <div>
@@ -24,9 +26,20 @@ const MyPageMainView: React.FunctionComponent = () => (
       class_style={classData.class_style}
       class_lastDay={classData.class_lastDay}
     ></MyClass>
-    <MyPaymentDetails></MyPaymentDetails>
+    <MyPaymentDetails
+      pay_number={classData.pay_number}
+      pay_date={classData.pay_date}
+      pay_classType={classData.pay_classType}
+      pay_amount={classData.pay_amount}
+      pay_status={classData.pay_status}
+    ></MyPaymentDetails>
     <ApplyToPostponeClass></ApplyToPostponeClass>
-    <PostponedClassDetail></PostponedClassDetail>
+    <PostponedClassDetail
+      postponed_date={postponedClass[0].postponed_date}
+      teachers_name={postponedClass[0].teachers_name}
+      postponedClass_date_times={postponedClass[0].postponedClass_date_times}
+      postponed_status={postponedClass[0].postponed_status}
+    ></PostponedClassDetail>
   </div>
 );
 
