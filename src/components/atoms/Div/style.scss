@@ -441,6 +441,45 @@
     }
 }
 
+// Review - ReviewMainView
+.ReviewMainView {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+
+    .review_container {
+        margin-top: 127px;
+
+        .review_box {
+            .review_main_title {
+                display: grid;
+                grid-template-columns: 1fr 9fr 1fr 2fr 1fr;
+                border-top: 1px solid #42175d;
+                border-bottom: 0.5px solid #42175d;
+                padding: 12px;
+                text-align: center;
+
+                .review_title_each {
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+            }
+        }
+        .review_writing_btn_form {
+            text-align: right;
+            .review_writing_btn {
+                background-color: #42175d;
+                width: 129px;
+                height: 50px;
+                color: #ffffff;
+                font-size: 22px;
+                border: 0;
+                outline: none;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
 // Policy
 .policy_vw_title {
     display: grid;
