@@ -12,6 +12,7 @@ import MyPage from 'pages/MyPage';
 import React from 'react';
 import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
 import ClassApp from 'pages/ClassApp';
+import ReviewAfter from 'pages/ReviewAfter';
 
 const App: React.FunctionComponent = () => (
   <BrowserRouter>
@@ -22,6 +23,7 @@ const App: React.FunctionComponent = () => (
       <Route path="/teachers" component={Teachers}></Route>
       <Route path="/review" exact component={Review}></Route>
       <Route path="/review/writing" component={ReviewWriting}></Route>
+      <Route path="/review/after" component={ReviewAfter}></Route>
       <Route path="/fqa" component={Faq}></Route>
       <Route path="/login" component={LogIn}></Route>
       <Route path="/mypage" component={MyPage}></Route>
