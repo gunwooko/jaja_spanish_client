@@ -1,9 +1,10 @@
+import Div from 'components/atoms/Div';
 import React from 'react';
 
 const ReviewAfterView: React.FunctionComponent = () => (
-  <div>
-    <h2>ReviewAfterView</h2>
-  </div>
+  <Div className="ReviewAfterView">
+    <button className="reviewAfterView_btn">내가 쓴 후기보기</button>
+  </Div>
 );
 
 export default ReviewAfterView;

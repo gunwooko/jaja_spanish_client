@@ -349,6 +349,137 @@
     font-weight: bold;
 }
 
+// Review - ReviewAfterView
+.ReviewAfterView {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 130px 0px 130px 0px;
+
+    .reviewAfterView_btn {
+        background-color: #42175d;
+        color: #ffffff;
+        font-size: 22px;
+        width: 201px;
+        height: 50px;
+        border: 0;
+        outline: none;
+        cursor: pointer;
+    }
+}
+
+// Review - ReviewWritingView
+.ReviewWritingView {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+
+    .ReviewWritingView_container {
+        margin: 90px 0px 20px 0px;
+
+        .reviewWritingView_h2 {
+            color: #42175d;
+            font-size: 30px;
+            font-weight: normal;
+            margin-bottom: 15px;
+
+            span {
+                font-weight: bold;
+            }
+        }
+        .reviewWritingView_h3 {
+            background-color: #fcf8fe;
+            color: #42175d;
+            font-size: 23px;
+            font-weight: normal;
+            padding: 18px 0px 18px 16px;
+            margin-bottom: 15px;
+
+            span {
+                font-weight: bold;
+            }
+            div {
+                font-size: 19px;
+                color: #171717;
+            }
+        }
+
+        // Review - ReviewWritingForm
+        .ReviewWritingForm {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .ReviewWriting_input_title {
+                line-height: 50px;
+                padding-left: 10px;
+                font-size: 20px;
+            }
+            .ReviewWriting_input_content {
+                height: 616px;
+                margin-top: 15px;
+                margin-bottom: 15px;
+                padding-top: 10px;
+                padding-left: 10px;
+                font-size: 20px;
+                vertical-align: top;
+            }
+            .ReviewWriting_input_btn_form {
+                text-align: right;
+
+                .ReviewWriting_input_btn {
+                    background-color: #42175d;
+                    width: 129px;
+                    height: 50px;
+                    color: #ffffff;
+                    font-size: 22px;
+                    border: 0;
+                    outline: none;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+// Review - ReviewMainView
+.ReviewMainView {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+
+    .review_container {
+        margin-top: 127px;
+
+        .review_box {
+            .review_main_title {
+                display: grid;
+                grid-template-columns: 1fr 9fr 1fr 2fr 1fr;
+                border-top: 1px solid #42175d;
+                border-bottom: 0.5px solid #42175d;
+                padding: 12px;
+                text-align: center;
+
+                .review_title_each {
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+            }
+        }
+        .review_writing_btn_form {
+            text-align: right;
+            .review_writing_btn {
+                background-color: #42175d;
+                width: 129px;
+                height: 50px;
+                color: #ffffff;
+                font-size: 22px;
+                border: 0;
+                outline: none;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
 // Policy
 .policy_vw_title {
     display: grid;
