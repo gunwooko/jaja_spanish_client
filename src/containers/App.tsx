@@ -11,8 +11,9 @@ import TermsPolicy from 'pages/TermsPolicy';
 import MyPage from 'pages/MyPage';
 import React from 'react';
 import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
-import ClassApp from 'pages/ClassApp';
+import SubmitClass from 'pages/SubmitClass';
 import ReviewAfter from 'pages/ReviewAfter';
+import SubmitClassAfter from 'pages/SubmitClassAfter';
 
 const App: React.FunctionComponent = () => (
   <BrowserRouter>
@@ -29,7 +30,9 @@ const App: React.FunctionComponent = () => (
       <Route path="/mypage" component={MyPage}></Route>
       <Route path="/policy/privacy" component={PrivacyPolicy}></Route>
       <Route path="/policy/terms" component={TermsPolicy}></Route>
-      <Route path="/submitclass" component={ClassApp}></Route>
+      <Route path="/submitclass" exact component={SubmitClass}></Route>
+      <Route path="/submitclass/after" component={SubmitClassAfter}></Route>
+
       <Redirect path="*" to="/" />
     </Switch>
   </BrowserRouter>

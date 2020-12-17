@@ -1165,3 +1165,80 @@
         }
     }
 }
+
+// SubmitClass - afterView
+.SubmitClassAfterView_container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+
+    .SubmitClassAfterView_box {
+        background-color: #fcf8fe;
+        margin: 220px 0px;
+        padding: 99px 108px;
+
+        .submitClassAfterView_phrase_1 {
+            color: #42175d;
+            font-size: 50px;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+        .submitClassAfterView_phrase_2 {
+            color: #42175d;
+            font-size: 22px;
+            margin-bottom: 26px;
+            .submitClassAfterView_emphasis {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+// SubmitClass - SubmitClassMainView
+.SubmitClassMainView {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    .SubmitClassMainView_container {
+        margin-top: 120px;
+        margin-bottom: 190px;
+
+        // CourseInfomation
+        .CourseInfomation_btn {
+            background-color: #42175d;
+            font-size: 22px;
+            color: #ffffff;
+            border: 0;
+            outline: none;
+            text-align: center;
+            padding: 9px 30px;
+            float: right;
+        }
+    }
+}
+
+// SubmitClass - nav
+.SubmitClassNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 114px;
+    span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        hr {
+            border: 2px solid #42175d;
+            border-radius: 8px;
+            width: 150px;
+        }
+    }
+    .submitClassNav_btn {
+        background-color: #42175d;
+        color: #ffffff;
+        font-size: 22px;
+        outline: none;
+        border: 10px double #f4eff7;
+        width: 122px;
+        height: 122px;
+        border-radius: 100%;
+    }
+}
