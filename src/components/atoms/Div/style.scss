@@ -1212,6 +1212,27 @@
             padding: 9px 30px;
             float: right;
         }
+        // CourseSubmit / CourseSubmitCompleted - btn
+        .CourseSubmit_prev_btn {
+            background-color: #42175d;
+            font-size: 22px;
+            color: #ffffff;
+            border: 0;
+            outline: none;
+            text-align: center;
+            padding: 9px 30px;
+            float: right;
+        }
+        .CourseSubmit_next_btn {
+            background-color: #42175d;
+            font-size: 22px;
+            color: #ffffff;
+            border: 0;
+            outline: none;
+            text-align: center;
+            padding: 9px 30px;
+            float: right;
+        }
     }
 }
 
@@ -1240,5 +1261,31 @@
         width: 122px;
         height: 122px;
         border-radius: 100%;
+    }
+}
+
+// SubmitClass - CourseInfomation
+.CourseInfomation {
+    .courseInfo_title {
+        color: #42175d;
+        font-size: 36px;
+        span {
+            font-weight: bold;
+        }
+    }
+    .courseInfo_box {
+        .courseInfo_subtitle {
+            color: #42175d;
+            font-size: 30px;
+            font-weight: 30px;
+        }
+        .courseInfo_content {
+            color: #1d1d1d;
+            font-size: 25px;
+            margin-bottom: 30px;
+            span {
+                font-weight: bold;
+            }
+        }
     }
 }
