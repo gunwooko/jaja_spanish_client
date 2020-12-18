@@ -16,9 +16,9 @@ const AuthButton: React.FunctionComponent = () => {
   return isLoggedIn ? (
     <>
       <div className="authButton">
-        <Link to="/" style={{ textDecoration: 'none' }}>
-          <button onClick={onLogOut}>로그아웃</button>
-        </Link>
+        {/* <Link to="/" style={{ textDecoration: 'none' }}> */}
+        <button onClick={onLogOut}>로그아웃</button>
+        {/* </Link> */}
         <p>/</p>
         <Link to="/mypage" style={{ textDecoration: 'none' }}>
           <button>마이페이지</button>
