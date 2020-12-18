@@ -1,5 +1,5 @@
-import { authService } from 'fbase';
-import React, { useState } from 'react';
+import { authService, dbService } from 'fbase';
+import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
 const AuthForm: React.FunctionComponent = (): React.ReactElement => {
@@ -82,19 +82,31 @@ const AuthForm: React.FunctionComponent = (): React.ReactElement => {
       if (newAccount) {
         // create account
         data = await authService.createUserWithEmailAndPassword(email, password);
-        data.user?.sendEmailVerification();
-        alert('인증메일이 발송되었습니다.');
-        authService.signOut();
-        history.push('/');
+        // data.user?.sendEmailVerification();
+        // alert('인증메일이 발송되었습니다.');
+        // authService.signOut();
+        // history.push('/');
       } else {
         // Log In
         data = await authService.signInWithEmailAndPassword(email, password);
+        history.push('/');
       }
       // console.log(data);
+      // return () => setNewAccount(false);
     } catch (error) {
       setError(error.message);
     }
   };
+
+  // useEffect(() => {
+  //   // DB에 유저정보 만들기 및 저장
+  //   dbService.collection('users').add({
+  //     userName,
+  //     email,
+  //     createdAt: Date.now(),
+  //   });
+  //   console.log('????');
+  // }, []);
 
   const toggleAccount = () => setNewAccount((prev) => !prev);
 

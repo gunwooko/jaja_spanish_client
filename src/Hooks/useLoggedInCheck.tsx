@@ -14,7 +14,13 @@ const useLoggedInCheck = (): typeof authService.currentUser | null | boolean => 
       }
       // setInit(true);
     });
-  }, []);
+  }, [isLoggedIn]);
+
+  // useEffect(() => {
+  //   // There is an error note => Warning: Can't perform a React state update on an unmounted component. That's why we have to use cleanupFunction :)
+  //   // Ref => https://velog.io/@ohgoodkim/-%EC%97%90%EB%9F%AC%EB%85%B8%ED%8A%B8-Cant-perform-a-React-state-update-on-an-unmounted-component
+  //   return () => setIsLoggedIn(false);
+  // }, []);
 
   return isLoggedIn;
 };
