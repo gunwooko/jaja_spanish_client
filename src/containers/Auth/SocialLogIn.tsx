@@ -10,6 +10,7 @@ const SocialLogIn: React.FunctionComponent = () => {
 
     console.log(name);
 
+    // eslint-disable-next-line
     let provider: any;
     if (name === 'google') {
       provider = new firebaseInstance.auth.GoogleAuthProvider();
