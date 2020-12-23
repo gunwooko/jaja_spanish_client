@@ -2,26 +2,29 @@ import Div from 'components/atoms/Div';
 import { authService, dbService, firebaseInstance } from 'fbase';
 import React, { useState } from 'react';
 import useGetUserObject from 'Hooks/useGetUserObject';
+import { useHistory } from 'react-router-dom';
 
 interface Props {
   name_kr: string;
   name_en: string;
   email: string;
   point: number;
-  password: string;
 }
 
-const MyDetails: React.FunctionComponent<Props> = ({ name_kr, name_en, email, point, password }: Props) => {
+const MyDetails: React.FunctionComponent<Props> = ({ name_kr, name_en, email, point }: Props) => {
   const [engNameEditMode, setEngNameEditMode] = useState(false);
   const [engName, setEngName] = useState('');
   const [passwordEditMode, setPasswordEditMode] = useState(false);
   const [newPassword, setNewPassword] = useState('');
   const [oldPassword, setOldPassword] = useState('');
+  const [deleteMode, setDeleteMode] = useState(false);
+  const [password, setPassword] = useState('');
 
   const userObj = useGetUserObject();
 
   const onEngNameEditMode = () => setEngNameEditMode((prev) => !prev);
   const onPasswordEditMode = () => setPasswordEditMode((prev) => !prev);
+  const onDeleteMode = () => setDeleteMode((prev) => !prev);
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const {
@@ -29,10 +32,12 @@ const MyDetails: React.FunctionComponent<Props> = ({ name_kr, name_en, email, po
     } = event;
     if (name === 'engName') {
       setEngName(value);
-    } else if (name === 'password') {
+    } else if (name === 'newPassword') {
       setNewPassword(value);
     } else if (name === 'oldPassword') {
       setOldPassword(value);
+    } else if (name === 'password') {
+      setPassword(value);
     }
   };
   const onEngNameChange = () => {
@@ -66,6 +71,21 @@ const MyDetails: React.FunctionComponent<Props> = ({ name_kr, name_en, email, po
       await authService.currentUser?.reauthenticateWithCredential(cred);
       await authService.currentUser?.updatePassword(newPassword);
       onPasswordEditMode();
+    } catch (err) {
+      if (err) {
+        alert(err.message);
+      }
+    }
+  };
+  // Delete User
+  const history = useHistory();
+  const onDeleteUser = async () => {
+    try {
+      const cred = await firebaseInstance.auth.EmailAuthProvider.credential(userObj.email, password);
+      await authService.currentUser?.reauthenticateWithCredential(cred);
+      await authService.currentUser?.delete();
+      onDeleteMode();
+      history.push('/');
     } catch (err) {
       if (err) {
         alert(err.message);
@@ -128,7 +148,7 @@ const MyDetails: React.FunctionComponent<Props> = ({ name_kr, name_en, email, po
                   required
                 />
                 <input
-                  name="password"
+                  name="newPassword"
                   type="password"
                   onChange={onChange}
                   className={`myDetails_info_editMode ${confirmPasswordClassName()}`}
@@ -137,7 +157,7 @@ const MyDetails: React.FunctionComponent<Props> = ({ name_kr, name_en, email, po
                 ></input>
               </>
             ) : (
-              <span className="myDetails_info">{password}</span>
+              <span className="myDetails_info">{}</span>
             )}
 
             {passwordEditMode ? (
@@ -154,7 +174,21 @@ const MyDetails: React.FunctionComponent<Props> = ({ name_kr, name_en, email, po
             )}
           </Div>
         </Div>
-        <button className="myDatails_withdrawal_btn">{`회원탈퇴 >`}</button>
+        {deleteMode ? (
+          <>
+            <input
+              className="myDetails_input_deleteMode"
+              name="password"
+              type="password"
+              onChange={onChange}
+              placeholder="비밀번호을 적어주세요."
+              required
+            ></input>
+            <button className="myDatails_withdrawal_btn" onClick={onDeleteUser}>{`탈퇴하기 >`}</button>
+          </>
+        ) : (
+          <button className="myDatails_withdrawal_btn" onClick={onDeleteMode}>{`회원탈퇴 >`}</button>
+        )}
       </Div>
       <div></div>
     </Div>
