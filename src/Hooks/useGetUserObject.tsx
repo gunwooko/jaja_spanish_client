@@ -9,6 +9,7 @@ import { authService, dbService } from 'fbase';
 //   point?: number;
 // }
 
+// eslint-disable-next-line
 const useGetUserObject = (): typeof authService.currentUser | null | any => {
   // eslint-disable-next-line
   const [init, setInit] = useState(false);

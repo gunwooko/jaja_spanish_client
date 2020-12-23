@@ -668,6 +668,25 @@
                     flex-grow: 2;
                     padding-left: 20px;
                 }
+                .myDetails_info_editMode {
+                    margin-left: 20px;
+                    font-size: 20px;
+
+                    &.is-valid {
+                        border: 1px solid #2aa646;
+                        box-shadow: 1px 1px 1px #2aa646;
+                    }
+                    &.is-valid:focus {
+                        outline: none;
+                    }
+                    &.is-invalid {
+                        border: 1px solid #d85350;
+                        box-shadow: 3px 3px 10px #d85350;
+                    }
+                    &.is-invalid:focus {
+                        outline: none;
+                    }
+                }
 
                 .myDetails_btn {
                     color: #a637ea;

@@ -2,7 +2,6 @@ import { authService, dbService } from 'fbase';
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import getTodayUtil from 'containers/Utilities/getToday';
-import getHashedPassword from 'containers/Utilities/hashingPassword';
 
 const AuthForm: React.FunctionComponent = (): React.ReactElement => {
   const [email, setEmail] = useState('');
@@ -83,9 +82,7 @@ const AuthForm: React.FunctionComponent = (): React.ReactElement => {
       let data;
       if (newAccount) {
         // create account
-        const hashedPassword = getHashedPassword(password);
-
-        data = await authService.createUserWithEmailAndPassword(email, hashedPassword);
+        data = await authService.createUserWithEmailAndPassword(email, password);
 
         // DB에 유저정보 만들기 및 저장
         // 가입날짜
@@ -97,7 +94,6 @@ const AuthForm: React.FunctionComponent = (): React.ReactElement => {
         dbService.collection('users').doc(`${email}`).set({
           userName,
           email,
-          hashedPassword,
           createdAt: hoy,
           userEngName: '영문 이름을 적어주세요',
           point: 0,
