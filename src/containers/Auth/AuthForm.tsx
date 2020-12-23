@@ -1,6 +1,8 @@
 import { authService, dbService } from 'fbase';
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import getTodayUtil from 'containers/Utilities/getToday';
+import getHashedPassword from 'containers/Utilities/hashingPassword';
 
 const AuthForm: React.FunctionComponent = (): React.ReactElement => {
   const [email, setEmail] = useState('');
@@ -81,21 +83,13 @@ const AuthForm: React.FunctionComponent = (): React.ReactElement => {
       let data;
       if (newAccount) {
         // create account
-        data = await authService.createUserWithEmailAndPassword(email, password);
+        const hashedPassword = getHashedPassword(password);
+
+        data = await authService.createUserWithEmailAndPassword(email, hashedPassword);
 
         // DB에 유저정보 만들기 및 저장
         // 가입날짜
-        const today = new Date();
-        let dd = today.getDate().toString();
-        let mm = (today.getMonth() + 1).toString();
-        const yyyy = today.getFullYear().toString();
-        if (Number(dd) < 10) {
-          dd = '0' + dd.toString();
-        }
-        if (Number(mm) < 10) {
-          mm = '0' + mm;
-        }
-        const hoy = mm + '/' + dd + '/' + yyyy;
+        const hoy = getTodayUtil();
 
         // 고유 docID <추후에 작성하기>
         // 비밀번호 암호화해서 저장하기
@@ -103,7 +97,7 @@ const AuthForm: React.FunctionComponent = (): React.ReactElement => {
         dbService.collection('users').doc(`${email}`).set({
           userName,
           email,
-          password,
+          hashedPassword,
           createdAt: hoy,
           userEngName: '영문 이름을 적어주세요',
           point: 0,
