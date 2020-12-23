@@ -21,7 +21,6 @@ const MyPageMainView: React.FunctionComponent = () => {
         name_en={userObj.userEngName}
         email={userObj.email}
         point={userObj.point}
-        password={userObj.password}
       ></MyDetails>
       <MyClass
         teachers_name={classData.teachers_name}
