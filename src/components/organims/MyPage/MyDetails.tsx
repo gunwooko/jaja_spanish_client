@@ -9,6 +9,7 @@ interface Props {
   name_en: string;
   email: string;
   point: number;
+  loginWith: string;
 }
 
 const MyDetails: React.FunctionComponent<Props> = ({ name_kr, name_en, email, point }: Props) => {
@@ -21,10 +22,31 @@ const MyDetails: React.FunctionComponent<Props> = ({ name_kr, name_en, email, po
   const [password, setPassword] = useState('');
 
   const userObj = useGetUserObject();
+  const history = useHistory();
 
   const onEngNameEditMode = () => setEngNameEditMode((prev) => !prev);
-  const onPasswordEditMode = () => setPasswordEditMode((prev) => !prev);
-  const onDeleteMode = () => setDeleteMode((prev) => !prev);
+  const onPasswordEditMode = () => {
+    if (userObj.loginWith === ('facebook' || 'google')) {
+      alert('페이스북/구글 로그인을 한 경우 비밀번호 변경이 불가능합니다.');
+    } else if (userObj.loginWith === 'email') {
+      setPasswordEditMode((prev) => !prev);
+    }
+  };
+  const onDeleteMode = async () => {
+    if (userObj.loginWith === 'google') {
+      const provider = new firebaseInstance.auth.GoogleAuthProvider();
+      await authService.currentUser?.reauthenticateWithPopup(provider);
+      await authService.currentUser?.delete();
+      history.push('/');
+    } else if (userObj.loginWith === 'facebook') {
+      const provider = new firebaseInstance.auth.FacebookAuthProvider();
+      await authService.currentUser?.reauthenticateWithPopup(provider);
+      await authService.currentUser?.delete();
+      history.push('/');
+    } else if (userObj.loginWith === 'email') {
+      setDeleteMode((prev) => !prev);
+    }
+  };
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const {
@@ -81,7 +103,6 @@ const MyDetails: React.FunctionComponent<Props> = ({ name_kr, name_en, email, po
     }
   };
   // Delete User
-  const history = useHistory();
   const onDeleteUser = async () => {
     try {
       const cred = await firebaseInstance.auth.EmailAuthProvider.credential(userObj.email, password);
@@ -187,6 +208,7 @@ const MyDetails: React.FunctionComponent<Props> = ({ name_kr, name_en, email, po
               placeholder="비밀번호을 적어주세요."
               required
             ></input>
+            <span>구글 혹은 페이스북 로그인한 경우 탈퇴하기를 바로 눌러주세요</span>
             <button className="myDatails_withdrawal_btn" onClick={onDeleteUser}>{`탈퇴하기 >`}</button>
           </>
         ) : (

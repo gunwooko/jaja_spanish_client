@@ -1,5 +1,6 @@
 import Div from 'components/atoms/Div';
-import { authService, firebaseInstance } from 'fbase';
+import getTodayUtil from 'containers/Utilities/getToday';
+import { authService, dbService, firebaseInstance } from 'fbase';
 import React from 'react';
 
 const SocialLogIn: React.FunctionComponent = () => {
@@ -19,6 +20,16 @@ const SocialLogIn: React.FunctionComponent = () => {
     }
     const data = await authService.signInWithPopup(provider);
     console.log(data.operationType);
+
+    const hoy = getTodayUtil();
+    dbService.collection('users').doc(`${data.user?.email}`).set({
+      userName: data.user?.displayName,
+      email: data.user?.email,
+      createdAt: hoy,
+      userEngName: '영문 이름을 적어주세요.',
+      point: 0,
+      loginWith: name,
+    });
   };
 
   return (
