@@ -18,18 +18,32 @@ const SocialLogIn: React.FunctionComponent = () => {
     } else if (name === 'facebook') {
       provider = new firebaseInstance.auth.FacebookAuthProvider();
     }
+
     const data = await authService.signInWithPopup(provider);
     console.log(data.operationType);
 
-    const hoy = getTodayUtil();
-    dbService.collection('users').doc(`${data.user?.email}`).set({
-      userName: data.user?.displayName,
-      email: data.user?.email,
-      createdAt: hoy,
-      userEngName: '영문 이름을 적어주세요.',
-      point: 0,
-      loginWith: name,
-    });
+    const alreadyUsed: any[] = [];
+    await dbService
+      .collection('users')
+      .doc(`${data.user?.email}`)
+      .get()
+      .then((eachField) => {
+        alreadyUsed.push(eachField.data());
+      });
+
+    if (!alreadyUsed[0]) {
+      // 우선 해당 유저가 이미 가입 되어 있는지 확인한다. 없으면 유저정보 저장하기
+      const hoy = getTodayUtil();
+      dbService.collection('users').doc(`${data.user?.email}`).set({
+        userName: data.user?.displayName,
+        email: data.user?.email,
+        createdAt: hoy,
+        userEngName: '영문 이름을 적어주세요.',
+        point: 0,
+        loginWith: name,
+        userId: data.user?.uid,
+      });
+    }
   };
 
   return (
