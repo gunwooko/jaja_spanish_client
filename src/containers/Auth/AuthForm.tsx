@@ -98,6 +98,7 @@ const AuthForm: React.FunctionComponent = (): React.ReactElement => {
           userEngName: '영문 이름을 적어주세요.',
           point: 0,
           loginWith: 'email',
+          userId: data.user?.uid,
         });
 
         // // 가입 인증메일 보내기
