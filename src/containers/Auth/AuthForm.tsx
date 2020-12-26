@@ -112,7 +112,7 @@ const AuthForm: React.FunctionComponent = (): React.ReactElement => {
         data = await authService.signInWithEmailAndPassword(email, password);
         history.push('/');
       }
-      console.log('data', data);
+      console.log(data.operationType);
     } catch (error) {
       setError(error.message);
     }

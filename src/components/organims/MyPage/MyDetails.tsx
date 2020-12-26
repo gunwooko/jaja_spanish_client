@@ -36,11 +36,25 @@ const MyDetails: React.FunctionComponent<Props> = ({ name_kr, name_en, email, po
     if (userObj.loginWith === 'google') {
       const provider = new firebaseInstance.auth.GoogleAuthProvider();
       await authService.currentUser?.reauthenticateWithPopup(provider);
+      await dbService
+        .collection('users')
+        .doc('deleted')
+        .collection('user-who-left')
+        .doc(`${userObj.email}`)
+        .set(userObj);
+      await dbService.collection('users').doc(`${userObj.email}`).delete();
       await authService.currentUser?.delete();
       history.push('/');
     } else if (userObj.loginWith === 'facebook') {
       const provider = new firebaseInstance.auth.FacebookAuthProvider();
       await authService.currentUser?.reauthenticateWithPopup(provider);
+      await dbService
+        .collection('users')
+        .doc('deleted')
+        .collection('user-who-left')
+        .doc(`${userObj.email}`)
+        .set(userObj);
+      await dbService.collection('users').doc(`${userObj.email}`).delete();
       await authService.currentUser?.delete();
       history.push('/');
     } else if (userObj.loginWith === 'email') {
@@ -107,6 +121,13 @@ const MyDetails: React.FunctionComponent<Props> = ({ name_kr, name_en, email, po
     try {
       const cred = await firebaseInstance.auth.EmailAuthProvider.credential(userObj.email, password);
       await authService.currentUser?.reauthenticateWithCredential(cred);
+      await dbService
+        .collection('users')
+        .doc('deleted')
+        .collection('user-who-left')
+        .doc(`${userObj.email}`)
+        .set(userObj);
+      await dbService.collection('users').doc(`${userObj.email}`).delete();
       await authService.currentUser?.delete();
       onDeleteMode();
       history.push('/');
@@ -208,7 +229,6 @@ const MyDetails: React.FunctionComponent<Props> = ({ name_kr, name_en, email, po
               placeholder="비밀번호을 적어주세요."
               required
             ></input>
-            <span>구글 혹은 페이스북 로그인한 경우 탈퇴하기를 바로 눌러주세요</span>
             <button className="myDatails_withdrawal_btn" onClick={onDeleteUser}>{`탈퇴하기 >`}</button>
           </>
         ) : (
