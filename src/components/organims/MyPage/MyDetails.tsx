@@ -40,13 +40,16 @@ const MyDetails: React.FunctionComponent<Props> = ({ name_kr, name_en, email, po
       setPassword(value);
     }
   };
-  const onEngNameChange = () => {
+
+  const onEngNameChange = async () => {
     if (engName.length === 0) {
-      dbService.collection('users').doc(`${email}`).update({ userEngName: '영문 이름을 적어주세요' });
+      await dbService.collection('users').doc(`${email}`).update({ userEngName: '영문 이름을 적어주세요' });
       onEngNameEditMode();
+      window.location.replace('/mypage'); // 새로고침
     } else {
-      dbService.collection('users').doc(`${email}`).update({ userEngName: engName });
+      await dbService.collection('users').doc(`${email}`).update({ userEngName: engName });
       onEngNameEditMode();
+      window.location.replace('/mypage'); // 새로고침
     }
   };
   const doesPasswordIsCorrect = () => {
