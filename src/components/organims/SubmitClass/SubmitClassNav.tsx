@@ -63,23 +63,23 @@ const SubmitClassNav: React.FunctionComponent = () => {
       {submitDisplay ? (
         <>
           <CourseSubmit />
-          <button onClick={backInfoDisplay} className="CourseSubmit_prev_btn">
-            이전
-          </button>
           <button onClick={goCompletedDisplay} className="CourseSubmit_next_btn">
             다음
+          </button>
+          <button onClick={backInfoDisplay} className="CourseSubmit_prev_btn">
+            이전
           </button>
         </>
       ) : null}
       {completedDisplay ? (
         <>
           <CourseSubmitCompleted />
-          <button onClick={backCourseSubmit} className="CourseSubmit_prev_btn">
-            수정
-          </button>
           <Link to="/submitclass/after">
             <button className="CourseSubmit_next_btn">최종제출</button>
           </Link>
+          <button onClick={backCourseSubmit} className="CourseSubmit_prev_btn">
+            수정
+          </button>
         </>
       ) : null}
     </>
