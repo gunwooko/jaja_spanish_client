@@ -1,12 +1,12 @@
 import Footer from 'components/organims/Footer';
 import Nav from 'components/organims/Nav';
-import SubmitClassMainView from 'components/organims/SubmitClass/SubmitClassMainView';
+import SubmitClassFirstView from 'components/organims/SubmitClass/SubmitClassFirstView';
 import React from 'react';
 
 const SubmitClass: React.FunctionComponent = () => (
   <>
     <Nav></Nav>
-    <SubmitClassMainView />
+    <SubmitClassFirstView />
     <Footer></Footer>
   </>
 );

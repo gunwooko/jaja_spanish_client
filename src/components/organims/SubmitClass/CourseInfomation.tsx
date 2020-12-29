@@ -1,7 +1,11 @@
 import Div from 'components/atoms/Div';
 import React from 'react';
 
-const CourseInfomation: React.FunctionComponent = () => {
+interface ChildProps {
+  goCourseSubmit: () => void;
+}
+
+const CourseInfomation: React.FunctionComponent<ChildProps> = ({ goCourseSubmit }: ChildProps) => {
   return (
     <>
       <Div className="CourseInfomation">
@@ -85,6 +89,9 @@ const CourseInfomation: React.FunctionComponent = () => {
           </div>
         </Div>
       </Div>
+      <button onClick={goCourseSubmit} className="CourseInfomation_btn">
+        다음
+      </button>
     </>
   );
 };
