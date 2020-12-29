@@ -1,6 +1,6 @@
 import Div from 'components/atoms/Div';
 import useGetProfesObject from 'Hooks/useGetProfesObject';
-import React from 'react';
+import React, { useState } from 'react';
 
 interface ChildProps {
   goCompletedDisplay: () => void;
@@ -8,7 +8,75 @@ interface ChildProps {
 }
 
 const CourseSubmit: React.FunctionComponent<ChildProps> = ({ goCompletedDisplay, backInfoDisplay }: ChildProps) => {
+  const [userKoreanName, setUserKoreanName] = useState('');
+  const [userEnglishName, setUserEnglishName] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [userSkypeID, setUserSkypeID] = useState('');
+  const [desiredDaysAndHours, setDesiredDaysAndHours] = useState('');
+  const [classType, setClassType] = useState('');
+  const [userAge, setUserAge] = useState('');
+  const [userSpanishLevel, setUserSpanishLevel] = useState('');
+  const [preferredTeacher, setPreferredTeacher] = useState('');
+  const [purposeOfStudy, setPurposeOfStudy] = useState('');
+  const [preferredClassMethod, setPreferredClassMethod] = useState('');
+  const [pathHowToKnow, setPathHowToKnow] = useState('');
+  const [userKaTalkID, setUserKaTalkID] = useState('');
+  const [phoneNumberForReceipt, setPhoneNumberForReceipt] = useState('');
+
   const profesList = useGetProfesObject();
+
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const {
+      target: { name, value },
+    } = event;
+    if (name === 'userKoreanName') {
+      setUserKoreanName(value);
+    } else if (name === 'userEnglishName') {
+      setUserEnglishName(value);
+    } else if (name === 'phoneNumber') {
+      setPhoneNumber(value);
+    } else if (name === 'userSkypeID') {
+      setUserSkypeID(value);
+    } else if (name === 'desiredDaysAndHours') {
+      setDesiredDaysAndHours(value);
+    } else if (name === 'classType') {
+      setClassType(value);
+    } else if (name === 'userAge') {
+      setUserAge(value);
+    } else if (name === 'userSpanishLevel') {
+      setUserSpanishLevel(value);
+    } else if (name === 'preferredTeacher') {
+      setPreferredTeacher(value);
+    } else if (name === 'purposeOfStudy') {
+      setPurposeOfStudy(value);
+    } else if (name === 'preferredClassMethod') {
+      setPreferredClassMethod(value);
+    } else if (name === 'pathHowToKnow') {
+      setPathHowToKnow(value);
+    } else if (name === 'userKaTalkID') {
+      setUserKaTalkID(value);
+    } else if (name === 'phoneNumberForReceipt') {
+      setPhoneNumberForReceipt(value);
+    }
+  };
+
+  // Verify userKoreanName
+  const doesNameIsCorrect = () => {
+    const hName = /^[가-힣]+$/;
+    return userKoreanName.length > 1 && hName.test(userKoreanName);
+  };
+  const confirmUserKoreanNameClassName = () => {
+    if (userKoreanName) {
+      return doesNameIsCorrect() ? 'is-valid' : 'is-invalid';
+    }
+  };
+  const renderNameFeedbackMessage = () => {
+    if (userKoreanName) {
+      if (!doesNameIsCorrect()) {
+        return <div className="invalid-feedback">정확한 이름을 작성해주세요.</div>;
+      }
+    }
+  };
 
   return (
     <>
@@ -17,13 +85,30 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ goCompletedDisplay,
           <span>필수로</span> 작성해주셔야해요!
         </Div>
         <Div className="courseSubmit_box">
-          <Div className="courseSubmit_row">
+          <div className="courseSubmit_row">
             <span className="courseSubmit_subtitle">한글이름</span>
-            <input className="courseSubmit_input" type="text" placeholder=""></input>
-          </Div>
+            <input
+              name="userKoreanName"
+              required
+              value={userKoreanName}
+              onChange={onChange}
+              className={`courseSubmit_input ${confirmUserKoreanNameClassName()}`}
+              type="text"
+              placeholder=""
+            />
+            {renderNameFeedbackMessage()}
+          </div>
           <Div className="courseSubmit_row">
             <span className="courseSubmit_subtitle">영문이름</span>
-            <input className="courseSubmit_input" type="text" placeholder=""></input>{' '}
+            <input
+              name="userEnglishName"
+              required
+              value={userEnglishName}
+              onChange={onChange}
+              className="courseSubmit_input"
+              type="text"
+              placeholder=""
+            />
           </Div>
           <Div className="courseSubmit_row">
             <span className="courseSubmit_subtitle">휴대폰번호</span>
