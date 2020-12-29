@@ -2,7 +2,12 @@ import Div from 'components/atoms/Div';
 import useGetProfesObject from 'Hooks/useGetProfesObject';
 import React from 'react';
 
-const CourseSubmit: React.FunctionComponent = () => {
+interface ChildProps {
+  goCompletedDisplay: () => void;
+  backInfoDisplay: () => void;
+}
+
+const CourseSubmit: React.FunctionComponent<ChildProps> = ({ goCompletedDisplay, backInfoDisplay }: ChildProps) => {
   const profesList = useGetProfesObject();
 
   return (
@@ -163,6 +168,12 @@ const CourseSubmit: React.FunctionComponent = () => {
           </Div>
         </Div>
       </Div>
+      <button onClick={goCompletedDisplay} className="CourseSubmit_next_btn">
+        다음
+      </button>
+      <button onClick={backInfoDisplay} className="CourseSubmit_prev_btn">
+        이전
+      </button>
     </>
   );
 };

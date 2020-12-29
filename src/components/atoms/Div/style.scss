@@ -1272,13 +1272,46 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        hr {
+        .hr1 {
             border: 2px solid #42175d;
             border-radius: 8px;
             width: 150px;
         }
+        .hr2 {
+            border: 2px solid #42175d;
+            border-radius: 8px;
+            width: 150px;
+            &.infomation {
+                border: 2px solid #f4eff7;
+            }
+        }
+        .hr3 {
+            border: 2px solid #42175d;
+            border-radius: 8px;
+            width: 150px;
+            &.infomation {
+                border: 2px solid #f4eff7;
+            }
+            &.submit {
+                border: 2px solid #f4eff7;
+            }
+        }
+        .hr4 {
+            border: 2px solid #42175d;
+            border-radius: 8px;
+            width: 150px;
+            &.infomation {
+                border: 2px solid #f4eff7;
+            }
+            &.submit {
+                border: 2px solid #f4eff7;
+            }
+            &.submitCompleted {
+                border: 2px solid #f4eff7;
+            }
+        }
     }
-    .submitClassNav_btn {
+    .submitClassNav_btn1 {
         background-color: #42175d;
         color: #ffffff;
         font-size: 22px;
@@ -1287,6 +1320,38 @@
         width: 122px;
         height: 122px;
         border-radius: 100%;
+    }
+    .submitClassNav_btn2 {
+        background-color: #42175d;
+        color: #ffffff;
+        font-size: 22px;
+        outline: none;
+        border: 10px double #f4eff7;
+        width: 122px;
+        height: 122px;
+        border-radius: 100%;
+        &.infomation {
+            background-color: #f4eff7;
+            border: 10px double #ffffff;
+        }
+    }
+    .submitClassNav_btn3 {
+        background-color: #42175d;
+        color: #ffffff;
+        font-size: 22px;
+        outline: none;
+        border: 10px double #f4eff7;
+        width: 122px;
+        height: 122px;
+        border-radius: 100%;
+        &.infomation {
+            background-color: #f4eff7;
+            border: 10px double #ffffff;
+        }
+        &.submit {
+            background-color: #f4eff7;
+            border: 10px double #ffffff;
+        }
     }
 }
 
