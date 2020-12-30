@@ -414,7 +414,7 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ goCompletedDisplay,
         </Div>
       </Div>
       <button onClick={goCompletedDisplay} className="CourseSubmit_next_btn">
-        다음
+        제출하기
       </button>
       <button onClick={backInfoDisplay} className="CourseSubmit_prev_btn">
         이전
