@@ -1454,10 +1454,22 @@
             .courseSubmit_input_opt {
                 font-size: 20px;
                 text-align: left;
-                padding-left: 20px;
+                margin-left: 20px;
                 border: 0;
                 outline: none;
                 width: 50%;
+                &.is-valid {
+                    border: 1px solid #2aa646;
+                }
+                &.is-valid:focus {
+                    outline: none;
+                }
+                &.is-invalid {
+                    border: 1px solid #d85350;
+                }
+                &.is-valid:focus {
+                    outline: none;
+                }
             }
         }
         .courseSubmit_mini_notice {
