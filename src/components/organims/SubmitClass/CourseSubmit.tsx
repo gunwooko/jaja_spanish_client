@@ -25,7 +25,7 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ goCompletedDisplay,
 
   const profesList = useGetProfesObject();
 
-  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const onChange = (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {
     const {
       target: { name, value },
     } = event;
@@ -60,12 +60,12 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ goCompletedDisplay,
     }
   };
 
-  // Verify userKoreanName
+  // Verify userKoreanName & confirmClassName & Error Message
   const doesNameIsCorrect = () => {
     const hName = /^[가-힣]+$/;
     return userKoreanName.length > 1 && hName.test(userKoreanName);
   };
-  const confirmUserKoreanNameClassName = () => {
+  const confirmClassName = () => {
     if (userKoreanName) {
       return doesNameIsCorrect() ? 'is-valid' : 'is-invalid';
     }
@@ -74,6 +74,105 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ goCompletedDisplay,
     if (userKoreanName) {
       if (!doesNameIsCorrect()) {
         return <div className="invalid-feedback">정확한 이름을 작성해주세요.</div>;
+      }
+    }
+  };
+  // Verify userEnglishName & confirmClassName & Error Message
+  const doesEngNameIsCorrect = () => {
+    const eName = /^[a-zA-Z]*$/;
+    return userEnglishName.length >= 2 && eName.test(userEnglishName);
+  };
+  const confirmUserEngNameClassName = () => {
+    if (userEnglishName) {
+      return doesEngNameIsCorrect() ? 'is-valid' : 'is-invalid';
+    }
+  };
+  const renderEngNameFeedbackMessage = () => {
+    if (userEnglishName) {
+      if (!doesEngNameIsCorrect()) {
+        return <div className="invalid-feedback">정확한 이름을 작성해주세요.</div>;
+      }
+    }
+  };
+  // Verify phoneNumber & confirmClassName & Error Message
+  const doesPhoneNumberIsCorrect = () => {
+    const phone = /^\d{2,3}-\d{3,4}-\d{4}$/;
+    return phone.test(phoneNumber);
+  };
+  const confirmPhoneNumberClassName = () => {
+    if (phoneNumber) {
+      return doesPhoneNumberIsCorrect() ? 'is-valid' : 'is-invalid';
+    }
+  };
+  const renderPhoneNumberFeedbackMessage = () => {
+    if (phoneNumber) {
+      if (!doesPhoneNumberIsCorrect()) {
+        return <div className="invalid-feedback">정확한 핸드폰 번호를 작성해주세요.(`-` 표시포함)</div>;
+      }
+    }
+  };
+  // Verify userSkypeID & confirmClassName & Error Message
+  const doesUserSkypeIDIsCorrect = () => {
+    return userSkypeID.length >= 2;
+  };
+  const confirmserSkypeIDClassName = () => {
+    if (userSkypeID) {
+      return doesUserSkypeIDIsCorrect() ? 'is-valid' : 'is-invalid';
+    }
+  };
+  const renderUserSkypeIDFeedbackMessage = () => {
+    if (userSkypeID) {
+      if (!doesUserSkypeIDIsCorrect()) {
+        return <div className="invalid-feedback">정확한 매칭을 위해 스카이프 아이디를 작성해주세요.</div>;
+      }
+    }
+  };
+  // Verify desiredDaysAndHours & confirmClassName & Error Message
+  const doesDesiredDaysAndHoursIsCorrect = () => {
+    return desiredDaysAndHours.length >= 2;
+  };
+  const confirmDesiredDaysAndHoursClassName = () => {
+    if (desiredDaysAndHours) {
+      return doesDesiredDaysAndHoursIsCorrect() ? 'is-valid' : 'is-invalid';
+    }
+  };
+  const renderDesiredDaysAndHoursFeedbackMessage = () => {
+    if (desiredDaysAndHours) {
+      if (!doesDesiredDaysAndHoursIsCorrect()) {
+        return <div className="invalid-feedback">정확한 매칭을 위해 희망하는 수업일/시간를 작성해주세요.</div>;
+      }
+    }
+  };
+  // Verify userKaTalkID & confirmClassName & Error Message
+  const doesUserKaTalkIDIsCorrect = () => {
+    return userKaTalkID.length >= 2;
+  };
+  const confirmUserKaTalkIDClassName = () => {
+    if (userKaTalkID) {
+      return doesUserKaTalkIDIsCorrect() ? 'is-valid' : 'is-invalid';
+    }
+  };
+  const renderUserKaTalkIDFeedbackMessage = () => {
+    if (userKaTalkID) {
+      if (!doesUserKaTalkIDIsCorrect()) {
+        return <div className="invalid-feedback">올바른 카카오톡 아이디를 작성해주세요.</div>;
+      }
+    }
+  };
+  // Verify phoneNumberForReceipt & confirmClassName & Error Message
+  const doesPhoneNumberForReceiptIsCorrect = () => {
+    const phone = /^\d{2,3}-\d{3,4}-\d{4}$/;
+    return phone.test(phoneNumberForReceipt);
+  };
+  const confirmPhoneNumberForReceiptClassName = () => {
+    if (phoneNumberForReceipt) {
+      return doesPhoneNumberForReceiptIsCorrect() ? 'is-valid' : 'is-invalid';
+    }
+  };
+  const renderPhoneNumberForReceiptFeedbackMessage = () => {
+    if (phoneNumberForReceipt) {
+      if (!doesPhoneNumberForReceiptIsCorrect()) {
+        return <div className="invalid-feedback">정확한 번호를 작성해주세요.(`-` 표시포함)</div>;
       }
     }
   };
@@ -92,36 +191,64 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ goCompletedDisplay,
               required
               value={userKoreanName}
               onChange={onChange}
-              className={`courseSubmit_input ${confirmUserKoreanNameClassName()}`}
+              className={`courseSubmit_input ${confirmClassName()}`}
               type="text"
               placeholder=""
             />
             {renderNameFeedbackMessage()}
           </div>
-          <Div className="courseSubmit_row">
+          <div className="courseSubmit_row">
             <span className="courseSubmit_subtitle">영문이름</span>
             <input
               name="userEnglishName"
               required
               value={userEnglishName}
               onChange={onChange}
-              className="courseSubmit_input"
+              className={`courseSubmit_input ${confirmUserEngNameClassName()}`}
               type="text"
               placeholder=""
             />
-          </Div>
-          <Div className="courseSubmit_row">
+            {renderEngNameFeedbackMessage()}
+          </div>
+          <div className="courseSubmit_row">
             <span className="courseSubmit_subtitle">휴대폰번호</span>
-            <input className="courseSubmit_input" type="text"></input>
-          </Div>
-          <Div className="courseSubmit_row">
+            <input
+              name="phoneNumber"
+              required
+              value={phoneNumber}
+              onChange={onChange}
+              className={`courseSubmit_input ${confirmPhoneNumberClassName()}`}
+              type="text"
+              placeholder=""
+            />
+            {renderPhoneNumberFeedbackMessage()}
+          </div>
+          <div className="courseSubmit_row">
             <span className="courseSubmit_subtitle">스카이프 ID</span>
-            <input className="courseSubmit_input" type="text"></input>
-          </Div>
-          <Div className="courseSubmit_row">
+            <input
+              name="userSkypeID"
+              required
+              value={userSkypeID}
+              onChange={onChange}
+              className={`courseSubmit_input ${confirmserSkypeIDClassName()}`}
+              type="text"
+              placeholder=""
+            />
+            {renderUserSkypeIDFeedbackMessage()}
+          </div>
+          <div className="courseSubmit_row">
             <span className="courseSubmit_subtitle">수업희망 요일/시간대</span>
-            <input className="courseSubmit_input" type="text"></input>
-          </Div>
+            <input
+              name="desiredDaysAndHours"
+              required
+              value={desiredDaysAndHours}
+              onChange={onChange}
+              className={`courseSubmit_input ${confirmDesiredDaysAndHoursClassName()}`}
+              type="text"
+              placeholder=""
+            />
+            {renderDesiredDaysAndHoursFeedbackMessage()}
+          </div>
           <span className="courseSubmit_mini_notice">
             * 수월한 매칭을 위해 가능하신 모든 요일과 시간대를 넓게 선택해주세요. (예: 월수금 오후 6~9시)
           </span>
@@ -130,7 +257,7 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ goCompletedDisplay,
           <Div className="courseSubmit_row">
             <span className="courseSubmit_subtitle">수업유형</span>
             <Div className="courseSubmit_input_box">
-              <select required>
+              <select name="classType" onChange={onChange} required>
                 <option value="">수업유형선택</option>
                 <option value="28분/주2회">28분 수업 / 주2회</option>
                 <option value="28분/주3회">28분 수업 / 주3회</option>
@@ -147,22 +274,47 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ goCompletedDisplay,
           <Div className="courseSubmit_row">
             <span className="courseSubmit_subtitle">수강생 연령대</span>
             <Div className="courseSubmit_input_box">
-              <input required className="courseSubmit_input" type="radio" name="userAge" value="성인" />
+              <input
+                required
+                className="courseSubmit_input"
+                type="radio"
+                name="userAge"
+                onChange={onChange}
+                value="성인"
+              />
               <label htmlFor="성인">성인</label>
-              <input className="courseSubmit_input" type="radio" name="userAge" value="중/고등생" />
+              <input className="courseSubmit_input" type="radio" name="userAge" onChange={onChange} value="중/고등생" />
               <label htmlFor="중/고등생">중/고등생</label>
-              <input className="courseSubmit_input" type="radio" name="userAge" value="초등고학년(4~6학년)" />
+              <input
+                className="courseSubmit_input"
+                type="radio"
+                name="userAge"
+                onChange={onChange}
+                value="초등고학년(4~6학년)"
+              />
               <label htmlFor="초등고학년(4~6학년)">초등고학년(4~6학년)</label>
-              <input className="courseSubmit_input" type="radio" name="userAge" value="초등저학년(1~3학년)" />
+              <input
+                className="courseSubmit_input"
+                type="radio"
+                name="userAge"
+                onChange={onChange}
+                value="초등저학년(1~3학년)"
+              />
               <label htmlFor="초등저학년(1~3학년)">초등저학년(1~3학년)</label>
-              <input className="courseSubmit_input" type="radio" name="userAge" value="초등생 미만" />
+              <input
+                className="courseSubmit_input"
+                type="radio"
+                name="userAge"
+                onChange={onChange}
+                value="초등생 미만"
+              />
               <label htmlFor="초등생 미만">초등생 미만</label>
             </Div>
           </Div>
           <Div className="courseSubmit_row">
             <span className="courseSubmit_subtitle">스페인어 실력</span>
             <Div className="courseSubmit_input_box">
-              <select required>
+              <select name="userSpanishLevel" onChange={onChange} required>
                 <option value="">스페인어 실력 선택</option>
                 <option value="왕초보">(왕초보) 스페인어를 처음 접해봐요.</option>
                 <option value="초보">(초보) 간단한 자기소개와 짤막한 대화를 천천히 이어갈 수 있어요.</option>
@@ -187,7 +339,7 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ goCompletedDisplay,
           <Div className="courseSubmit_row">
             <span className="courseSubmit_subtitle">선호강사</span>
             <Div className="courseSubmit_input_box">
-              <select>
+              <select name="preferredTeacher" onChange={onChange}>
                 <option value="">(선택) 선호하는 강사님의 이름을 선택해주세요.</option>
                 {profesList &&
                   profesList.map((profe) => (
@@ -199,7 +351,7 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ goCompletedDisplay,
           <Div className="courseSubmit_row">
             <span className="courseSubmit_subtitle">공부목적</span>
             <Div className="courseSubmit_input_box">
-              <select>
+              <select name="purposeOfStudy" onChange={onChange}>
                 <option value="">(선택) 스페인어를 어떤 목적으로 공부하는지 알려주세요.</option>
                 <option value="어학공부">어학으로 스페인어를 공부하고 싶어요.</option>
                 <option value="학교공부">학교에서 스페인어를 공부해요.</option>
@@ -213,7 +365,7 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ goCompletedDisplay,
           <Div className="courseSubmit_row">
             <span className="courseSubmit_subtitle">선호수업방식</span>
             <Div className="courseSubmit_input_box">
-              <select>
+              <select name="preferredClassMethod" onChange={onChange}>
                 <option value="">(선택) 선호하는 수업방식을 알려주세요.</option>
                 <option value="전화스페인어">(전화스페인어) 음성 통화로만 수업하고 싶어요.</option>
                 <option value="영상스페인어">(영상스페인어) 영상 통화로 수업하고 싶어요.</option>
@@ -224,7 +376,7 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ goCompletedDisplay,
           <Div className="courseSubmit_row">
             <span className="courseSubmit_subtitle">알게된 경로</span>
             <Div className="courseSubmit_input_box">
-              <select>
+              <select name="pathHowToKnow" onChange={onChange}>
                 <option value="">(선택) 알려주시면 깔깔스페인어가 무럭무럭 자라나는데 도움이 돼요!</option>
                 <option value="지인소개">지인소개</option>
                 <option value="인터넷 검색">인터넷 검색</option>
@@ -235,22 +387,30 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ goCompletedDisplay,
               </select>
             </Div>
           </Div>
-          <Div className="courseSubmit_row">
+          <div className="courseSubmit_row">
             <span className="courseSubmit_subtitle">카카오톡 ID</span>
             <input
-              className="courseSubmit_input_opt"
+              className={`courseSubmit_input_opt ${confirmUserKaTalkIDClassName()}`}
               type="text"
               placeholder="(선택) 국내 연락처가 없으신 분들은 카카오톡으로 연락을 드려요."
-            ></input>
-          </Div>
-          <Div className="courseSubmit_row">
+              name="userKaTalkID"
+              value={userKaTalkID}
+              onChange={onChange}
+            />
+            {renderUserKaTalkIDFeedbackMessage()}
+          </div>
+          <div className="courseSubmit_row">
             <span className="courseSubmit_subtitle">현금영수증 발급번호</span>
             <input
-              className="courseSubmit_input_opt"
+              className={`courseSubmit_input_opt ${confirmPhoneNumberForReceiptClassName()}`}
               type="text"
               placeholder="(선택) 미기재시 국세청 번호로 발급됩니다."
-            ></input>
-          </Div>
+              name="phoneNumberForReceipt"
+              value={phoneNumberForReceipt}
+              onChange={onChange}
+            />
+            {renderPhoneNumberForReceiptFeedbackMessage()}
+          </div>
         </Div>
       </Div>
       <button onClick={goCompletedDisplay} className="CourseSubmit_next_btn">
