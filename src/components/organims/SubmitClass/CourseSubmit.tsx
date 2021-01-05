@@ -178,12 +178,17 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ backInfoDisplay }: 
     }
   };
 
+  // 모든 input 정보를 보내기!
   const history = useHistory();
-  const onSubmit = () => {
-    console.log('hello');
-    console.log(userKoreanName);
-    // courseSubmitCompleted 페이지 하나 만들어서 그곳으로 보내기
-    history.push('/submitclass/complete');
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    try {
+      let courseData;
+
+      history.push('/submitclass/complete');
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   return (
@@ -421,7 +426,7 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ backInfoDisplay }: 
             {renderPhoneNumberForReceiptFeedbackMessage()}
           </div>
         </Div>
-        <input type="submit" className="CourseSubmit_next_btn"></input>
+        <input type="submit" value="제출하기" className="CourseSubmit_next_btn"></input>
         <button onClick={backInfoDisplay} className="CourseSubmit_prev_btn">
           이전
         </button>
