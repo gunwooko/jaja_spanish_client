@@ -3,10 +3,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 interface ChildProps {
-  backCourseSubmit: () => void;
+  backCourseSubmit?: () => void;
 }
 
-const CourseSubmitCompleted: React.FunctionComponent<ChildProps> = ({ backCourseSubmit }: ChildProps) => {
+const CourseSubmitCompleted: React.FunctionComponent = () => {
   return (
     <>
       <Div className="CourseSubmitCompleted">
@@ -80,9 +80,7 @@ const CourseSubmitCompleted: React.FunctionComponent<ChildProps> = ({ backCourse
       <Link to="/submitclass/after">
         <button className="CourseSubmit_next_btn">완료</button>
       </Link>
-      <button onClick={backCourseSubmit} className="CourseSubmit_prev_btn">
-        수정하기
-      </button>
+      <button className="CourseSubmit_prev_btn">수정하기</button>
     </>
   );
 };

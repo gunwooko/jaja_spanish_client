@@ -2,31 +2,31 @@ import Div from 'components/atoms/Div';
 import React, { useState } from 'react';
 import CourseInfomation from './CourseInfomation';
 import CourseSubmit from './CourseSubmit';
-import CourseSubmitCompleted from './CourseSubmitCompleted';
+// import CourseSubmitCompleted from './CourseSubmitCompleted';
 import SubmitClassNav from './SubmitClassNav';
 
 const SubmitClassFirstView: React.FunctionComponent = () => {
   const [infoDisplay, setInfoDisplay] = useState(true);
   const [submitDisplay, setSubmitDisplay] = useState(false);
-  const [completedDisplay, setCompletedDisplay] = useState(false);
+  // const [completedDisplay, setCompletedDisplay] = useState(false);
 
   const goCourseSubmit = () => {
     setInfoDisplay(false);
     setSubmitDisplay(true);
-    setCompletedDisplay(false);
+    // setCompletedDisplay(false);
   };
 
   const goInfoDisplay = () => {
     setInfoDisplay(true);
     setSubmitDisplay(false);
-    setCompletedDisplay(false);
+    // setCompletedDisplay(false);
   };
 
-  const goCompletedDisplay = () => {
-    setInfoDisplay(false);
-    setSubmitDisplay(false);
-    setCompletedDisplay(true);
-  };
+  // const goCompletedDisplay = () => {
+  //   setInfoDisplay(false);
+  //   setSubmitDisplay(false);
+  //   setCompletedDisplay(true);
+  // };
 
   // const finishedSumbit = () => {};
 
@@ -37,9 +37,9 @@ const SubmitClassFirstView: React.FunctionComponent = () => {
         {infoDisplay ? (
           <>
             <SubmitClassNav
-              goInfoDisplay={goInfoDisplay}
-              goCourseSubmit={goCourseSubmit}
-              goCompletedDisplay={goCompletedDisplay}
+              // goInfoDisplay={goInfoDisplay}
+              // goCourseSubmit={goCourseSubmit}
+              // goCompletedDisplay={goCompletedDisplay}
               className="infomation"
             />
             <CourseInfomation goCourseSubmit={goCourseSubmit} />
@@ -48,25 +48,25 @@ const SubmitClassFirstView: React.FunctionComponent = () => {
         {submitDisplay ? (
           <>
             <SubmitClassNav
-              goInfoDisplay={goInfoDisplay}
-              goCourseSubmit={goCourseSubmit}
-              goCompletedDisplay={goCompletedDisplay}
+              // goInfoDisplay={goInfoDisplay}
+              // goCourseSubmit={goCourseSubmit}
+              // goCompletedDisplay={goCompletedDisplay}
               className="submit"
             />
-            <CourseSubmit goCompletedDisplay={goCompletedDisplay} backInfoDisplay={goInfoDisplay} />
+            <CourseSubmit backInfoDisplay={goInfoDisplay} />
           </>
         ) : null}
-        {completedDisplay ? (
+        {/* {completedDisplay ? (
           <>
             <SubmitClassNav
-              goInfoDisplay={goInfoDisplay}
-              goCourseSubmit={goCourseSubmit}
-              goCompletedDisplay={goCompletedDisplay}
+              // goInfoDisplay={goInfoDisplay}
+              // goCourseSubmit={goCourseSubmit}
+              // goCompletedDisplay={goCompletedDisplay}
               className="submitCompleted"
             />
-            <CourseSubmitCompleted backCourseSubmit={goCourseSubmit} />
+            <CourseSubmitCompleted />
           </>
-        ) : null}
+        ) : null} */}
       </div>
       <div></div>
     </Div>
