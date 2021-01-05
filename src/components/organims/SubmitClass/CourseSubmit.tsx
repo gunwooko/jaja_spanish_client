@@ -1,13 +1,14 @@
 import Div from 'components/atoms/Div';
 import useGetProfesObject from 'Hooks/useGetProfesObject';
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 interface ChildProps {
-  goCompletedDisplay: () => void;
-  backInfoDisplay: () => void;
+  goCompletedDisplay?: () => void;
+  backInfoDisplay?: () => void;
 }
 
-const CourseSubmit: React.FunctionComponent<ChildProps> = ({ goCompletedDisplay, backInfoDisplay }: ChildProps) => {
+const CourseSubmit: React.FunctionComponent<ChildProps> = ({ backInfoDisplay }: ChildProps) => {
   const [userKoreanName, setUserKoreanName] = useState('');
   const [userEnglishName, setUserEnglishName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -177,9 +178,17 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ goCompletedDisplay,
     }
   };
 
+  const history = useHistory();
+  const onSubmit = () => {
+    console.log('hello');
+    console.log(userKoreanName);
+    // courseSubmitCompleted 페이지 하나 만들어서 그곳으로 보내기
+    history.push('/submitclass/complete');
+  };
+
   return (
     <>
-      <Div className="CourseSubmit">
+      <form onSubmit={onSubmit} className="CourseSubmit">
         <Div className="courseSubmit_title">
           <span>필수로</span> 작성해주셔야해요!
         </Div>
@@ -201,7 +210,7 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ goCompletedDisplay,
             <span className="courseSubmit_subtitle">영문이름</span>
             <input
               name="userEnglishName"
-              required
+              // required
               value={userEnglishName}
               onChange={onChange}
               className={`courseSubmit_input ${confirmUserEngNameClassName()}`}
@@ -214,7 +223,7 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ goCompletedDisplay,
             <span className="courseSubmit_subtitle">휴대폰번호</span>
             <input
               name="phoneNumber"
-              required
+              // required
               value={phoneNumber}
               onChange={onChange}
               className={`courseSubmit_input ${confirmPhoneNumberClassName()}`}
@@ -227,7 +236,7 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ goCompletedDisplay,
             <span className="courseSubmit_subtitle">스카이프 ID</span>
             <input
               name="userSkypeID"
-              required
+              // required
               value={userSkypeID}
               onChange={onChange}
               className={`courseSubmit_input ${confirmserSkypeIDClassName()}`}
@@ -240,7 +249,7 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ goCompletedDisplay,
             <span className="courseSubmit_subtitle">수업희망 요일/시간대</span>
             <input
               name="desiredDaysAndHours"
-              required
+              // required
               value={desiredDaysAndHours}
               onChange={onChange}
               className={`courseSubmit_input ${confirmDesiredDaysAndHoursClassName()}`}
@@ -257,7 +266,7 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ goCompletedDisplay,
           <Div className="courseSubmit_row">
             <span className="courseSubmit_subtitle">수업유형</span>
             <Div className="courseSubmit_input_box">
-              <select name="classType" onChange={onChange} required>
+              <select name="classType" onChange={onChange}>
                 <option value="">수업유형선택</option>
                 <option value="28분/주2회">28분 수업 / 주2회</option>
                 <option value="28분/주3회">28분 수업 / 주3회</option>
@@ -275,7 +284,7 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ goCompletedDisplay,
             <span className="courseSubmit_subtitle">수강생 연령대</span>
             <Div className="courseSubmit_input_box">
               <input
-                required
+                // required
                 className="courseSubmit_input"
                 type="radio"
                 name="userAge"
@@ -314,7 +323,7 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ goCompletedDisplay,
           <Div className="courseSubmit_row">
             <span className="courseSubmit_subtitle">스페인어 실력</span>
             <Div className="courseSubmit_input_box">
-              <select name="userSpanishLevel" onChange={onChange} required>
+              <select name="userSpanishLevel" onChange={onChange}>
                 <option value="">스페인어 실력 선택</option>
                 <option value="왕초보">(왕초보) 스페인어를 처음 접해봐요.</option>
                 <option value="초보">(초보) 간단한 자기소개와 짤막한 대화를 천천히 이어갈 수 있어요.</option>
@@ -412,13 +421,11 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ goCompletedDisplay,
             {renderPhoneNumberForReceiptFeedbackMessage()}
           </div>
         </Div>
-      </Div>
-      <button onClick={goCompletedDisplay} className="CourseSubmit_next_btn">
-        제출하기
-      </button>
-      <button onClick={backInfoDisplay} className="CourseSubmit_prev_btn">
-        이전
-      </button>
+        <input type="submit" className="CourseSubmit_next_btn"></input>
+        <button onClick={backInfoDisplay} className="CourseSubmit_prev_btn">
+          이전
+        </button>
+      </form>
     </>
   );
 };

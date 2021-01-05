@@ -3,9 +3,9 @@ import React from 'react';
 
 interface Props {
   className: string;
-  goCourseSubmit: () => void;
-  goInfoDisplay: () => void;
-  goCompletedDisplay: () => void;
+  goCourseSubmit?: () => void;
+  goInfoDisplay?: () => void;
+  goCompletedDisplay?: () => void;
 }
 
 const SubmitClassNav: React.FunctionComponent<Props> = ({
