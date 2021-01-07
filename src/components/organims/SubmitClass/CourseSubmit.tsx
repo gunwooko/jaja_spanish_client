@@ -1,4 +1,5 @@
 import Div from 'components/atoms/Div';
+import calculateTuitionFees from 'containers/Utilities/calculateTuitionFees';
 import getRandomInt from 'containers/Utilities/getRandomNumber';
 import getTodayUtil from 'containers/Utilities/getToday';
 import { dbService } from 'fbase';
@@ -187,6 +188,8 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ backInfoDisplay }: 
   const history = useHistory();
   const hoy = getTodayUtil();
   const randomNum = getRandomInt(1, 100000000);
+  const tuitionFees = calculateTuitionFees(classType);
+
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
@@ -212,7 +215,7 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ backInfoDisplay }: 
         수업종료일: '매칭중...',
         결제번호: randomNum,
         결제일자: '-',
-        결제금액: '',
+        결제금액: tuitionFees,
         결제상태: '매칭중...',
       });
 
@@ -304,15 +307,15 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ backInfoDisplay }: 
             <Div className="courseSubmit_input_box">
               <select name="classType" onChange={onChange}>
                 <option value="">수업유형선택</option>
-                <option value="주 2회 28분">28분 수업 / 주2회</option>
-                <option value="주 3회 28분">28분 수업 / 주3회</option>
-                <option value="주 4회 28분">28분 수업 / 주4회</option>
-                <option value="주 5회 28분">28분 수업 / 주5회</option>
-                <option value="주 1회 58분">58분 수업 / 주1회</option>
-                <option value="주 2회 58분">58분 수업 / 주2회</option>
-                <option value="주 3회 58분">58분 수업 / 주3회</option>
-                <option value="주 4회 58분">58분 수업 / 주4회</option>
-                <option value="주 5회 58분">58분 수업 / 주5회</option>
+                <option value="주_2회_28분">28분 수업 / 주2회</option>
+                <option value="주_3회_28분">28분 수업 / 주3회</option>
+                <option value="주_4회_28분">28분 수업 / 주4회</option>
+                <option value="주_5회_28분">28분 수업 / 주5회</option>
+                <option value="주_1회_58분">58분 수업 / 주1회</option>
+                <option value="주_2회_58분">58분 수업 / 주2회</option>
+                <option value="주_3회_58분">58분 수업 / 주3회</option>
+                <option value="주_4회_58분">58분 수업 / 주4회</option>
+                <option value="주_5회_58분">58분 수업 / 주5회</option>
               </select>
             </Div>
           </Div>
