@@ -1,5 +1,10 @@
 import Div from 'components/atoms/Div';
+import calculateTuitionFees from 'containers/Utilities/calculateTuitionFees';
+import getRandomInt from 'containers/Utilities/getRandomNumber';
+import getTodayUtil from 'containers/Utilities/getToday';
+import { dbService } from 'fbase';
 import useGetProfesObject from 'Hooks/useGetProfesObject';
+import useGetUserObject from 'Hooks/useGetUserObject';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
@@ -25,6 +30,7 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ backInfoDisplay }: 
   const [phoneNumberForReceipt, setPhoneNumberForReceipt] = useState('');
 
   const profesList = useGetProfesObject();
+  const userData = useGetUserObject();
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {
     const {
@@ -180,10 +186,43 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ backInfoDisplay }: 
 
   // 모든 input 정보를 보내기!
   const history = useHistory();
+  const hoy = getTodayUtil();
+  const key = getRandomInt(1, 100000000);
+  const tuitionFees = calculateTuitionFees(classType);
+
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
-      let courseData;
+      await dbService
+        .collection('courses')
+        .doc(`${userData.email}`)
+        .collection(`${userData.userId}`)
+        .doc(`${hoy}`)
+        .set({
+          한글이름: userKoreanName,
+          영문이름: userEnglishName,
+          휴대폰번호: phoneNumber,
+          스카이프ID: userSkypeID,
+          수업희망_요일_시간: desiredDaysAndHours,
+          수업유형: classType,
+          수강생연령대: userAge,
+          스페인어실력: userSpanishLevel,
+          선호강사: preferredTeacher,
+          공부목적: purposeOfStudy,
+          선호수업방식: preferredClassMethod,
+          알게된경로: pathHowToKnow,
+          카카오톡ID: userKaTalkID,
+          현금영수증_발급번호: phoneNumberForReceipt,
+          수업신청일: hoy,
+          수업번호: key,
+          수업상태: '등록',
+          강사이름: '선생님 매칭 중...',
+          수업종료일: '선생님 매칭 중...',
+          결제번호: key,
+          결제일자: '',
+          결제금액: tuitionFees,
+          결제상태: '미완료',
+        });
 
       history.push('/submitclass/complete');
     } catch (error) {
@@ -215,7 +254,7 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ backInfoDisplay }: 
             <span className="courseSubmit_subtitle">영문이름</span>
             <input
               name="userEnglishName"
-              // required
+              required
               value={userEnglishName}
               onChange={onChange}
               className={`courseSubmit_input ${confirmUserEngNameClassName()}`}
@@ -228,7 +267,7 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ backInfoDisplay }: 
             <span className="courseSubmit_subtitle">휴대폰번호</span>
             <input
               name="phoneNumber"
-              // required
+              required
               value={phoneNumber}
               onChange={onChange}
               className={`courseSubmit_input ${confirmPhoneNumberClassName()}`}
@@ -241,7 +280,7 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ backInfoDisplay }: 
             <span className="courseSubmit_subtitle">스카이프 ID</span>
             <input
               name="userSkypeID"
-              // required
+              required
               value={userSkypeID}
               onChange={onChange}
               className={`courseSubmit_input ${confirmserSkypeIDClassName()}`}
@@ -254,7 +293,7 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ backInfoDisplay }: 
             <span className="courseSubmit_subtitle">수업희망 요일/시간대</span>
             <input
               name="desiredDaysAndHours"
-              // required
+              required
               value={desiredDaysAndHours}
               onChange={onChange}
               className={`courseSubmit_input ${confirmDesiredDaysAndHoursClassName()}`}
@@ -273,15 +312,15 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ backInfoDisplay }: 
             <Div className="courseSubmit_input_box">
               <select name="classType" onChange={onChange}>
                 <option value="">수업유형선택</option>
-                <option value="28분/주2회">28분 수업 / 주2회</option>
-                <option value="28분/주3회">28분 수업 / 주3회</option>
-                <option value="28분/주4회">28분 수업 / 주4회</option>
-                <option value="28분/주5회">28분 수업 / 주5회</option>
-                <option value="58분/주1회">58분 수업 / 주1회</option>
-                <option value="58분/주2회">58분 수업 / 주2회</option>
-                <option value="58분/주3회">58분 수업 / 주3회</option>
-                <option value="58분/주4회">58분 수업 / 주4회</option>
-                <option value="58분/주5회">58분 수업 / 주5회</option>
+                <option value="주_2회_28분">28분 수업 / 주2회</option>
+                <option value="주_3회_28분">28분 수업 / 주3회</option>
+                <option value="주_4회_28분">28분 수업 / 주4회</option>
+                <option value="주_5회_28분">28분 수업 / 주5회</option>
+                <option value="주_1회_58분">58분 수업 / 주1회</option>
+                <option value="주_2회_58분">58분 수업 / 주2회</option>
+                <option value="주_3회_58분">58분 수업 / 주3회</option>
+                <option value="주_4회_58분">58분 수업 / 주4회</option>
+                <option value="주_5회_58분">58분 수업 / 주5회</option>
               </select>
             </Div>
           </Div>
@@ -289,7 +328,7 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ backInfoDisplay }: 
             <span className="courseSubmit_subtitle">수강생 연령대</span>
             <Div className="courseSubmit_input_box">
               <input
-                // required
+                required
                 className="courseSubmit_input"
                 type="radio"
                 name="userAge"
@@ -328,17 +367,22 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ backInfoDisplay }: 
           <Div className="courseSubmit_row">
             <span className="courseSubmit_subtitle">스페인어 실력</span>
             <Div className="courseSubmit_input_box">
-              <select name="userSpanishLevel" onChange={onChange}>
+              <select name="userSpanishLevel" onChange={onChange} required>
                 <option value="">스페인어 실력 선택</option>
-                <option value="왕초보">(왕초보) 스페인어를 처음 접해봐요.</option>
-                <option value="초보">(초보) 간단한 자기소개와 짤막한 대화를 천천히 이어갈 수 있어요.</option>
-                <option value="중급1">
+                <option value="(왕초보)스페인어를 처음 접해봐요">(왕초보) 스페인어를 처음 접해봐요.</option>
+                <option value="(초보)간단한 자기소개와 짤막한 대화를 천천히 이어갈 수 있어요">
+                  (초보) 간단한 자기소개와 짤막한 대화를 천천히 이어갈 수 있어요.
+                </option>
+                <option value="(중급1)때때로 실수를 하지만 다양한 시제를 사용하며 일상적인 대화를 구사할 수 있어요">
                   (중급1) 때때로 실수를 하지만 다양한 시제를 사용하며 일상적인 대화를 구사할 수 있어요.
                 </option>
-                <option value="중급2">
+                <option value="(중급2)스페인어를 자유롭게 구사하고 관심있는 주제에 대해 자세하게 서술할 수 있어요">
                   (중급2) 스페인어를 자유롭게 구사하고 관심있는 주제에 대해 자세하게 서술할 수 있어요.
                 </option>
-                <option value="고급">
+                <option
+                  value="(고급)큰 어려움 없이 스페인어 뉴스와 라디오를 이해하고, 복잡한 주제나 전문 기사에 대해 이해하고
+                  설명할 수 있어요"
+                >
                   (고급) 큰 어려움 없이 스페인어 뉴스와 라디오를 이해하고, 복잡한 주제나 전문 기사에 대해 이해하고
                   설명할 수 있어요.
                 </option>
