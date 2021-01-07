@@ -187,13 +187,13 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ backInfoDisplay }: 
   // 모든 input 정보를 보내기!
   const history = useHistory();
   const hoy = getTodayUtil();
-  const randomNum = getRandomInt(1, 100000000);
+  const key = getRandomInt(1, 100000000);
   const tuitionFees = calculateTuitionFees(classType);
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
-      await dbService.collection('courses').doc(`${userData.email}`).set({
+      await dbService.collection('courses').doc(`${userData.email}`).collection(`${hoy}`).doc(`${key}`).set({
         한글이름: userKoreanName,
         영문이름: userEnglishName,
         휴대폰번호: phoneNumber,
@@ -209,14 +209,14 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ backInfoDisplay }: 
         카카오톡ID: userKaTalkID,
         현금영수증_발급번호: phoneNumberForReceipt,
         수업신청일: hoy,
-        수업번호: randomNum,
+        수업번호: key,
         수업상태: '등록',
-        강사이름: '매칭중...',
-        수업종료일: '매칭중...',
-        결제번호: randomNum,
-        결제일자: '-',
+        강사이름: '선생님 매칭 중...',
+        수업종료일: '선생님 매칭 중...',
+        결제번호: key,
+        결제일자: '',
         결제금액: tuitionFees,
-        결제상태: '매칭중...',
+        결제상태: '미완료',
       });
 
       history.push('/submitclass/complete');

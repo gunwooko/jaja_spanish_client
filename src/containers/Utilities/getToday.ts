@@ -9,7 +9,7 @@ const getTodayUtil = (): string => {
   if (Number(mm) < 10) {
     mm = '0' + mm;
   }
-  const hoy = mm + '/' + dd + '/' + yyyy;
+  const hoy = yyyy + '-' + mm + '-' + dd;
 
   return hoy;
 };
