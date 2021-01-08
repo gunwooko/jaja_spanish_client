@@ -3,6 +3,8 @@ import calculateTuitionFees from 'containers/Utilities/calculateTuitionFees';
 import getRandomInt from 'containers/Utilities/getRandomNumber';
 import getTodayUtil from 'containers/Utilities/getToday';
 import { dbService } from 'fbase';
+import useGetCourseObject from 'Hooks/useGetCourseObject';
+// import useGetCourseObject from 'Hooks/useGetCourseObject';
 import useGetProfesObject from 'Hooks/useGetProfesObject';
 import useGetUserObject from 'Hooks/useGetUserObject';
 import React, { useState } from 'react';
@@ -199,32 +201,41 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ backInfoDisplay }: 
         .collection(`${userData.userId}`)
         .doc(`${hoy}`)
         .set({
-          한글이름: userKoreanName,
-          영문이름: userEnglishName,
-          휴대폰번호: phoneNumber,
-          스카이프ID: userSkypeID,
-          수업희망_요일_시간: desiredDaysAndHours,
-          수업유형: classType,
-          수강생연령대: userAge,
-          스페인어실력: userSpanishLevel,
-          선호강사: preferredTeacher,
-          공부목적: purposeOfStudy,
-          선호수업방식: preferredClassMethod,
-          알게된경로: pathHowToKnow,
-          카카오톡ID: userKaTalkID,
-          현금영수증_발급번호: phoneNumberForReceipt,
-          수업신청일: hoy,
-          수업번호: key,
-          수업상태: '등록',
-          강사이름: '선생님 매칭 중...',
-          수업종료일: '선생님 매칭 중...',
-          결제번호: key,
-          결제일자: '',
-          결제금액: tuitionFees,
-          결제상태: '미완료',
+          nameKr: userKoreanName,
+          nameEn: userEnglishName,
+          phoneNumber,
+          skypeId: userSkypeID,
+          desiredDaysAndHours,
+          classType,
+          userAge,
+          spanish_Level: userSpanishLevel,
+          preferredTeacher,
+          purposeOfStudy,
+          preferredClassMethod,
+          pathHowToKnow,
+          kakaoId: userKaTalkID,
+          phoneNumberForReceipt,
+          startDate: hoy,
+          classNumber: key,
+          classStatus: '등록',
+          teacher: '선생님 매칭 중...',
+          finishDate: '선생님 매칭 중...',
+          payNumber: key,
+          payDate: '',
+          payAmount: tuitionFees,
+          payStatus: '미완료',
         });
+      // alert('확인');
+      // 2. 두번째문제
+      // redirect사용 생각하기.... =>
+      // react css 스크롤 제어 =>
+      // 1. 첫번째문제
+      // state 위에서 아래로 혹은 useContext/
 
       history.push('/submitclass/complete');
+
+      // const courseObject = useGetCourseObject(userData.email, userData.userId, hoy);
+      // courseObject.refreshCourse();
     } catch (error) {
       console.log(error.message);
     }
