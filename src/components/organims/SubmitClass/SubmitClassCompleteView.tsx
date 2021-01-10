@@ -4,7 +4,7 @@ import CourseSubmitCompleted from './CourseSubmitCompleted';
 import SubmitClassNav from './SubmitClassNav';
 
 interface Props {
-  backCourseSubmit?: () => void;
+  editCourseSubmit?: () => void;
   classNumber?: number;
   classStatus?: string;
   classType?: string;
@@ -31,7 +31,7 @@ interface Props {
 }
 
 const SubmitClassCompletedView: React.FunctionComponent<Props> = ({
-  backCourseSubmit,
+  editCourseSubmit,
   classType,
   desiredDaysAndHours,
   kakaoId,
@@ -68,7 +68,7 @@ const SubmitClassCompletedView: React.FunctionComponent<Props> = ({
             skypeId={skypeId}
             spanish_Level={spanish_Level}
             userAge={userAge}
-            backCourseSubmit={backCourseSubmit}
+            editCourseSubmit={editCourseSubmit}
           />
         </div>
         <div></div>

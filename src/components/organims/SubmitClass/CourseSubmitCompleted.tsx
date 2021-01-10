@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 interface Props {
-  backCourseSubmit?: () => void;
+  editCourseSubmit?: () => void;
   classNumber?: number;
   classStatus?: string;
   classType?: string;
@@ -30,7 +30,6 @@ interface Props {
 }
 
 const CourseSubmitCompleted: React.FunctionComponent<Props> = ({
-  backCourseSubmit,
   classType,
   desiredDaysAndHours,
   kakaoId,
@@ -48,10 +47,24 @@ const CourseSubmitCompleted: React.FunctionComponent<Props> = ({
 }: Props) => {
   return (
     <>
-      <Div className="CourseSubmitCompleted">
-        <Div className="courseSubmit_title">
-          <span>더 수정할 내용이 없는지</span> 확인해주세요 :)
+      <Div className="SubmitClassAfterView_container">
+        <div></div>
+        <Div className="SubmitClassAfterView_box">
+          <Div className="submitClassAfterView_phrase_1">수강신청이 무사히 완료되었습니다 :)</Div>
+          <div className="submitClassAfterView_phrase_2">
+            조금만 기다려주세요. <br /> {`${nameKr}님께 잘 맞는 선생님을 고심하여 매칭한 뒤,`}
+            <span className="submitClassAfterView_emphasis"> 3일 이내</span>로 연락드리겠습니다. <br />
+          </div>
+          <Div className="submitClassAfterView_phrase_2">
+            <span className="submitClassAfterView_emphasis">
+              당신의 새로운 도전을 깔깔스페인어가 함께하게 되어 기쁩니다.
+            </span>
+          </Div>
         </Div>
+        <div></div>
+      </Div>
+      <Div className="CourseSubmitCompleted">
+        <Div className="courseSubmit_title">{/* <span>더 수정할 내용이 없는지</span> 확인해주세요 :) */}</Div>
         <Div className="courseSubmit_box">
           <div className="courseSubmit_row">
             <span className="courseSubmit_subtitle">한글이름</span>
@@ -107,21 +120,21 @@ const CourseSubmitCompleted: React.FunctionComponent<Props> = ({
           </Div>
           <div className="courseSubmit_row">
             <span className="courseSubmit_subtitle">카카오톡 ID</span>
-            <span className={`courseSubmit_input_opt `}>{kakaoId}</span>
+            <span className={`courseSubmit_input_opt`}>{kakaoId}</span>
           </div>
           <div className="courseSubmit_row">
             <span className="courseSubmit_subtitle">현금영수증 발급번호</span>
-            <span className={`courseSubmit_input_opt `}>{phoneNumberForReceipt}</span>
+            <span className={`courseSubmit_input_opt`}>{phoneNumberForReceipt}</span>
           </div>
         </Div>
       </Div>
 
-      <Link to="/submitclass/after">
+      <Link to="/">
         <button className="CourseSubmit_next_btn">완료</button>
       </Link>
-      <button className="CourseSubmit_prev_btn" onClick={backCourseSubmit}>
+      {/* <button className="CourseSubmit_prev_btn" onClick={editCourseSubmit}>
         수정하기
-      </button>
+      </button> */}
     </>
   );
 };

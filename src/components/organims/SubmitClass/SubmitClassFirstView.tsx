@@ -2,7 +2,6 @@ import Div from 'components/atoms/Div';
 import React, { useState } from 'react';
 import CourseInfomation from './CourseInfomation';
 import CourseSubmit from './CourseSubmit';
-import CourseSubmitCompleted from './CourseSubmitCompleted';
 import SubmitClassNav from './SubmitClassNav';
 
 const SubmitClassFirstView: React.FunctionComponent = () => {
