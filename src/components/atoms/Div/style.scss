@@ -1192,31 +1192,31 @@
 }
 
 // SubmitClass - afterView
-.SubmitClassAfterView_container {
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
+// .SubmitClassAfterView_container {
+//     display: grid;
+//     grid-template-columns: 1fr 3fr 1fr;
 
-    .SubmitClassAfterView_box {
-        background-color: #fcf8fe;
-        margin: 220px 0px;
-        padding: 99px 108px;
+.SubmitClassAfterView_box {
+    background-color: #fcf8fe;
+    margin: 70px 0px;
+    padding: 99px 108px;
 
-        .submitClassAfterView_phrase_1 {
-            color: #42175d;
-            font-size: 50px;
+    .submitClassAfterView_phrase_1 {
+        color: #42175d;
+        font-size: 50px;
+        font-weight: bold;
+        margin-bottom: 40px;
+    }
+    .submitClassAfterView_phrase_2 {
+        color: #42175d;
+        font-size: 22px;
+        margin-bottom: 26px;
+        .submitClassAfterView_emphasis {
             font-weight: bold;
-            margin-bottom: 40px;
-        }
-        .submitClassAfterView_phrase_2 {
-            color: #42175d;
-            font-size: 22px;
-            margin-bottom: 26px;
-            .submitClassAfterView_emphasis {
-                font-weight: bold;
-            }
         }
     }
 }
+// }
 
 // SubmitClass - SubmitClassMainView
 .SubmitClassMainView {

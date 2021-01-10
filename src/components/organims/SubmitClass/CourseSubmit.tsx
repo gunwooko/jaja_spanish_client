@@ -6,14 +6,13 @@ import { dbService } from 'fbase';
 import useGetProfesObject from 'Hooks/useGetProfesObject';
 import useGetUserObject from 'Hooks/useGetUserObject';
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import CourseSubmitCompleted from './CourseSubmitCompleted';
 import SubmitClassCompletedView from './SubmitClassCompleteView';
 import SubmitClassNav from './SubmitClassNav';
 
 interface ChildProps {
-  goCompletedDisplay?: () => void;
   backInfoDisplay?: () => void;
+  goCompletedDisplay?: () => void;
+  editCourseSubmit?: () => void;
 }
 
 interface CourseData {
@@ -42,7 +41,7 @@ interface CourseData {
   userAge?: string;
 }
 
-const CourseSubmit: React.FunctionComponent<ChildProps> = ({ backInfoDisplay, goCompletedDisplay }: ChildProps) => {
+const CourseSubmit: React.FunctionComponent<ChildProps> = ({ backInfoDisplay }: ChildProps) => {
   const [userKoreanName, setUserKoreanName] = useState('');
   const [userEnglishName, setUserEnglishName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -216,7 +215,7 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ backInfoDisplay, go
   };
 
   // 모든 input 정보를 보내기!
-  const history = useHistory();
+  // const history = useHistory();
   const hoy = getTodayUtil();
   const key = getRandomInt(1, 100000000);
   const tuitionFees = calculateTuitionFees(classType);
@@ -262,11 +261,18 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ backInfoDisplay, go
         .doc(`${hoy}`)
         .get();
 
+      // eslint-disable-next-line
       const realData: any = courseData.data();
       setData(realData);
       console.log('realData', realData);
       console.log('???어떨까?', data);
-      setPage(false);
+      // setPage(false);
+
+      // 수업내용확인을 팝업으로 다시 확인한다면 =>
+      const isCorrect = confirm('더 수정할 내용이 없으시다면 확인 버튼을 눌러주세요.');
+      if (isCorrect) {
+        setPage(false);
+      }
 
       // await history.push('/submitclass/complete');
       // const courseObject = useGetCourseObject(userData.email, userData.userId, hoy);
@@ -276,13 +282,17 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ backInfoDisplay, go
     }
   };
 
+  // 수업신청한 내역을 수정하고 싶을때
+  const editCourseSubmit = () => {
+    console.log('수정');
+  };
+
   return (
     <>
       {page ? (
         <>
-          <>
-            <SubmitClassNav className="submit" />
-          </>
+          <SubmitClassNav className="submit" />
+
           <form onSubmit={onSubmit} className="CourseSubmit">
             <Div className="courseSubmit_title">
               <span>필수로</span> 작성해주셔야해요!
@@ -563,6 +573,7 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ backInfoDisplay, go
                 startDate={data.startDate}
                 teacher={data.teacher}
                 userAge={data.userAge}
+                editCourseSubmit={editCourseSubmit}
               />
             </>
           )}
