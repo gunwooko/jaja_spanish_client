@@ -14,7 +14,6 @@ import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
 import SubmitClass from 'pages/SubmitClass';
 import ReviewAfter from 'pages/ReviewAfter';
 import SubmitClassAfter from 'pages/SubmitClassAfter';
-import SumbitClassCompledted from 'pages/SubmitClassCompleted';
 
 const App: React.FunctionComponent = () => (
   <BrowserRouter>
@@ -33,7 +32,7 @@ const App: React.FunctionComponent = () => (
       <Route path="/policy/terms" component={TermsPolicy}></Route>
       <Route path="/submitclass" exact component={SubmitClass}></Route>
       <Route path="/submitclass/after" component={SubmitClassAfter}></Route>
-      <Route path="/submitclass/complete" component={SumbitClassCompledted}></Route>
+      {/* <Route path="/submitclass/complete" component={SumbitClassCompledted}></Route> */}
       <Redirect path="*" to="/" />
     </Switch>
   </BrowserRouter>

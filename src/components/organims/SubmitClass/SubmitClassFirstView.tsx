@@ -2,7 +2,7 @@ import Div from 'components/atoms/Div';
 import React, { useState } from 'react';
 import CourseInfomation from './CourseInfomation';
 import CourseSubmit from './CourseSubmit';
-// import CourseSubmitCompleted from './CourseSubmitCompleted';
+import CourseSubmitCompleted from './CourseSubmitCompleted';
 import SubmitClassNav from './SubmitClassNav';
 
 const SubmitClassFirstView: React.FunctionComponent = () => {
@@ -22,11 +22,11 @@ const SubmitClassFirstView: React.FunctionComponent = () => {
     // setCompletedDisplay(false);
   };
 
-  // const goCompletedDisplay = () => {
-  //   setInfoDisplay(false);
-  //   setSubmitDisplay(false);
-  //   setCompletedDisplay(true);
-  // };
+  const goCompletedDisplay = () => {
+    setInfoDisplay(false);
+    setSubmitDisplay(false);
+    // setCompletedDisplay(true);
+  };
 
   // const finishedSumbit = () => {};
 
@@ -47,13 +47,13 @@ const SubmitClassFirstView: React.FunctionComponent = () => {
         ) : null}
         {submitDisplay ? (
           <>
-            <SubmitClassNav
+            {/* <SubmitClassNav
               // goInfoDisplay={goInfoDisplay}
               // goCourseSubmit={goCourseSubmit}
               // goCompletedDisplay={goCompletedDisplay}
               className="submit"
-            />
-            <CourseSubmit backInfoDisplay={goInfoDisplay} />
+            /> */}
+            <CourseSubmit backInfoDisplay={goInfoDisplay} goCompletedDisplay={goCompletedDisplay} />
           </>
         ) : null}
         {/* {completedDisplay ? (
@@ -64,7 +64,7 @@ const SubmitClassFirstView: React.FunctionComponent = () => {
               // goCompletedDisplay={goCompletedDisplay}
               className="submitCompleted"
             />
-            <CourseSubmitCompleted />
+            <CourseSubmitCompleted backCourseSubmit={goCourseSubmit} />
           </>
         ) : null} */}
       </div>
