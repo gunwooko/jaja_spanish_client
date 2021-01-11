@@ -264,8 +264,8 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ backInfoDisplay }: 
       // eslint-disable-next-line
       const realData: any = courseData.data();
       setData(realData);
-      console.log('realData', realData);
-      console.log('???어떨까?', data);
+      // console.log('realData', realData);
+      // console.log('???어떨까?', data);
       // setPage(false);
 
       // 수업내용확인을 팝업으로 다시 확인한다면 =>

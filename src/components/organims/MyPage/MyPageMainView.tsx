@@ -5,15 +5,19 @@ import MyDetails from './MyDetails';
 import MyPaymentDetails from './MyPaymentDetails';
 import PostponedClassDetail from './PostponedClassDetail';
 import useGetUserObject from 'Hooks/useGetUserObject';
+import useGetCourseObject from 'Hooks/useGetCourseObject';
 
 // test data
 // import user from 'testData/userData';
-import classData from 'testData/classData';
+// import classData from 'testData/classData';
 import postponedClass from 'testData/postponedClassData';
 
 const MyPageMainView: React.FunctionComponent = () => {
   const userObj = useGetUserObject();
 
+  const courseObj = useGetCourseObject(userObj.email, userObj.userId);
+  console.log('courseObj 훅에서 무엇을 가져오나?', courseObj);
+  // console.log(courseObj[0]);
   return (
     <div>
       <MyDetails
@@ -22,27 +26,32 @@ const MyPageMainView: React.FunctionComponent = () => {
         email={userObj.email}
         point={userObj.point}
         loginWith={userObj.loginWith}
-      ></MyDetails>
-      <MyClass
-        teachers_name={classData.teachers_name}
-        class_status={classData.class_status}
-        class_style={classData.class_style}
-        class_lastDay={classData.class_lastDay}
-      ></MyClass>
-      <MyPaymentDetails
-        pay_number={classData.pay_number}
-        pay_date={classData.pay_date}
-        pay_classType={classData.pay_classType}
-        pay_amount={classData.pay_amount}
-        pay_status={classData.pay_status}
-      ></MyPaymentDetails>
-      <ApplyToPostponeClass></ApplyToPostponeClass>
+      />
+      {/* {courseArr.map((course: any) => (
+        <>
+          <MyClass
+            teachers_name={course.teacher}
+            class_status={course.classStatus}
+            class_style={course.classType}
+            class_lastDay={course.finishDate}
+          />
+          <MyPaymentDetails
+            pay_number={course.payNumber}
+            pay_date={course.payDate}
+            pay_classType={course.classType}
+            pay_amount={course.payAmount}
+            pay_status={course.payStatus}
+          />
+        </>
+      ))} */}
+      {courseObj && <div>{courseObj.teacher}</div>}
+      <ApplyToPostponeClass />
       <PostponedClassDetail
         postponed_date={postponedClass[0].postponed_date}
         teachers_name={postponedClass[0].teachers_name}
         postponedClass_date_times={postponedClass[0].postponedClass_date_times}
         postponed_status={postponedClass[0].postponed_status}
-      ></PostponedClassDetail>
+      />
     </div>
   );
 };
