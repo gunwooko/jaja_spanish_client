@@ -138,6 +138,10 @@ const MyDetails: React.FunctionComponent<Props> = ({ name_kr, name_en, email, po
     }
   };
 
+  const checkMyPoint = () => {
+    alert('적립금 상세보기 페이지가 수리중에 있습니다.');
+  };
+
   return (
     <Div className="MyDetails_form">
       <div></div>
@@ -178,7 +182,9 @@ const MyDetails: React.FunctionComponent<Props> = ({ name_kr, name_en, email, po
           <Div className="myDetails_row">
             <span className="myDetails_subtitle">적립금</span>
             <span className="myDetails_info">{point}</span>
-            <button className="myDetails_btn">상세보기</button>
+            <button className="myDetails_btn" onClick={checkMyPoint}>
+              상세보기
+            </button>
           </Div>
           <Div className="myDetails_row">
             <span className="myDetails_subtitle">비밀번호 변경</span>
