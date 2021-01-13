@@ -12,6 +12,7 @@ const useGetCourseObject = (email:any, userId:any) => {
       .doc(`${email}`)
       .collection(`${userId}`)
       .orderBy('startDate', 'desc');
+    // eslint-disable-next-line
     const arr: any[] = [];
     coursesData.onSnapshot((snapshot) => {
       snapshot.docs.forEach((doc) => {
