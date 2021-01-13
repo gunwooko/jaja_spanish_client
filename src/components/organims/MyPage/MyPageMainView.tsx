@@ -14,10 +14,8 @@ import postponedClass from 'testData/postponedClassData';
 
 const MyPageMainView: React.FunctionComponent = () => {
   const userObj = useGetUserObject();
+  const { courseData } = useGetCourseObject(userObj.email, userObj.userId);
 
-  const courseObj = useGetCourseObject(userObj.email, userObj.userId);
-  console.log('courseObj 훅에서 무엇을 가져오나?', courseObj);
-  // console.log(courseObj[0]);
   return (
     <div>
       <MyDetails
@@ -27,24 +25,26 @@ const MyPageMainView: React.FunctionComponent = () => {
         point={userObj.point}
         loginWith={userObj.loginWith}
       />
-      {/* {courseArr.map((course: any) => (
+      {courseData ? (
         <>
           <MyClass
-            teachers_name={course.teacher}
-            class_status={course.classStatus}
-            class_style={course.classType}
-            class_lastDay={course.finishDate}
+            teachers_name={courseData.teacher}
+            class_status={courseData.classStatus}
+            class_style={courseData.classType}
+            class_lastDay={courseData.finishDate}
           />
           <MyPaymentDetails
-            pay_number={course.payNumber}
-            pay_date={course.payDate}
-            pay_classType={course.classType}
-            pay_amount={course.payAmount}
-            pay_status={course.payStatus}
+            pay_number={courseData.payNumber}
+            pay_date={courseData.payDate}
+            pay_classType={courseData.classType}
+            pay_amount={courseData.payAmount}
+            pay_status={courseData.payStatus}
           />
         </>
-      ))} */}
-      {courseObj && <div>{courseObj.teacher}</div>}
+      ) : (
+        <div>Loding...</div>
+      )}
+
       <ApplyToPostponeClass />
       <PostponedClassDetail
         postponed_date={postponedClass[0].postponed_date}

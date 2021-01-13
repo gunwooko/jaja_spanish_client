@@ -2,49 +2,31 @@ import { dbService } from 'fbase';
 import { useEffect, useState } from 'react';
 
 // eslint-disable-next-line
-const useGetCourseObject = (email:string, userId:string): any => {
+const useGetCourseObject = (email:any, userId:any) => {
   // eslint-disable-next-line
-  const [courseArr, setCourseArr] = useState<any[]>([]);
+  const [courseData, setCourseData] = useState<any>({});
 
-  // const testArr: any[] = [];
-  useEffect(() => {
-    dbService
+  const fetchCourseData = async () => {
+    const coursesData = await dbService
       .collection('courses')
       .doc(`${email}`)
       .collection(`${userId}`)
-      .orderBy('startDate', 'desc')
-      .onSnapshot((snapshot) => {
-        const coursesArray: any = snapshot.docs.map((doc) => ({
-          ...doc.data(),
-        }));
-        console.log('???????', coursesArray);
-        setCourseArr(coursesArray[0]);
+      .orderBy('startDate', 'desc');
+    const arr: any[] = [];
+    coursesData.onSnapshot((snapshot) => {
+      snapshot.docs.forEach((doc) => {
+        arr.push(doc.data());
       });
-    return () => setCourseArr([]);
-  }, []);
 
-  // let coursesArray: any[] = [];
-  // useEffect(() => {
-  //   fetchCourseData();
-  //   return () => setCourseArr([]);
-  // }, []);
+      setCourseData(arr[0]);
+    });
+  };
 
-  // const fetchCourseData = async () => {
-  //   dbService
-  //     .collection('courses')
-  //     .doc(`${userObj.email}`)
-  //     .collection(`${userObj.userId}`)
-  //     .orderBy('startDate', 'desc')
-  //     .onSnapshot((snapshot) => {
-  //       coursesArray = snapshot.docs.map((doc) => ({
-  //         id: doc.id,
-  //         ...doc.data(),
-  //       }));
-  //       setCourseArr(coursesArray);
-  //     });
-  // };
+  useEffect(() => {
+    fetchCourseData();
+  }, [email]);
 
-  return courseArr;
+  return { courseData };
 };
 
 export default useGetCourseObject;
