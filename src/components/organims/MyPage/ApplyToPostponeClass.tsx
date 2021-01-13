@@ -1,39 +1,95 @@
 import Div from 'components/atoms/Div';
-import React from 'react';
+import getTodayUtil from 'containers/Utilities/getToday';
+import { dbService } from 'fbase';
+import useGetProfesObject from 'Hooks/useGetProfesObject';
+import useGetUserObject from 'Hooks/useGetUserObject';
+import React, { useState } from 'react';
 
-const ApplyToPostponeClass: React.FunctionComponent = () => (
-  <Div className="ApplyToPostponedClass_form">
-    <div></div>
-    <Div className="ApplyToPostponeClass">
-      <Div className="ApplyToPostponeClass_title" text="수업연기신청"></Div>
-      <Div className="ApplyToPostponeClass_box">
-        <Div className="ApplyToPostponeClass_row">
-          <span className="ApplyToPostponeClass_subtitle">취소하는 수업</span>
-          {/* <i className="far fa-calendar-alt"></i> */}
-          <input className="applyToPostponeInput_date" type="date" placeholder="날짜선택" />
-          {/* <i className="far fa-clock"></i> */}
-          <input className="applyToPostponeInput_date" type="time" name="time" />
-        </Div>
-        <Div className="ApplyToPostponeClass_row">
-          <span className="ApplyToPostponeClass_subtitle">강사이름</span>
-          <input className="applyToPostponeInput" type="text" placeholder="강사이름 선택"></input>
-        </Div>
-        <Div className="ApplyToPostponeClass_row">
-          <span className="ApplyToPostponeClass_subtitle">연기 사유 및 비고</span>
-          <input
-            className="applyToPostponeInput"
-            type="text"
-            placeholder="(선택) 연기사유를 자유롭게 작성해주세요."
-          ></input>
-        </Div>
+const ApplyToPostponeClass: React.FunctionComponent = () => {
+  const [teacher, setTeacher] = useState('');
+  const [reasons, setReasons] = useState('');
+  const [date, setDate] = useState('');
+  const [time, setTime] = useState('');
+
+  const profesList = useGetProfesObject();
+  const userData = useGetUserObject();
+
+  const onChange = (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {
+    const {
+      target: { name, value },
+    } = event;
+
+    if (name === 'teacher') {
+      setTeacher(value);
+    } else if (name === 'reasons') {
+      setReasons(value);
+    } else if (name === 'date') {
+      setDate(value);
+    } else if (name === 'time') {
+      setTime(value);
+    }
+  };
+
+  const hoy = getTodayUtil();
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    console.log('hello');
+    try {
+      await dbService.collection('postponedCourses').doc(`${userData.email}`).set({
+        userName: '건우',
+        postponedDate: date,
+        postponedTime: time,
+        teacher,
+        postponedReasons: reasons,
+        dateApplied: hoy,
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  return (
+    <Div className="ApplyToPostponedClass_form">
+      <div></div>
+      <Div className="ApplyToPostponeClass">
+        <Div className="ApplyToPostponeClass_title" text="수업연기신청"></Div>
+        <form onSubmit={onSubmit} className="ApplyToPostponeClass_box">
+          <Div className="ApplyToPostponeClass_row">
+            <span className="ApplyToPostponeClass_subtitle">취소하는 수업</span>
+            <input name="date" className="applyToPostponeInput_date" type="date" onChange={onChange} />
+            <input name="time" className="applyToPostponeInput_date" type="time" onChange={onChange} />
+          </Div>
+          <Div className="ApplyToPostponeClass_row">
+            <span className="ApplyToPostponeClass_subtitle">강사이름</span>
+            <select name="teacher" className="applyToPostponeInput" onChange={onChange}>
+              <option value="">강사이름 선택</option>
+              {profesList.map((profe) => (
+                <option key={`${profe.key}`} value={`${profe.nombre}`}>{`${profe.nombre} 강사님`}</option>
+              ))}
+            </select>
+          </Div>
+          <Div className="ApplyToPostponeClass_row">
+            <span className="ApplyToPostponeClass_subtitle">연기 사유 및 비고</span>
+            <input
+              name="reasons"
+              className="applyToPostponeInput"
+              type="text"
+              placeholder="(선택) 연기사유를 자유롭게 작성해주세요."
+              value={reasons}
+              onChange={onChange}
+              maxLength={230}
+            />
+          </Div>
+          <span className="ApplyToPostponeClass_info">
+            *수업유형당 연기 가능 회수: 주 2회 수업: 월 2회 / 주 3회 이상 수업: 월 3회
+          </span>
+          <input type="submit" value="연기신청" className="ApplyToPostponeClass_btn" />
+        </form>
       </Div>
-      <span className="ApplyToPostponeClass_info">
-        *수업유형당 연기 가능 회수: 주 2회 수업: 월 2회 / 주 3회 이상 수업: 월 3회
-      </span>
-      <button className="ApplyToPostponeClass_btn">연기신청</button>
+      <div></div>
     </Div>
-    <div></div>
-  </Div>
-);
+  );
+};
 
 export default ApplyToPostponeClass;
