@@ -8,8 +8,7 @@ import React, { useState } from 'react';
 const ApplyToPostponeClass: React.FunctionComponent = () => {
   const [teacher, setTeacher] = useState('');
   const [reasons, setReasons] = useState('');
-  const [date, setDate] = useState('');
-  const [time, setTime] = useState('');
+  const [datetime, setDatetime] = useState('');
 
   const profesList = useGetProfesObject();
   const userData = useGetUserObject();
@@ -23,10 +22,8 @@ const ApplyToPostponeClass: React.FunctionComponent = () => {
       setTeacher(value);
     } else if (name === 'reasons') {
       setReasons(value);
-    } else if (name === 'date') {
-      setDate(value);
-    } else if (name === 'time') {
-      setTime(value);
+    } else if (name === 'datetime') {
+      setDatetime(value);
     }
   };
 
@@ -38,8 +35,7 @@ const ApplyToPostponeClass: React.FunctionComponent = () => {
     try {
       await dbService.collection('postponedCourses').doc(`${userData.email}`).set({
         userName: '건우',
-        postponedDate: date,
-        postponedTime: time,
+        postponedDatetime: datetime,
         teacher,
         postponedReasons: reasons,
         dateApplied: hoy,
@@ -57,12 +53,12 @@ const ApplyToPostponeClass: React.FunctionComponent = () => {
         <form onSubmit={onSubmit} className="ApplyToPostponeClass_box">
           <Div className="ApplyToPostponeClass_row">
             <span className="ApplyToPostponeClass_subtitle">취소하는 수업</span>
-            <input name="date" className="applyToPostponeInput_date" type="date" onChange={onChange} />
-            <input name="time" className="applyToPostponeInput_date" type="time" onChange={onChange} />
+            <input name="datetime" className="applyToPostponeInput_date" type="datetime-local" onChange={onChange} />
+            {/* <input name="time" className="applyToPostponeInput_date" type="time" onChange={onChange} /> */}
           </Div>
           <Div className="ApplyToPostponeClass_row">
             <span className="ApplyToPostponeClass_subtitle">강사이름</span>
-            <select name="teacher" className="applyToPostponeInput" onChange={onChange}>
+            <select name="teacher" className="applyToPostponeSelect" onChange={onChange}>
               <option value="">강사이름 선택</option>
               {profesList.map((profe) => (
                 <option key={`${profe.key}`} value={`${profe.nombre}`}>{`${profe.nombre} 강사님`}</option>
