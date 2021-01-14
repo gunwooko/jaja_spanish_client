@@ -1,6 +1,8 @@
 import Div from 'components/atoms/Div';
+import getCurrentTime from 'containers/Utilities/getCurrentTime';
 import getTodayUtil from 'containers/Utilities/getToday';
 import { dbService } from 'fbase';
+import useGetCourseObject from 'Hooks/useGetCourseObject';
 import useGetProfesObject from 'Hooks/useGetProfesObject';
 import useGetUserObject from 'Hooks/useGetUserObject';
 import React, { useState } from 'react';
@@ -8,11 +10,15 @@ import React, { useState } from 'react';
 const ApplyToPostponeClass: React.FunctionComponent = () => {
   const [teacher, setTeacher] = useState('');
   const [reasons, setReasons] = useState('');
-  const [date, setDate] = useState('');
-  const [time, setTime] = useState('');
+  const [datetime, setDatetime] = useState('');
 
   const profesList = useGetProfesObject();
   const userData = useGetUserObject();
+  const { courseData } = useGetCourseObject(userData.email, userData.userId);
+
+  const hoy = getTodayUtil();
+  const currentTime = getCurrentTime();
+  const currentDatetime = hoy + 'T' + currentTime;
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {
     const {
@@ -23,27 +29,33 @@ const ApplyToPostponeClass: React.FunctionComponent = () => {
       setTeacher(value);
     } else if (name === 'reasons') {
       setReasons(value);
-    } else if (name === 'date') {
-      setDate(value);
-    } else if (name === 'time') {
-      setTime(value);
+    } else if (name === 'datetime') {
+      setDatetime(value);
     }
   };
 
-  const hoy = getTodayUtil();
-
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log('hello');
     try {
-      await dbService.collection('postponedCourses').doc(`${userData.email}`).set({
-        userName: '건우',
-        postponedDate: date,
-        postponedTime: time,
-        teacher,
-        postponedReasons: reasons,
-        dateApplied: hoy,
-      });
+      await dbService
+        .collection('postponedCourses')
+        .doc(`${userData.email}`)
+        .collection(`${courseData.nameKr}`)
+        .doc(`${courseData.phoneNumber}`)
+        .set({
+          userName: courseData.nameKr,
+          nameEn: courseData.nameEn,
+          userSkypeId: courseData.skypeId,
+          userKakaoId: courseData.kakaoId,
+          dateApplied: currentDatetime,
+          teacher,
+          postponedDatetime: datetime,
+          postponedReasons: reasons,
+          postponedClassNumber: courseData.classNumber,
+          postponedClassStartDate: courseData.startDate,
+        });
+
+      alert('수업 연기가 신청되었습니다. 24시간 내에 연락드리겠습니다.');
     } catch (err) {
       console.error(err);
     }
@@ -57,12 +69,11 @@ const ApplyToPostponeClass: React.FunctionComponent = () => {
         <form onSubmit={onSubmit} className="ApplyToPostponeClass_box">
           <Div className="ApplyToPostponeClass_row">
             <span className="ApplyToPostponeClass_subtitle">취소하는 수업</span>
-            <input name="date" className="applyToPostponeInput_date" type="date" onChange={onChange} />
-            <input name="time" className="applyToPostponeInput_date" type="time" onChange={onChange} />
+            <input name="datetime" className="applyToPostponeInput_date" type="datetime-local" onChange={onChange} />
           </Div>
           <Div className="ApplyToPostponeClass_row">
             <span className="ApplyToPostponeClass_subtitle">강사이름</span>
-            <select name="teacher" className="applyToPostponeInput" onChange={onChange}>
+            <select name="teacher" className="applyToPostponeSelect" onChange={onChange}>
               <option value="">강사이름 선택</option>
               {profesList.map((profe) => (
                 <option key={`${profe.key}`} value={`${profe.nombre}`}>{`${profe.nombre} 강사님`}</option>
