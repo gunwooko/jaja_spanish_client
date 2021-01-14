@@ -1,24 +1,46 @@
+import React, { useState } from 'react';
 import Div from 'components/atoms/Div';
 import getCurrentTime from 'containers/Utilities/getCurrentTime';
 import getTodayUtil from 'containers/Utilities/getToday';
 import { dbService } from 'fbase';
-import useGetCourseObject from 'Hooks/useGetCourseObject';
 import useGetProfesObject from 'Hooks/useGetProfesObject';
-import useGetUserObject from 'Hooks/useGetUserObject';
-import React, { useState } from 'react';
+import getRandomInt from 'containers/Utilities/getRandomNumber';
+import { useHistory } from 'react-router-dom';
 
-const ApplyToPostponeClass: React.FunctionComponent = () => {
+interface Props {
+  email: string;
+  userName: string;
+  phoneNumber: string;
+  userEngName: string;
+  userSkypeId: string;
+  userKakaoId: string;
+  postponedClassNumber: number;
+  postponedClassStartDate: string;
+}
+
+const ApplyToPostponeClass: React.FunctionComponent<Props> = ({
+  email,
+  userName,
+  phoneNumber,
+  userEngName,
+  userSkypeId,
+  userKakaoId,
+  postponedClassNumber,
+  postponedClassStartDate,
+}: Props) => {
   const [teacher, setTeacher] = useState('');
   const [reasons, setReasons] = useState('');
   const [datetime, setDatetime] = useState('');
 
   const profesList = useGetProfesObject();
-  const userData = useGetUserObject();
-  const { courseData } = useGetCourseObject(userData.email, userData.userId);
+  // const userData = useGetUserObject();
+  // const { courseData } = useGetCourseObject(userData.email, userData.userId);
 
   const hoy = getTodayUtil();
   const currentTime = getCurrentTime();
   const currentDatetime = hoy + 'T' + currentTime;
+  const key = getRandomInt(1, 100000000);
+  const history = useHistory();
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {
     const {
@@ -42,23 +64,26 @@ const ApplyToPostponeClass: React.FunctionComponent = () => {
       } else {
         await dbService
           .collection('postponedCourses')
-          .doc(`${userData.email}`)
-          .collection(`${courseData.nameKr}`)
-          .doc(`${courseData.phoneNumber}`)
+          .doc(`${email}`)
+          .collection(`${userName}`)
+          .doc(`${currentDatetime}`)
           .set({
-            userName: courseData.nameKr,
-            nameEn: courseData.nameEn,
-            userSkypeId: courseData.skypeId,
-            userKakaoId: courseData.kakaoId,
+            userName: userName,
+            userEngName,
+            userSkypeId,
+            userKakaoId,
+            phoneNumber,
             dateApplied: currentDatetime,
             teacher,
             postponedDatetime: datetime,
             postponedReasons: reasons,
-            postponedClassNumber: courseData.classNumber,
-            postponedClassStartDate: courseData.startDate,
+            postponedClassNumber,
+            postponedClassStartDate,
+            postponeStatus: '진행중',
+            postponedNumber: key,
           });
-
         alert('수업 연기가 신청되었습니다. 24시간 내에 연락드리겠습니다.');
+        history.replace('/mypage');
       }
     } catch (err) {
       console.error(err);
