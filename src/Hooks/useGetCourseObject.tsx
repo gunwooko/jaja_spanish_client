@@ -2,7 +2,7 @@ import { dbService } from 'fbase';
 import { useEffect, useState } from 'react';
 
 // eslint-disable-next-line
-const useGetCourseObject = (email:any, userId:any) => {
+const useGetCourseObject = (email: any, userId: any): any => {
   // eslint-disable-next-line
   const [courseData, setCourseData] = useState<any>({});
 

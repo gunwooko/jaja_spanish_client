@@ -10,7 +10,7 @@ import useGetCourseObject from 'Hooks/useGetCourseObject';
 // test data
 // import user from 'testData/userData';
 // import classData from 'testData/classData';
-import postponedClass from 'testData/postponedClassData';
+// import postponedClass from 'testData/postponedClassData';
 
 const MyPageMainView: React.FunctionComponent = () => {
   const userObj = useGetUserObject();
@@ -44,14 +44,23 @@ const MyPageMainView: React.FunctionComponent = () => {
       ) : (
         <div>Loding...</div>
       )}
-
-      <ApplyToPostponeClass />
-      <PostponedClassDetail
-        postponed_date={postponedClass[0].postponed_date}
-        teachers_name={postponedClass[0].teachers_name}
-        postponedClass_date_times={postponedClass[0].postponedClass_date_times}
-        postponed_status={postponedClass[0].postponed_status}
-      />
+      {courseData ? (
+        <>
+          <ApplyToPostponeClass
+            email={userObj.email}
+            userName={courseData.nameKr}
+            phoneNumber={courseData.phoneNumber}
+            userEngName={courseData.nameEn}
+            userSkypeId={courseData.skypeId}
+            userKakaoId={courseData.kakaoId}
+            postponedClassNumber={courseData.classNumber}
+            postponedClassStartDate={courseData.startDate}
+          />
+          <PostponedClassDetail email={userObj.email} userName={courseData.nameKr} />
+        </>
+      ) : (
+        <div>Loding...</div>
+      )}
     </div>
   );
 };
