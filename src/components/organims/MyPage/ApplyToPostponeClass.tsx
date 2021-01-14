@@ -5,7 +5,6 @@ import getTodayUtil from 'containers/Utilities/getToday';
 import { dbService } from 'fbase';
 import useGetProfesObject from 'Hooks/useGetProfesObject';
 import getRandomInt from 'containers/Utilities/getRandomNumber';
-import { useHistory } from 'react-router-dom';
 
 interface Props {
   email: string;
@@ -40,7 +39,6 @@ const ApplyToPostponeClass: React.FunctionComponent<Props> = ({
   const currentTime = getCurrentTime();
   const currentDatetime = hoy + 'T' + currentTime;
   const key = getRandomInt(1, 100000000);
-  const history = useHistory();
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {
     const {
@@ -83,7 +81,7 @@ const ApplyToPostponeClass: React.FunctionComponent<Props> = ({
             postponedNumber: key,
           });
         alert('수업 연기가 신청되었습니다. 24시간 내에 연락드리겠습니다.');
-        history.replace('/mypage');
+        window.location.replace('/mypage');
       }
     } catch (err) {
       console.error(err);
