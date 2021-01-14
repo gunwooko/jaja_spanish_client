@@ -37,25 +37,29 @@ const ApplyToPostponeClass: React.FunctionComponent = () => {
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
-      await dbService
-        .collection('postponedCourses')
-        .doc(`${userData.email}`)
-        .collection(`${courseData.nameKr}`)
-        .doc(`${courseData.phoneNumber}`)
-        .set({
-          userName: courseData.nameKr,
-          nameEn: courseData.nameEn,
-          userSkypeId: courseData.skypeId,
-          userKakaoId: courseData.kakaoId,
-          dateApplied: currentDatetime,
-          teacher,
-          postponedDatetime: datetime,
-          postponedReasons: reasons,
-          postponedClassNumber: courseData.classNumber,
-          postponedClassStartDate: courseData.startDate,
-        });
+      if (datetime === '' || teacher === '') {
+        alert('수업 연기를 원하시는 날짜와 강사님를 선택해주세요.');
+      } else {
+        await dbService
+          .collection('postponedCourses')
+          .doc(`${userData.email}`)
+          .collection(`${courseData.nameKr}`)
+          .doc(`${courseData.phoneNumber}`)
+          .set({
+            userName: courseData.nameKr,
+            nameEn: courseData.nameEn,
+            userSkypeId: courseData.skypeId,
+            userKakaoId: courseData.kakaoId,
+            dateApplied: currentDatetime,
+            teacher,
+            postponedDatetime: datetime,
+            postponedReasons: reasons,
+            postponedClassNumber: courseData.classNumber,
+            postponedClassStartDate: courseData.startDate,
+          });
 
-      alert('수업 연기가 신청되었습니다. 24시간 내에 연락드리겠습니다.');
+        alert('수업 연기가 신청되었습니다. 24시간 내에 연락드리겠습니다.');
+      }
     } catch (err) {
       console.error(err);
     }
