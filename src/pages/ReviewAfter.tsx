@@ -7,7 +7,7 @@ import React from 'react';
 const ReviewAfter: React.FunctionComponent = () => (
   <>
     <Nav cl_name="review"></Nav>
-    <RestFirstView name="Review"></RestFirstView>
+    <RestFirstView name="ReviewAfter"></RestFirstView>
     <ReviewAfterView></ReviewAfterView>
     <Footer></Footer>
   </>

@@ -341,7 +341,6 @@
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
 }
-
 .rest_first_vw_review_1 {
     display: flex;
     flex-direction: row;
@@ -351,6 +350,36 @@
     font-size: 50px;
     color: #ffffff;
     font-weight: bold;
+}
+.rest_first_vw_review_reviewAfter {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.rest_first_vw_review_0_reviewAfter {
+    height: 400px;
+    background-image: url(https://media.vlpt.us/images/gunwooko/post/9d5908f1-e408-4ce8-9cd1-d0ee4cc4b8c3/pexels-freestocksorg-64057.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 50% 160%;
+    background-size: cover;
+    opacity: 0.87;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+.rest_first_vw_review_1_reviewAfter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    font-size: 50px;
+    color: #ffffff;
+    font-weight: bold;
+}
+.rest_first_vw_review_2_reviewAfter {
+    font-size: 25px;
+    color: #ffffff;
+    font-weight: normal;
+    margin-top: 20px;
 }
 
 // Review - ReviewAfterView
