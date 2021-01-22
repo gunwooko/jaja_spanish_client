@@ -359,7 +359,7 @@
     background-image: url(https://media.vlpt.us/images/gunwooko/post/9d5908f1-e408-4ce8-9cd1-d0ee4cc4b8c3/pexels-freestocksorg-64057.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-position: 50% 160%;
+    background-position: 50% 100%;
     background-size: cover;
     opacity: 0.87;
     display: grid;
@@ -483,22 +483,48 @@
         margin-top: 127px;
 
         .review_box {
+            border-top: 2px solid #42175d;
+            border-bottom: 0.5px solid #42175d;
             .review_main_title {
                 display: grid;
                 grid-template-columns: 1fr 9fr 1fr 2fr 1fr;
-                border-top: 1px solid #42175d;
-                border-bottom: 0.5px solid #42175d;
-                padding: 12px;
+                padding: 5px;
                 text-align: center;
 
                 .review_title_each {
                     font-size: 20px;
                     font-weight: bold;
+                    white-space: nowrap;
+                }
+            }
+            .review_line {
+                display: grid;
+                grid-template-columns: 1fr 9fr 1fr 2fr 1fr;
+                // border-top: 1px solid #42175d;
+                border-bottom: 0.5px solid #dddddf;
+                padding: 12px;
+                text-align: center;
+                align-items: center;
+
+                .review_title {
+                    text-align: left;
+                    padding-left: 20px;
+                    cursor: pointer;
+                    text-decoration: none;
+                }
+                .review_title:visited {
+                    text-decoration: none;
+                    color: black;
+                }
+                .review_writer {
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
                 }
             }
         }
         .review_writing_btn_form {
             text-align: right;
+            margin-top: 10px;
             .review_writing_btn {
                 background-color: #42175d;
                 width: 129px;

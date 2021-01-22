@@ -1,10 +1,10 @@
+import React from 'react';
 import Div from 'components/atoms/Div';
 import useGetUserObject from 'Hooks/useGetUserObject';
-import React from 'react';
 import { Link } from 'react-router-dom';
 import ReviewPaging from './ReviewRead/ReviewPaging';
-import ReviewRead from './ReviewRead/ReviewRead';
 import ReviewSearching from './ReviewRead/ReviewSearching';
+import ReviewList from 'containers/Review/ReviewList';
 
 const ReviewMainView: React.FunctionComponent = () => {
   const userObj = useGetUserObject();
@@ -21,7 +21,7 @@ const ReviewMainView: React.FunctionComponent = () => {
             <span className="review_title_each">작성일</span>
             <span className="review_title_each">조회</span>
           </Div>
-          <ReviewRead />
+          <ReviewList />
         </Div>
         {userObj ? (
           <Div className="review_writing_btn_form">
