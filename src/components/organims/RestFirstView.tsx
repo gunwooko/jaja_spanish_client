@@ -50,6 +50,22 @@ const RestFirstView: React.FunctionComponent<Props> = ({ name, notice }: Props):
     </Div>
   ) : name === 'ReviewWriting' ? (
     <div>ReviewWriting</div>
+  ) : name === 'ReviewAfter' ? (
+    <Div className="rest_first_vw_review_reviewAfter">
+      <Div className="rest_first_vw_review_0_reviewAfter">
+        <div></div>
+        <Div className="rest_first_vw_review_1_reviewAfter">
+          솔직한 후기를 남겨주셔서 감사합니다. :)
+          <Div className="rest_first_vw_review_2_reviewAfter">
+            1000포인트의 적립금은 관리자가 확인 후 익일에 적립될 예정입니다.
+            <br />
+            *4주 수업이 끝난 후 7일 이내로 후기를 남겨주셨을 경우에만 후기 적립금이 지급됩니다.
+          </Div>
+        </Div>
+
+        <div></div>
+      </Div>
+    </Div>
   ) : (
     <Div className="rest_first_vw_faq_0">
       <div></div>

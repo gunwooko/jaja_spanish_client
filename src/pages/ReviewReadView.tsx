@@ -1,16 +1,16 @@
 import Footer from 'components/organims/Footer';
 import Nav from 'components/organims/Nav';
 import RestFirstView from 'components/organims/RestFirstView';
-import ReviewAfterView from 'components/organims/Review/ReviewAfterView';
+import ReviewRead from 'components/organims/Review/ReviewRead/ReviewRead';
 import React from 'react';
 
-const ReviewAfter: React.FunctionComponent = () => (
+const ReviewReadView: React.FunctionComponent = () => (
   <>
     <Nav cl_name="review"></Nav>
-    <RestFirstView name="ReviewAfter"></RestFirstView>
-    <ReviewAfterView></ReviewAfterView>
+    <RestFirstView name="Review"></RestFirstView>
+    <ReviewRead></ReviewRead>
     <Footer></Footer>
   </>
 );
 
-export default ReviewAfter;
+export default ReviewReadView;
