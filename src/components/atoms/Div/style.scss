@@ -471,6 +471,58 @@
                 }
             }
         }
+
+        .reviewRead_box {
+            .reviewRead_title {
+                font-size: 30px;
+                font-weight: bold;
+                margin-bottom: 60px;
+                text-align: center;
+            }
+            .reviewRead_detail {
+                font-size: 20px;
+                color: #707070;
+                margin-bottom: 9px;
+                .reviewRead_detail_name {
+                    margin-left: 5px;
+                    margin-right: 50px;
+                }
+                .reviewRead_detail_date {
+                    margin-right: 10px;
+                }
+                .reviewRead_detail_time {
+                    margin-right: 50px;
+                }
+            }
+            .reviewRead_content_box {
+                border-top: 1px solid #42175d;
+                border-bottom: 1px solid #42175d;
+                margin-bottom: 50px;
+
+                .reviewRead_content {
+                    margin-top: 50px;
+                    margin-bottom: 50px;
+                    font-size: 20px;
+                    color: #171717;
+                    text-align: left;
+                }
+            }
+        }
+        .reviewRead_btn_container {
+            text-align: right;
+            margin-bottom: 95px;
+            .reviewRead_btn {
+                width: 100px;
+                height: 50px;
+                background-color: #42175d;
+                color: #ffffff;
+                font-size: 22px;
+                border: 0;
+                margin: 5px;
+                outline: none;
+                cursor: pointer;
+            }
+        }
     }
 }
 
