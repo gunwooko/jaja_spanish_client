@@ -15,18 +15,7 @@ interface Props {
   id: number;
 }
 
-const ReviewLine: React.FunctionComponent<Props> = ({
-  title,
-  content,
-  createdTime,
-  userEmail,
-  userName,
-  views,
-  index,
-  createdDate,
-  madeAt,
-  id,
-}: Props) => {
+const ReviewLine: React.FunctionComponent<Props> = ({ title, userName, views, index, createdDate, id }: Props) => {
   return (
     <Div className="review_line">
       <span className="review_number">{index}</span>

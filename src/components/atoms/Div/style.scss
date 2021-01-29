@@ -564,6 +564,10 @@
                     cursor: pointer;
                     text-decoration: none;
                 }
+                .review_title:link {
+                    text-decoration: none;
+                    color: black;
+                }
                 .review_title:visited {
                     text-decoration: none;
                     color: black;
@@ -586,6 +590,40 @@
                 border: 0;
                 outline: none;
                 cursor: pointer;
+                i {
+                    padding-right: 15px;
+                }
+            }
+        }
+
+        .reviewPagination_ul {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 92px;
+            justify-content: center;
+            .reviewPagination_li {
+                list-style-type: none;
+                color: #000000;
+                font-size: 22px;
+                font-weight: 500;
+                margin-left: 32px;
+                margin-right: 32px;
+                cursor: pointer;
+            }
+            .reviewPagination_li_selected {
+                list-style-type: none;
+                color: #ffffff;
+                font-size: 22px;
+                font-weight: 500;
+                margin-left: 32px;
+                margin-right: 32px;
+                cursor: pointer;
+                background-color: #42175d;
+                border: none;
+                border-radius: 50%;
+                width: 33px;
+                height: 33px;
+                text-align: center;
             }
         }
     }
