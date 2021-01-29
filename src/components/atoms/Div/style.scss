@@ -471,6 +471,58 @@
                 }
             }
         }
+
+        .reviewRead_box {
+            .reviewRead_title {
+                font-size: 30px;
+                font-weight: bold;
+                margin-bottom: 60px;
+                text-align: center;
+            }
+            .reviewRead_detail {
+                font-size: 20px;
+                color: #707070;
+                margin-bottom: 9px;
+                .reviewRead_detail_name {
+                    margin-left: 5px;
+                    margin-right: 50px;
+                }
+                .reviewRead_detail_date {
+                    margin-right: 10px;
+                }
+                .reviewRead_detail_time {
+                    margin-right: 50px;
+                }
+            }
+            .reviewRead_content_box {
+                border-top: 1px solid #42175d;
+                border-bottom: 1px solid #42175d;
+                margin-bottom: 50px;
+
+                .reviewRead_content {
+                    margin-top: 50px;
+                    margin-bottom: 50px;
+                    font-size: 20px;
+                    color: #171717;
+                    text-align: left;
+                }
+            }
+        }
+        .reviewRead_btn_container {
+            text-align: right;
+            margin-bottom: 95px;
+            .reviewRead_btn {
+                width: 100px;
+                height: 50px;
+                background-color: #42175d;
+                color: #ffffff;
+                font-size: 22px;
+                border: 0;
+                margin: 5px;
+                outline: none;
+                cursor: pointer;
+            }
+        }
     }
 }
 
@@ -512,6 +564,10 @@
                     cursor: pointer;
                     text-decoration: none;
                 }
+                .review_title:link {
+                    text-decoration: none;
+                    color: black;
+                }
                 .review_title:visited {
                     text-decoration: none;
                     color: black;
@@ -533,6 +589,74 @@
                 font-size: 22px;
                 border: 0;
                 outline: none;
+                cursor: pointer;
+                i {
+                    padding-right: 15px;
+                }
+            }
+        }
+
+        .reviewPagination_ul {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 92px;
+            justify-content: center;
+            .reviewPagination_li {
+                list-style-type: none;
+                color: #000000;
+                font-size: 22px;
+                font-weight: 500;
+                margin-left: 32px;
+                margin-right: 32px;
+                cursor: pointer;
+            }
+            .reviewPagination_li_selected {
+                list-style-type: none;
+                color: #ffffff;
+                font-size: 22px;
+                font-weight: 500;
+                margin-left: 32px;
+                margin-right: 32px;
+                cursor: pointer;
+                background-color: #42175d;
+                border: none;
+                border-radius: 50%;
+                width: 33px;
+                height: 33px;
+                text-align: center;
+            }
+        }
+        .review_search_container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 270px;
+
+            .review_search_select {
+                width: 159px;
+                height: 50px;
+                border: 1px solid #dddddf;
+                font-size: 22px;
+                background-color: #ffffff;
+                margin-right: 19px;
+                padding-left: 19px;
+            }
+            .review_search_input {
+                width: 249px;
+                height: 50px;
+                border: 1px solid #dddddf;
+                font-size: 22px;
+                padding-left: 10px;
+            }
+            .review_search_btn {
+                width: 101px;
+                height: 50px;
+                background-color: #fcf8fe;
+                color: #42175d;
+                font-size: 22px;
+                text-align: center;
+                border: 1px solid #42175d;
                 cursor: pointer;
             }
         }

@@ -15,6 +15,10 @@ const ReviewRead: React.FunctionComponent<RouteComponentProps<MatchParams>> = ({
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [userEmail, setUserEmail] = useState('');
+  const [userName, setUserName] = useState('');
+  const [date, setDate] = useState('');
+  const [time, setTime] = useState('');
+  const [view, setView] = useState(0);
 
   const userObj = useGetUserObject();
 
@@ -25,30 +29,54 @@ const ReviewRead: React.FunctionComponent<RouteComponentProps<MatchParams>> = ({
       setTitle(data.title);
       setContent(data.content);
       setUserEmail(data.userEmail);
+      setUserName(data.userName);
+      setDate(data.createdDate);
+      setTime(data.createdTime);
+      setView(data.views);
+    });
+  };
+
+  const sumViews = async () => {
+    const review = await dbService.collection('reviews').where('id', '==', Number(match.params.id)).get();
+    review.forEach((doc) => {
+      const data = doc.data();
+      const docId = doc.id;
+      dbService
+        .collection('reviews')
+        .doc(docId)
+        .update({
+          views: data.views + 1,
+        });
     });
   };
 
   useEffect(() => {
     fetchReviewData();
+    sumViews();
   }, []);
   return (
     <>
       <Div className="ReviewWritingView">
         <div></div>
         <div className="ReviewWritingView_container">
-          <Div className="reviewWritingView_h2">
-            깔깔스페인에 대한 <span>솔직한 후기</span>를 들려주세요. :)
-          </Div>
-          <Div className="reviewWritingView_h3">
-            후기 작성 시 <span>1000포인트</span>의 적립금을 드립니다.
-            <div>* 4주 수업이 끝난 후 7일 이내로 후기를 남겨주셨을 경우에만 후기 적립금이 지급됩니다.</div>
-          </Div>
           <Div className="reviewRead_box">
             <Div className="reviewRead_title">{title}</Div>
-            <Div className="reviewRead_content">{content}</Div>
+            <Div className="reviewRead_detail">
+              <span className="reviewRead_detail_name">{userName}</span>
+              <span className="reviewRead_detail_date">{date}</span>
+              <span className="reviewRead_detail_time">{time}</span>
+              <span className="reviewRead_detail_views">{`조회 ${view}`}</span>
+            </Div>
+            <Div className="reviewRead_content_box">
+              <Div className="reviewRead_content">{content}</Div>
+            </Div>
           </Div>
-          <button onClick={() => history.goBack()}>뒤로가기</button>
-          {userObj.email === userEmail && <button>수정하기</button>}
+          <div className="reviewRead_btn_container">
+            {userObj.email === userEmail && <button className="reviewRead_btn">수정하기</button>}
+            <button className="reviewRead_btn" onClick={() => history.goBack()}>
+              목록
+            </button>
+          </div>
         </div>
         <div></div>
       </Div>

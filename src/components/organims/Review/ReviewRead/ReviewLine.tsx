@@ -1,6 +1,6 @@
 import Div from 'components/atoms/Div';
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 interface Props {
   title: string;
@@ -15,18 +15,7 @@ interface Props {
   id: number;
 }
 
-const ReviewLine: React.FunctionComponent<Props> = ({
-  title,
-  content,
-  createdTime,
-  userEmail,
-  userName,
-  views,
-  index,
-  createdDate,
-  madeAt,
-  id,
-}: Props) => {
+const ReviewLine: React.FunctionComponent<Props> = ({ title, userName, views, index, createdDate, id }: Props) => {
   return (
     <Div className="review_line">
       <span className="review_number">{index}</span>
