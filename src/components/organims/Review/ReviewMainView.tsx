@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Div from 'components/atoms/Div';
 import useGetUserObject from 'Hooks/useGetUserObject';
 import { Link } from 'react-router-dom';
-import ReviewSearching from './ReviewRead/ReviewSearching';
+// import ReviewSearching from './ReviewRead/ReviewSearching';
 import ReviewList from 'containers/Review/ReviewList';
 import ReviewPagination from './ReviewRead/ReviewPagination';
 import { dbService } from 'fbase';
@@ -71,7 +71,7 @@ const ReviewMainView: React.FunctionComponent = () => {
           paginate={paginate}
           currentPage={currentPage}
         />
-        <ReviewSearching />
+        {/* <ReviewSearching /> */}
       </Div>
       <div></div>
     </Div>
