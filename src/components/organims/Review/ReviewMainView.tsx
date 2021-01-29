@@ -21,7 +21,6 @@ const ReviewMainView: React.FunctionComponent = () => {
         .collection('reviews')
         .orderBy('madeAt', 'desc')
         .onSnapshot((snapshot) => {
-          // snapshot.docs.map((doc) => console.log(doc.id));
           setLoading(true);
           const reviewsArray = snapshot.docs.map((doc) => ({
             ...doc.data(),
@@ -31,7 +30,6 @@ const ReviewMainView: React.FunctionComponent = () => {
         });
     };
     fetchPosts();
-    // return () => setPosts([]);
   }, []);
 
   // Get current posts

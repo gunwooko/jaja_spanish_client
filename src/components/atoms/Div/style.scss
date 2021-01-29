@@ -626,6 +626,40 @@
                 text-align: center;
             }
         }
+        .review_search_container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 270px;
+
+            .review_search_select {
+                width: 159px;
+                height: 50px;
+                border: 1px solid #dddddf;
+                font-size: 22px;
+                background-color: #ffffff;
+                margin-right: 19px;
+                padding-left: 19px;
+            }
+            .review_search_input {
+                width: 249px;
+                height: 50px;
+                border: 1px solid #dddddf;
+                font-size: 22px;
+                padding-left: 10px;
+            }
+            .review_search_btn {
+                width: 101px;
+                height: 50px;
+                background-color: #fcf8fe;
+                color: #42175d;
+                font-size: 22px;
+                text-align: center;
+                border: 1px solid #42175d;
+                cursor: pointer;
+            }
+        }
     }
 }
 

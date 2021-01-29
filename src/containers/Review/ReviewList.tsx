@@ -1,8 +1,8 @@
-import { dbService } from 'fbase';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import ReviewLine from 'components/organims/Review/ReviewRead/ReviewLine';
 
 interface Props {
+  // eslint-disable-next-line
   posts: any[];
   loading: boolean;
 }

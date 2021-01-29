@@ -31,13 +31,6 @@ const ReviewWritingForm: React.FunctionComponent = (): React.ReactElement => {
     event.preventDefault();
     try {
       // DB에 후기 정보 저장하기
-      // await dbService
-      //   .collection('reviews')
-      //   .doc(`${userData.email}`)
-      //   .collection(`${userData.userName}`)
-      //   .doc(`${hoy}T${currentTime}`)
-      //   .set({ title, content, createdAt: hoy + 'T' + currentTime, views: 0 });
-
       await dbService.collection('reviews').doc().set({
         userEmail: userData.email,
         userName: userData.userName,
