@@ -560,6 +560,18 @@
                     outline: none;
                     cursor: pointer;
                 }
+                // Review Update
+                .ReviewUpdate_input_btn {
+                    background-color: #42175d;
+                    width: 129px;
+                    height: 50px;
+                    color: #ffffff;
+                    font-size: 22px;
+                    margin: 5px;
+                    border: 0;
+                    outline: none;
+                    cursor: pointer;
+                }
             }
         }
 
@@ -607,6 +619,15 @@
                 height: 50px;
                 background-color: #42175d;
                 color: #ffffff;
+                font-size: 22px;
+                border: 0;
+                margin: 5px;
+                outline: none;
+                cursor: pointer;
+            }
+            .reviewRead_btn_delete {
+                background-color: transparent;
+                color: #42175d;
                 font-size: 22px;
                 border: 0;
                 margin: 5px;

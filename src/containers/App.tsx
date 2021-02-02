@@ -15,6 +15,7 @@ import SubmitClass from 'pages/SubmitClass';
 import ReviewAfter from 'pages/ReviewAfter';
 import SubmitClassAfter from 'pages/SubmitClassAfter';
 import ReviewReadView from 'pages/ReviewReadView';
+import ReviewUpdateView from 'pages/ReviewUpdateView';
 
 const App: React.FunctionComponent = () => (
   <BrowserRouter>
@@ -26,7 +27,8 @@ const App: React.FunctionComponent = () => (
       <Route path="/review" exact component={Review}></Route>
       <Route path="/review/writing" component={ReviewWriting}></Route>
       <Route path="/review/after" component={ReviewAfter}></Route>
-      <Route path="/review/:id" component={ReviewReadView}></Route>
+      <Route path="/review/:id" exact component={ReviewReadView}></Route>
+      <Route path="/review/:id/update" component={ReviewUpdateView}></Route>
       <Route path="/fqa" component={Faq}></Route>
       <Route path="/login" component={LogIn}></Route>
       <Route path="/mypage" component={MyPage}></Route>

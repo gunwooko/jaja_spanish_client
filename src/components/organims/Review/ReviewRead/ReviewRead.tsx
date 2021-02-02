@@ -2,7 +2,7 @@ import Div from 'components/atoms/Div';
 import { dbService } from 'fbase';
 import useGetUserObject from 'Hooks/useGetUserObject';
 import React, { useEffect, useState } from 'react';
-import { RouteComponentProps, withRouter } from 'react-router-dom';
+import { Link, RouteComponentProps, withRouter } from 'react-router-dom';
 
 interface MatchParams {
   id: string;
@@ -26,6 +26,8 @@ const ReviewRead: React.FunctionComponent<RouteComponentProps<MatchParams>> = ({
     const review = await dbService.collection('reviews').where('id', '==', Number(match.params.id)).get();
     review.forEach((doc) => {
       const data = doc.data();
+      // eslint-disable-next-line
+      const docId = doc.id;
       setTitle(data.title);
       setContent(data.content);
       setUserEmail(data.userEmail);
@@ -54,6 +56,25 @@ const ReviewRead: React.FunctionComponent<RouteComponentProps<MatchParams>> = ({
     fetchReviewData();
     sumViews();
   }, []);
+
+  const onDelete = async () => {
+    const review = await dbService.collection('reviews').where('id', '==', Number(match.params.id)).get();
+    review.forEach((doc) => {
+      const docId = doc.id;
+      dbService.collection('reviews').doc(docId).delete();
+      alert('삭제되었습니다.');
+      history.push('/review');
+    });
+  };
+
+  // const onUpdate = async () => {
+  //   const review = await dbService.collection('reviews').where('id', '==', Number(match.params.id)).get();
+  //   review.forEach((doc) => {
+  //     const docId = doc.id;
+  //     history.push(`/review/update/${docId}`);
+  //   });
+  // };
+
   return (
     <>
       <Div className="ReviewWritingView">
@@ -72,7 +93,16 @@ const ReviewRead: React.FunctionComponent<RouteComponentProps<MatchParams>> = ({
             </Div>
           </Div>
           <div className="reviewRead_btn_container">
-            {userObj.email === userEmail && <button className="reviewRead_btn">수정하기</button>}
+            {userObj.email === userEmail && (
+              <>
+                <button className="reviewRead_btn" onClick={onDelete}>
+                  삭제
+                </button>
+                <Link to={`/review/${match.params.id}/update`}>
+                  <button className="reviewRead_btn">수정하기</button>
+                </Link>
+              </>
+            )}
             <button className="reviewRead_btn" onClick={() => history.goBack()}>
               목록
             </button>
