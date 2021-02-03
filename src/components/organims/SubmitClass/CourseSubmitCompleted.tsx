@@ -129,7 +129,7 @@ const CourseSubmitCompleted: React.FunctionComponent<Props> = ({
         </Div>
       </Div>
 
-      <Link to="/">
+      <Link to="/" onClick={() => window.scrollTo(0, 0)}>
         <button className="CourseSubmit_next_btn">완료</button>
       </Link>
       {/* <button className="CourseSubmit_prev_btn" onClick={editCourseSubmit}>

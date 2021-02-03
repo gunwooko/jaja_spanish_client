@@ -13,18 +13,21 @@ const SubmitClassFirstView: React.FunctionComponent = () => {
     setInfoDisplay(false);
     setSubmitDisplay(true);
     // setCompletedDisplay(false);
+    window.scrollTo(0, 0);
   };
 
   const goInfoDisplay = () => {
     setInfoDisplay(true);
     setSubmitDisplay(false);
     // setCompletedDisplay(false);
+    window.scrollTo(0, 0);
   };
 
   const goCompletedDisplay = () => {
     setInfoDisplay(false);
     setSubmitDisplay(false);
     // setCompletedDisplay(true);
+    window.scrollTo(0, 0);
   };
 
   // const finishedSumbit = () => {};

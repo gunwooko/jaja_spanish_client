@@ -99,7 +99,7 @@ const ReviewRead: React.FunctionComponent<RouteComponentProps<MatchParams>> = ({
                   삭제
                 </button>
                 <Link to={`/review/${match.params.id}/update`}>
-                  <button className="reviewRead_btn">수정하기</button>
+                  <button className="reviewRead_btn">수정</button>
                 </Link>
               </>
             )}

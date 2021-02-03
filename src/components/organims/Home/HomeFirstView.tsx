@@ -24,11 +24,11 @@ const HomeFirstView: React.FunctionComponent = () => {
         </Div>
         <Div className="home_first_sub_phrase">제대로 배우자, 1:1 화상 스페인어</Div>
         {isLoggedIn ? (
-          <Link to="/submitclass">
+          <Link to="/submitclass" onClick={() => window.scrollTo(0, 0)}>
             <button className="home_first_btn">지금 시작하기</button>
           </Link>
         ) : (
-          <Link to="/login" style={{ textDecoration: 'none' }}>
+          <Link to="/login" style={{ textDecoration: 'none' }} onClick={() => window.scrollTo(0, 0)}>
             <button onClick={alertNeededAuth} className="home_first_btn">
               지금 시작하기
             </button>

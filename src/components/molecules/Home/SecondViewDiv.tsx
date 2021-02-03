@@ -30,7 +30,7 @@ const SecondViewDiv: React.FunctionComponent<IProps> = ({
           <Div className="second_vw_content2" text={content2}></Div>
         </Div>
         {second_vw_className === 'home_second_view_img_1' ? (
-          <Link to="/teachers" style={{ textDecoration: 'none' }}>
+          <Link to="/teachers" style={{ textDecoration: 'none' }} onClick={() => window.scrollTo(0, 0)}>
             <button className="second_vw_btn_content">{btn_content}</button>
           </Link>
         ) : (
@@ -56,7 +56,7 @@ const SecondViewDiv: React.FunctionComponent<IProps> = ({
           <Div className="second_vw_content1" text={content}></Div>
           <Div className="second_vw_content2" text={content2}></Div>
         </Div>
-        <Link to="/guide" style={{ textDecoration: 'none' }}>
+        <Link to="/guide" style={{ textDecoration: 'none' }} onClick={() => window.scrollTo(0, 0)}>
           <button className="second_vw_btn_content">{btn_content}</button>
         </Link>
       </div>
