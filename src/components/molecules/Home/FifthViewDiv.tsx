@@ -23,11 +23,11 @@ const FifthViewDiv: React.FunctionComponent = ({}) => {
         1:1 화상 스페인어
       </Div>
       {isLoggedIn ? (
-        <Link to="/submitclass">
+        <Link to="/submitclass" onClick={() => window.scrollTo(0, 0)}>
           <button className="fifth_vw_btn">지금 시작하기</button>
         </Link>
       ) : (
-        <Link to="/login" style={{ textDecoration: 'none' }}>
+        <Link to="/login" style={{ textDecoration: 'none' }} onClick={() => window.scrollTo(0, 0)}>
           <button onClick={alertNeededAuth} className="fifth_vw_btn">
             지금 시작하기
           </button>

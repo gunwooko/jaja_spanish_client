@@ -34,7 +34,7 @@ const ClassGuideMainView: React.FunctionComponent = () => (
           이름과 이메일로 간편가입!
         </div>
         <div className="classGuide_vw_btn_div">
-          <Link to="/login" style={{ textDecoration: 'none' }}>
+          <Link to="/login" style={{ textDecoration: 'none' }} onClick={() => window.scrollTo(0, 0)}>
             <button className="classGuide_vw_btn_2">{`무료회원가입 >`}</button>
           </Link>
         </div>
@@ -59,7 +59,7 @@ const ClassGuideMainView: React.FunctionComponent = () => (
           <br /> 신청서에 쓰인 내용을 바탕으로 <br /> 최적의 선생님을 매칭해 드립니다.
         </div>
         <div className="classGuide_vw_btn_div_2">
-          <Link to="/submitclass" style={{ textDecoration: 'none' }}>
+          <Link to="/submitclass" style={{ textDecoration: 'none' }} onClick={() => window.scrollTo(0, 0)}>
             <button className="classGuide_vw_btn">{`수강신청 >`}</button>
           </Link>
         </div>

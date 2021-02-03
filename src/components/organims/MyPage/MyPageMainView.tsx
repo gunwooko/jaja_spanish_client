@@ -42,9 +42,12 @@ const MyPageMainView: React.FunctionComponent = () => {
           />
         </>
       ) : (
-        <div>Loding...</div>
+        <>
+          <MyClass teachers_name={'-'} class_status={'-'} class_style={'-'} class_lastDay={'-'} />
+          <MyPaymentDetails pay_number={0} pay_date={0} pay_classType={'-'} pay_amount={0} pay_status={'-'} />
+        </>
       )}
-      {courseData ? (
+      {courseData && (
         <>
           <ApplyToPostponeClass
             email={userObj.email}
@@ -58,8 +61,6 @@ const MyPageMainView: React.FunctionComponent = () => {
           />
           <PostponedClassDetail email={userObj.email} userName={courseData.nameKr} />
         </>
-      ) : (
-        <div>Loding...</div>
       )}
     </div>
   );

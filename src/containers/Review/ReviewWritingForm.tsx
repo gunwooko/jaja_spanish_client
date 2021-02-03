@@ -68,6 +68,9 @@ const ReviewWritingForm: React.FunctionComponent = (): React.ReactElement => {
           required
         />
         <div className="ReviewWriting_input_btn_form">
+          <button className="ReviewWriting_goBack_btn" onClick={() => history.goBack()}>
+            뒤로가기
+          </button>
           <input type="submit" value="완료" className="ReviewWriting_input_btn" />
         </div>
       </form>
