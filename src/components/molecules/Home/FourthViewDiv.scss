@@ -1,3 +1,5 @@
+@import '../../styles/mixin';
+
 .FourthViewDiv {
     background-color: #110417;
     display: flex;
@@ -9,6 +11,15 @@
 .fourth_vw_body {
     background-color: #ffffff;
     height: 778px;
+    @include medium {
+        height: 778px;
+    }
+    @include small {
+        height: 700px;
+    }
+    @include extra-small {
+        height: 630px;
+    }
 }
 
 .fourth_vw_btn_0 {
@@ -27,5 +38,14 @@
         opacity: 1;
         padding: 19px 69px;
         cursor: pointer;
+
+        @include small {
+            font-size: 20px;
+            padding: 14px 64px;
+        }
+        @include extra-small {
+            font-size: 20px;
+            padding: 14px 57px;
+        }
     }
 }
