@@ -1,58 +1,91 @@
 @import '../../styles/mixin';
 
 .SecondViewDiv {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 128px;
-    margin-bottom: 128px;
-
+    @include large {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 128px;
+        margin-bottom: 128px;
+    }
+    @include medium {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 128px;
+        margin-bottom: 128px;
+    }
     @include small {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 128px;
-        margin-bottom: 128px;
+        margin-top: 100px;
+        margin-bottom: 80px;
     }
     @include extra-small {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 128px;
-        margin-bottom: 128px;
+        margin-top: 30px;
+        margin-bottom: 10px;
     }
 }
 
 .SecondViewDiv2 {
     margin-left: 102px;
+    @include small {
+        margin-left: 20px;
+        text-align: center;
+        width: 100%;
+    }
+    @include extra-small {
+        margin-left: 0px;
+        text-align: center;
+        width: 100%;
+    }
 }
 
 .SecondViewDiv3 {
     margin-right: 124px;
-    width: 557px;
+    // width: 557px;
 
     @include small {
-        margin-left: 102px;
-        width: 557px;
+        margin-right: 0px;
+        margin-left: 20px;
+        text-align: center;
+        width: 100%;
     }
     @include extra-small {
-        margin-left: 102px;
-        width: 557px;
+        margin-right: 0px;
+        margin-left: 0px;
+        text-align: center;
+        width: 100%;
     }
 }
 
 .home_second_view_img_1 {
     width: 473px;
+    @include extra-small {
+        width: 343px;
+    }
 }
 
 .home_second_view_img_2 {
     width: 403px;
     height: 431px;
+    @include extra-small {
+        width: 300px;
+        height: 331px;
+    }
 }
 
 .home_second_view_img_3 {
     width: 422px;
     height: 353px;
+    @include extra-small {
+        width: 322px;
+        height: 253px;
+    }
 }
 
 .second_vw_btn_content {
@@ -63,4 +96,26 @@
     border: 0;
     outline: none;
     cursor: pointer;
+    @include small {
+        display: inline;
+        font-size: 20px;
+        color: #a637ea;
+        background-color: transparent;
+        border: 0;
+        outline: none;
+        cursor: pointer;
+        align-items: center;
+        margin: 1rem;
+    }
+    @include extra-small {
+        display: inline;
+        font-size: 13px;
+        color: #a637ea;
+        background-color: transparent;
+        border: 0;
+        outline: none;
+        cursor: pointer;
+        align-items: center;
+        margin: 1rem;
+    }
 }

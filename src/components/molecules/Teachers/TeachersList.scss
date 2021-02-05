@@ -18,6 +18,16 @@
             width: 280px;
             height: 280px;
             margin: 55px 69px 55px 55px;
+            @include small {
+                width: 210px;
+                height: 210px;
+                margin: 35px 30px 35px 30px;
+            }
+            @include extra-small {
+                width: 170px;
+                height: 170px;
+                margin: 45px 25px 45px 25px;
+            }
         }
 
         button {
@@ -28,6 +38,14 @@
             outline: none;
             margin-bottom: 52px;
             cursor: pointer;
+            @include small {
+                margin-bottom: 12px;
+                font-size: 16px;
+            }
+            @include extra-small {
+                margin-bottom: 12px;
+                font-size: 13px;
+            }
         }
 
         @include extra-small {

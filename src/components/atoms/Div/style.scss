@@ -69,45 +69,123 @@
 
 // Home page
 .second_vw_title {
-    font-size: 40px;
-    width: 480px;
-    height: 118px;
-    font-weight: bold;
-    margin-bottom: 40px;
-
+    @include large {
+        font-size: 40px;
+        width: 480px;
+        height: 118px;
+        font-weight: bold;
+        margin-bottom: 40px;
+    }
+    @include medium {
+        font-size: 40px;
+        width: 480px;
+        height: 118px;
+        font-weight: bold;
+        margin-bottom: 40px;
+    }
     @include small {
+        font-weight: bold;
+        margin-bottom: 40px;
         margin-top: 25px;
+        font-size: 35px;
     }
     @include extra-small {
+        font-weight: bold;
+        margin-bottom: 40px;
         margin-top: 25px;
+        font-size: 27px;
+        // white-space: pre-wrap;
     }
 }
 
 .second_vw_title2 {
-    font-size: 40px;
-    width: 552px;
-    height: 118px;
-    font-weight: bold;
-    margin-bottom: 40px;
+    // font-size: 40px;
+    // width: 552px;
+    // height: 118px;
+    // font-weight: bold;
+    // margin-bottom: 40px;
+    @include large {
+        font-size: 40px;
+        width: 552px;
+        height: 118px;
+        font-weight: bold;
+        margin-bottom: 40px;
+    }
+    @include medium {
+        font-size: 40px;
+        width: 552px;
+        height: 118px;
+        font-weight: bold;
+        margin-bottom: 40px;
+    }
+    @include small {
+        font-weight: bold;
+        margin-bottom: 40px;
+        margin-top: 25px;
+        font-size: 35px;
+    }
+    @include extra-small {
+        font-weight: bold;
+        margin-bottom: 40px;
+        margin-top: 25px;
+        font-size: 27px;
+        // white-space: pre-wrap;
+    }
 }
 
 .second_vw_content {
-    width: 557px;
-    margin-bottom: 24px;
-}
+    // .second_vw_content1 {
+    @include large {
+        font-size: 20px;
+        width: 557px;
+        margin-bottom: 24px;
+    }
+    @include medium {
+        font-size: 20px;
+        width: 557px;
+        margin-bottom: 24px;
+    }
+    @include small {
+        font-size: 20px;
+        // width: 80%;
+        // text-align: center;
+    }
+    @include extra-small {
+        font-size: 14px;
+        // width: 100%;
+        // text-align: center;
+    }
+    // }
 
-.second_vw_content1 {
-    font-size: 20px;
-}
-
-.second_vw_content2 {
-    font-size: 20px;
+    // .second_vw_content2 {
+    //     @include large {
+    //         font-size: 20px;
+    //     }
+    //     @include medium {
+    //         font-size: 20px;
+    //     }
+    //     @include small {
+    //         font-size: 20px;
+    //         width: 100%;
+    //         text-align: center;
+    //     }
+    //     @include extra-small {
+    //         font-size: 14px;
+    //         width: 100%;
+    //         text-align: center;
+    //     }
+    // }
 }
 
 .third_vw_1 {
     font-size: 40px;
     text-align: center;
     margin-bottom: 80px;
+    @include extra-small {
+        font-size: 25px;
+        text-align: center;
+        margin-bottom: 40px;
+    }
 }
 
 .third_vw_2 {
@@ -117,25 +195,44 @@
     span {
         color: #a637ea;
     }
+    @include extra-small {
+        font-size: 25px;
+        text-align: center;
+        font-weight: bold;
+    }
 }
 
 .fourth_vw_28min {
-    margin: 162px 20px 144px 0px;
-    height: 1118px;
-    width: 586px;
-
+    @include large {
+        margin: 162px 20px 144px 0px;
+        height: 1118px;
+        width: 586px;
+    }
+    @include medium {
+        margin: 102px 10px 10px 10px;
+    }
+    @include small {
+        margin: 102px 10px 10px 10px;
+    }
     @include extra-small {
         margin: 102px 10px 10px 10px;
     }
 }
 
 .fourth_vw_58min {
-    margin: 162px 0px 144px 20px;
-    height: 1118px;
-    width: 586px;
-
+    @include large {
+        margin: 162px 20px 144px 0px;
+        height: 1118px;
+        width: 586px;
+    }
+    @include medium {
+        margin: 102px 10px 10px 10px;
+    }
+    @include small {
+        margin: 102px 10px 10px 10px;
+    }
     @include extra-small {
-        margin: 10px 10px 10px 10px;
+        margin: 102px 10px 10px 10px;
     }
 }
 
@@ -151,9 +248,19 @@
     padding: 85px 287px 45px 40px;
     border-radius: 20px 20px 0px 0px;
 
-    @include extra-small {
+    @include medium {
         font-size: 35px;
-        padding: 85px 40px 45px 40px;
+        padding: 40px 40px 45px 40px;
+    }
+    @include small {
+        font-size: 35px;
+        padding: 40px 40px 45px 40px;
+    }
+
+    @include extra-small {
+        font-size: 27px;
+        padding: 20px;
+        text-align: center;
     }
 
     span {
@@ -169,24 +276,68 @@
     .fourth_vw_price_title_1 {
         font-size: 30px;
         margin: 50px 0px 181px 40px;
-        @include extra-small {
+
+        @include medium {
+            font-size: 23px;
+            margin: 50px 0px 181px 40px;
+        }
+        @include small {
+            margin: 50px 0px 90px 40px;
             font-size: 20px;
+        }
+        @include extra-small {
+            margin: 40px 0px 50px 30px;
+            font-size: 15px;
         }
     }
 
     .fourth_vw_price_title_2 {
         font-size: 30px;
         margin: 50px 0px 90px 40px;
-        @include extra-small {
+
+        @include medium {
+            font-size: 23px;
+            margin: 50px 0px 90px 40px;
+        }
+        @include small {
+            margin: 50px 0px 30px 40px;
             font-size: 20px;
+        }
+        @include extra-small {
+            margin: 40px 0px 25px 30px;
+            font-size: 15px;
         }
     }
 
     .fourth_vw_price_disc_box_1 {
         margin-top: 240px;
+        @include medium {
+            margin-top: 230px;
+            margin-right: 10px;
+        }
+        @include small {
+            margin-top: 220px;
+            margin-right: 10px;
+        }
+        @include extra-small {
+            margin-top: 170px;
+            margin-right: 10px;
+        }
     }
     .fourth_vw_price_disc_box_2 {
         margin-top: 240px;
+        @include medium {
+            margin-top: 230px;
+            margin-right: 10px;
+        }
+        @include small {
+            margin-top: 220px;
+            margin-right: 10px;
+        }
+        @include extra-small {
+            margin-top: 170px;
+            margin-right: 10px;
+        }
     }
 }
 
@@ -195,6 +346,9 @@
     font-size: 40px;
     font-weight: bold;
     text-align: center;
+    @include extra-small {
+        font-size: 25px;
+    }
 }
 
 .fifth_vw_2 {
@@ -202,6 +356,9 @@
     font-size: 20px;
     margin: 20px 0px 20px 0px;
     text-align: center;
+    @include extra-small {
+        font-size: 20px;
+    }
 }
 
 // Company
@@ -218,6 +375,16 @@
         div {
             color: #171717;
         }
+        @include medium {
+            font-size: 35px;
+        }
+        @include small {
+            font-size: 35px;
+        }
+        @include extra-small {
+            font-size: 20px;
+            margin-bottom: 100px;
+        }
     }
 
     .company_vw_2 {
@@ -233,6 +400,17 @@
             span {
                 color: #a637ea;
             }
+        }
+
+        @include small {
+            font-size: 17px;
+            width: 95%;
+            margin-left: 1rem;
+        }
+        @include extra-small {
+            font-size: 15px;
+            width: 95%;
+            margin-left: 1rem;
         }
     }
 }
@@ -253,13 +431,21 @@
             font-size: 35px;
             font-weight: 500;
         }
+
+        @include extra-small {
+            .company_vw2_text1 {
+                color: #42175d;
+                font-size: 25px;
+                font-weight: 500;
+            }
+        }
     }
     .company_vw_4 {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-bottom: 147px;
+        margin-bottom: 90px;
         .company_vw2_text2 {
             font-size: 30px;
             font-weight: normal;
@@ -279,6 +465,18 @@
                     padding-right: 53px;
                 }
             }
+
+            @include extra-small {
+                font-size: 23px;
+                width: 315px;
+                height: 315px;
+                div {
+                    padding-top: 110px;
+                }
+            }
+        }
+        @include extra-small {
+            margin-bottom: 40px;
         }
     }
     .company_vw_5 {
@@ -291,12 +489,16 @@
             width: 317px;
             margin-left: 50px;
             margin-right: 50px;
+            margin-top: 34px;
             .company_vw_5_title {
                 color: #42175d;
                 font-size: 30px;
                 font-weight: 500;
                 margin-bottom: 18px;
                 text-align: left;
+                @include extra-small {
+                    font-size: 20px;
+                }
             }
             .company_vw_5_content {
                 color: #42175d;
@@ -304,6 +506,16 @@
                 font-weight: 400;
                 margin-bottom: 70px;
                 text-align: left;
+                @include medium {
+                    margin-bottom: 20px;
+                }
+                @include small {
+                    margin-bottom: 20px;
+                }
+                @include extra-small {
+                    margin-bottom: 10px;
+                    font-size: 15px;
+                }
             }
             .company_vw_5_extraContent {
                 color: #42175d;
@@ -311,6 +523,12 @@
                 font-weight: 400;
                 text-align: left;
             }
+            @include extra-small {
+                margin-top: 20px;
+            }
+        }
+        @include extra-small {
+            margin-bottom: 50px;
         }
     }
 }
@@ -331,10 +549,12 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-
     font-size: 50px;
     color: #ffffff;
     font-weight: bold;
+    @include extra-small {
+        font-size: 35px;
+    }
 }
 
 // Guide
@@ -365,6 +585,12 @@
     span {
         font-size: 22px;
     }
+    @include extra-small {
+        font-size: 35px;
+        span {
+            font-size: 15px;
+        }
+    }
 }
 
 // Teachers
@@ -385,10 +611,12 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-
     font-size: 50px;
     color: #ffffff;
     font-weight: bold;
+    @include extra-small {
+        font-size: 35px;
+    }
 }
 
 .teachersDetail {
@@ -407,15 +635,42 @@
         margin-bottom: 40px;
         margin-right: 91px;
     }
-
+    @include small {
+        .teachersName {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 2px;
+        }
+        .teachersPais {
+            font-size: 17px;
+            font-weight: bold;
+            margin-bottom: 2px;
+        }
+        .teachersDesc {
+            margin-bottom: 20px;
+            margin-right: 30px;
+            font-size: 17px;
+        }
+    }
     @include extra-small {
         display: flex;
         flex-direction: column;
         align-items: center;
-
+        .teachersName {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 2px;
+        }
+        .teachersPais {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 27px;
+        }
         .teachersDesc {
             margin-right: 40px;
             margin-left: 40px;
+            font-size: 14px;
+            margin-bottom: 10px;
         }
     }
 }
@@ -437,10 +692,12 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-
     font-size: 50px;
     color: #ffffff;
     font-weight: bold;
+    @include extra-small {
+        font-size: 35px;
+    }
 }
 .rest_first_vw_review_reviewAfter {
     background-color: rgba(0, 0, 0, 0.7);
@@ -499,7 +756,12 @@
 
     .ReviewWritingView_container {
         margin: 90px 0px 20px 0px;
-
+        @include small {
+            margin: 50px 0px 20px 0px;
+        }
+        @include extra-small {
+            margin: 30px 0px 20px 0px;
+        }
         .reviewWritingView_h2 {
             color: #42175d;
             font-size: 30px;
@@ -508,6 +770,12 @@
 
             span {
                 font-weight: bold;
+            }
+            @include small {
+                font-size: 24px;
+            }
+            @include extra-small {
+                font-size: 17px;
             }
         }
         .reviewWritingView_h3 {
@@ -525,6 +793,20 @@
                 font-size: 19px;
                 color: #171717;
             }
+            @include small {
+                font-size: 17px;
+                div {
+                    font-size: 14px;
+                    color: #171717;
+                }
+            }
+            @include extra-small {
+                font-size: 14px;
+                div {
+                    font-size: 10px;
+                    color: #171717;
+                }
+            }
         }
 
         // Review - ReviewWritingForm
@@ -537,6 +819,12 @@
                 line-height: 50px;
                 padding-left: 10px;
                 font-size: 20px;
+                @include small {
+                    font-size: 17px;
+                }
+                @include extra-small {
+                    font-size: 14px;
+                }
             }
             .ReviewWriting_input_content {
                 height: 616px;
@@ -546,6 +834,14 @@
                 padding-left: 10px;
                 font-size: 20px;
                 vertical-align: top;
+                @include small {
+                    font-size: 17px;
+                    height: 416px;
+                }
+                @include extra-small {
+                    font-size: 14px;
+                    height: 316px;
+                }
             }
             .ReviewWriting_input_btn_form {
                 text-align: right;
@@ -559,6 +855,16 @@
                     border: 0;
                     outline: none;
                     cursor: pointer;
+                    @include small {
+                        width: 100px;
+                        height: 40px;
+                        font-size: 17px;
+                    }
+                    @include extra-small {
+                        width: 70px;
+                        height: 34px;
+                        font-size: 13px;
+                    }
                 }
                 // Review Update
                 .ReviewUpdate_input_btn {
@@ -571,6 +877,16 @@
                     border: 0;
                     outline: none;
                     cursor: pointer;
+                    @include small {
+                        width: 100px;
+                        height: 40px;
+                        font-size: 17px;
+                    }
+                    @include extra-small {
+                        width: 70px;
+                        height: 34px;
+                        font-size: 13px;
+                    }
                 }
             }
         }
@@ -584,6 +900,16 @@
             border: 0;
             outline: none;
             cursor: pointer;
+            @include small {
+                width: 100px;
+                height: 40px;
+                font-size: 17px;
+            }
+            @include extra-small {
+                width: 70px;
+                height: 34px;
+                font-size: 13px;
+            }
         }
 
         .reviewRead_box {
@@ -592,11 +918,25 @@
                 font-weight: bold;
                 margin-bottom: 60px;
                 text-align: center;
+                @include small {
+                    font-size: 23px;
+                    margin-bottom: 35px;
+                }
+                @include extra-small {
+                    font-size: 17px;
+                    margin-bottom: 20px;
+                }
             }
             .reviewRead_detail {
                 font-size: 18px;
                 color: #707070;
                 margin-bottom: 9px;
+                @include small {
+                    font-size: 12px;
+                }
+                @include extra-small {
+                    font-size: 8px;
+                }
                 .reviewRead_detail_name {
                     margin-left: 5px;
                     margin-right: 50px;
@@ -619,6 +959,16 @@
                     font-size: 20px;
                     color: #171717;
                     text-align: left;
+                    @include small {
+                        margin-top: 34px;
+                        margin-bottom: 34px;
+                        font-size: 15px;
+                    }
+                    @include extra-small {
+                        margin-top: 20px;
+                        margin-bottom: 20px;
+                        font-size: 11px;
+                    }
                 }
             }
         }
@@ -635,6 +985,16 @@
                 margin: 5px;
                 outline: none;
                 cursor: pointer;
+                @include small {
+                    width: 80px;
+                    height: 40px;
+                    font-size: 18px;
+                }
+                @include extra-small {
+                    width: 50px;
+                    height: 30px;
+                    font-size: 14px;
+                }
             }
             .reviewRead_btn_delete {
                 background-color: transparent;
@@ -653,7 +1013,15 @@
 .ReviewMainView {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
-
+    @include medium {
+        grid-template-columns: 1fr 6fr 1fr;
+    }
+    @include small {
+        grid-template-columns: 1fr 8fr 1fr;
+    }
+    @include extra-small {
+        grid-template-columns: 1fr 14fr 1fr;
+    }
     .review_container {
         margin-top: 127px;
 
@@ -670,6 +1038,15 @@
                     font-size: 20px;
                     font-weight: bold;
                     white-space: nowrap;
+                    @include medium {
+                        font-size: 16px;
+                    }
+                    @include small {
+                        font-size: 14px;
+                    }
+                    @include extra-small {
+                        font-size: 12px;
+                    }
                 }
             }
             .review_line {
@@ -699,6 +1076,15 @@
                     text-overflow: ellipsis;
                     white-space: nowrap;
                 }
+                @include medium {
+                    font-size: 14px;
+                }
+                @include small {
+                    font-size: 12px;
+                }
+                @include extra-small {
+                    font-size: 10px;
+                }
             }
         }
         .review_writing_btn_form {
@@ -715,6 +1101,16 @@
                 cursor: pointer;
                 i {
                     padding-right: 15px;
+                }
+                @include small {
+                    font-size: 16px;
+                    width: 100px;
+                    height: 35px;
+                }
+                @include extra-small {
+                    font-size: 13px;
+                    width: 80px;
+                    height: 30px;
                 }
             }
         }
@@ -747,6 +1143,16 @@
                 width: 33px;
                 height: 33px;
                 text-align: center;
+                @include small {
+                    font-size: 16px;
+                    width: 27px;
+                    height: 27px;
+                }
+                @include extra-small {
+                    font-size: 13px;
+                    width: 21px;
+                    height: 21px;
+                }
             }
         }
         .review_search_container {
@@ -830,6 +1236,9 @@
         font-size: 50px;
         color: #42175d;
         font-weight: bold;
+        @include extra-small {
+            font-size: 35px;
+        }
     }
 }
 
@@ -1454,6 +1863,12 @@
                 font-size: 60px;
                 text-align: right;
                 margin-bottom: 6px;
+                @include small {
+                    font-size: 48px;
+                }
+                @include extra-small {
+                    font-size: 33px;
+                }
             }
             .classGuide_vw_subtitle {
                 color: #42175d;
@@ -1461,6 +1876,9 @@
                 font-size: 40px;
                 text-align: right;
                 margin-bottom: 40px;
+                @include extra-small {
+                    font-size: 27px;
+                }
             }
             .classGuide_vw_contents {
                 color: #333333;
@@ -1469,6 +1887,13 @@
                 line-height: 40px;
                 text-align: right;
                 margin-bottom: 24px;
+                @include small {
+                    font-size: 20px;
+                }
+                @include extra-small {
+                    font-size: 13px;
+                    margin-bottom: 0px;
+                }
             }
             .classGuide_vw_btn_div {
                 text-align: right;
@@ -1483,6 +1908,12 @@
                 border: 0;
                 outline: none;
                 cursor: pointer;
+                @include small {
+                    font-size: 20px;
+                }
+                @include extra-small {
+                    font-size: 13px;
+                }
             }
 
             .classGuide_vw_title_2 {
@@ -1491,6 +1922,12 @@
                 font-size: 60px;
                 text-align: left;
                 margin-bottom: 6px;
+                @include small {
+                    font-size: 48px;
+                }
+                @include extra-small {
+                    font-size: 33px;
+                }
             }
             .classGuide_vw_subtitle_2 {
                 color: #42175d;
@@ -1498,6 +1935,9 @@
                 font-size: 40px;
                 text-align: left;
                 margin-bottom: 40px;
+                @include extra-small {
+                    font-size: 27px;
+                }
             }
             .classGuide_vw_contents_2 {
                 color: #333333;
@@ -1506,6 +1946,13 @@
                 line-height: 40px;
                 text-align: left;
                 margin-bottom: 24px;
+                @include small {
+                    font-size: 20px;
+                }
+                @include extra-small {
+                    font-size: 13px;
+                    margin-bottom: 0px;
+                }
             }
             .classGuide_vw_btn_div_2 {
                 text-align: left;
@@ -1520,12 +1967,32 @@
                 border: 0;
                 outline: none;
                 cursor: pointer;
+                @include small {
+                    font-size: 20px;
+                }
+                @include extra-small {
+                    font-size: 13px;
+                }
             }
         }
         .classGuide_vw_img {
             width: 500px;
             height: 360px;
             margin: 0px 90px 0px 90px;
+            @include small {
+                width: 410px;
+                height: 270px;
+            }
+            @include extra-small {
+                width: 310px;
+                height: 200px;
+            }
+        }
+        @include small {
+            margin: 30px 0px 30px 0px;
+        }
+        @include extra-small {
+            margin: 10px 0px 10px 0px;
         }
     }
 }
