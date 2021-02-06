@@ -722,12 +722,24 @@
     font-size: 50px;
     color: #ffffff;
     font-weight: bold;
+    @include small {
+        font-size: 40px;
+    }
+    @include extra-small {
+        font-size: 30px;
+    }
 }
 .rest_first_vw_review_2_reviewAfter {
     font-size: 25px;
     color: #ffffff;
     font-weight: normal;
     margin-top: 20px;
+    @include small {
+        font-size: 20px;
+    }
+    @include extra-small {
+        font-size: 15px;
+    }
 }
 
 // Review - ReviewAfterView
@@ -746,6 +758,16 @@
         border: 0;
         outline: none;
         cursor: pointer;
+        @include small {
+            font-size: 20px;
+            width: 180px;
+            height: 50px;
+        }
+        @include extra-small {
+            font-size: 17px;
+            width: 150px;
+            height: 44px;
+        }
     }
 }
 
@@ -753,7 +775,12 @@
 .ReviewWritingView {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
-
+    @include small {
+        grid-template-columns: 1fr 7fr 1fr;
+    }
+    @include extra-small {
+        grid-template-columns: 1fr 13fr 1fr;
+    }
     .ReviewWritingView_container {
         margin: 90px 0px 20px 0px;
         @include small {
@@ -975,6 +1002,9 @@
         .reviewRead_btn_container {
             text-align: right;
             margin-bottom: 95px;
+            @include extra-small {
+                text-align: center;
+            }
             .reviewRead_btn {
                 width: 100px;
                 height: 50px;
@@ -991,9 +1021,9 @@
                     font-size: 18px;
                 }
                 @include extra-small {
-                    width: 50px;
-                    height: 30px;
-                    font-size: 14px;
+                    width: 55px;
+                    height: 35px;
+                    font-size: 13px;
                 }
             }
             .reviewRead_btn_delete {
@@ -1109,8 +1139,11 @@
                 }
                 @include extra-small {
                     font-size: 13px;
-                    width: 80px;
-                    height: 30px;
+                    width: 85px;
+                    height: 35px;
+                    i {
+                        padding-right: 7px;
+                    }
                 }
             }
         }
@@ -1711,6 +1744,12 @@
         cursor: pointer;
         outline: none;
         margin-top: 15px;
+        @include extra-small {
+            width: 270px;
+            max-width: 270px;
+            font-size: 16px;
+            height: 40px;
+        }
     }
     .authBtn_google {
         font-size: 19px;
@@ -1727,6 +1766,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        @include extra-small {
+            width: 270px;
+            max-width: 270px;
+            font-size: 16px;
+            height: 40px;
+        }
     }
 
     i {
@@ -1742,6 +1787,9 @@
 .authForm {
     display: flex;
     flex-direction: column;
+    @include extra-small {
+        align-items: center;
+    }
 
     .authInput {
         width: 480px;
@@ -1765,6 +1813,12 @@
         &.is-invalid:focus {
             outline: none;
         }
+        @include extra-small {
+            width: 270px;
+            max-width: 270px;
+            font-size: 12px;
+            height: 40px;
+        }
     }
     .authInput:focus {
         outline: 0.6px solid gray;
@@ -1786,6 +1840,12 @@
         margin-top: 10;
         cursor: pointer;
         outline: none;
+        @include extra-small {
+            width: 270px;
+            max-width: 270px;
+            font-size: 16px;
+            height: 40px;
+        }
     }
 }
 .authError {
@@ -1810,10 +1870,16 @@
         text-decoration: underline;
         margin-left: 5px;
     }
+    @include extra-small {
+        font-size: 13px;
+    }
 }
 .authLine {
     font-size: 14px;
     color: #707070;
+    @include extra-small {
+        font-size: 11px;
+    }
 }
 .authPolicy {
     font-size: 15px;
@@ -1822,6 +1888,9 @@
     a {
         color: #707070;
         text-decoration: underline;
+    }
+    @include extra-small {
+        font-size: 8px;
     }
 }
 
