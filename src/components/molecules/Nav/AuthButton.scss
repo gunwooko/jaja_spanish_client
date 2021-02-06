@@ -41,6 +41,7 @@
         display: flex;
         flex-direction: column;
         // margin: 2rem;
+        align-items: center;
 
         p {
             display: none;
@@ -64,7 +65,7 @@
     @include extra-small {
         display: flex;
         flex-direction: column;
-
+        align-items: center;
         p {
             display: none;
         }

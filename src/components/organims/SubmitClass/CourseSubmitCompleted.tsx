@@ -128,10 +128,11 @@ const CourseSubmitCompleted: React.FunctionComponent<Props> = ({
           </div>
         </Div>
       </Div>
-
-      <Link to="/" onClick={() => window.scrollTo(0, 0)}>
-        <button className="CourseSubmit_next_btn">완료</button>
-      </Link>
+      <div className="CourseSubmit_btn_">
+        <Link to="/" onClick={() => window.scrollTo(0, 0)}>
+          <button className="CourseSubmit_next_btn">완료</button>
+        </Link>
+      </div>
       {/* <button className="CourseSubmit_prev_btn" onClick={editCourseSubmit}>
         수정하기
       </button> */}

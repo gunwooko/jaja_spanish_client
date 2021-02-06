@@ -300,68 +300,78 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ backInfoDisplay }: 
             <Div className="courseSubmit_box">
               <div className="courseSubmit_row">
                 <span className="courseSubmit_subtitle">한글이름</span>
-                <input
-                  name="userKoreanName"
-                  required
-                  value={userKoreanName}
-                  onChange={onChange}
-                  className={`courseSubmit_input ${confirmClassName()}`}
-                  type="text"
-                  placeholder=""
-                />
-                {renderNameFeedbackMessage()}
+                <div className="courseSubmit_input_display">
+                  <input
+                    name="userKoreanName"
+                    required
+                    value={userKoreanName}
+                    onChange={onChange}
+                    className={`courseSubmit_input ${confirmClassName()}`}
+                    type="text"
+                    placeholder=""
+                  />
+                  {renderNameFeedbackMessage()}
+                </div>
               </div>
               <div className="courseSubmit_row">
                 <span className="courseSubmit_subtitle">영문이름</span>
-                <input
-                  name="userEnglishName"
-                  required
-                  value={userEnglishName}
-                  onChange={onChange}
-                  className={`courseSubmit_input ${confirmUserEngNameClassName()}`}
-                  type="text"
-                  placeholder=""
-                />
-                {renderEngNameFeedbackMessage()}
+                <div className="courseSubmit_input_display">
+                  <input
+                    name="userEnglishName"
+                    required
+                    value={userEnglishName}
+                    onChange={onChange}
+                    className={`courseSubmit_input ${confirmUserEngNameClassName()}`}
+                    type="text"
+                    placeholder=""
+                  />
+                  {renderEngNameFeedbackMessage()}
+                </div>
               </div>
               <div className="courseSubmit_row">
                 <span className="courseSubmit_subtitle">휴대폰번호</span>
-                <input
-                  name="phoneNumber"
-                  required
-                  value={phoneNumber}
-                  onChange={onChange}
-                  className={`courseSubmit_input ${confirmPhoneNumberClassName()}`}
-                  type="text"
-                  placeholder=""
-                />
-                {renderPhoneNumberFeedbackMessage()}
+                <div className="courseSubmit_input_display">
+                  <input
+                    name="phoneNumber"
+                    required
+                    value={phoneNumber}
+                    onChange={onChange}
+                    className={`courseSubmit_input ${confirmPhoneNumberClassName()}`}
+                    type="text"
+                    placeholder=""
+                  />
+                  {renderPhoneNumberFeedbackMessage()}
+                </div>
               </div>
               <div className="courseSubmit_row">
                 <span className="courseSubmit_subtitle">스카이프 ID</span>
-                <input
-                  name="userSkypeID"
-                  required
-                  value={userSkypeID}
-                  onChange={onChange}
-                  className={`courseSubmit_input ${confirmserSkypeIDClassName()}`}
-                  type="text"
-                  placeholder=""
-                />
-                {renderUserSkypeIDFeedbackMessage()}
+                <div className="courseSubmit_input_display">
+                  <input
+                    name="userSkypeID"
+                    required
+                    value={userSkypeID}
+                    onChange={onChange}
+                    className={`courseSubmit_input ${confirmserSkypeIDClassName()}`}
+                    type="text"
+                    placeholder=""
+                  />
+                  {renderUserSkypeIDFeedbackMessage()}
+                </div>
               </div>
               <div className="courseSubmit_row">
                 <span className="courseSubmit_subtitle">수업희망 요일/시간대</span>
-                <input
-                  name="desiredDaysAndHours"
-                  required
-                  value={desiredDaysAndHours}
-                  onChange={onChange}
-                  className={`courseSubmit_input ${confirmDesiredDaysAndHoursClassName()}`}
-                  type="text"
-                  placeholder=""
-                />
-                {renderDesiredDaysAndHoursFeedbackMessage()}
+                <div className="courseSubmit_input_display">
+                  <input
+                    name="desiredDaysAndHours"
+                    required
+                    value={desiredDaysAndHours}
+                    onChange={onChange}
+                    className={`courseSubmit_input ${confirmDesiredDaysAndHoursClassName()}`}
+                    type="text"
+                    placeholder=""
+                  />
+                  {renderDesiredDaysAndHoursFeedbackMessage()}
+                </div>
               </div>
               <span className="courseSubmit_mini_notice">
                 * 수월한 매칭을 위해 가능하신 모든 요일과 시간대를 넓게 선택해주세요. (예: 월수금 오후 6~9시)
@@ -388,47 +398,59 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ backInfoDisplay }: 
               <Div className="courseSubmit_row">
                 <span className="courseSubmit_subtitle">수강생 연령대</span>
                 <Div className="courseSubmit_input_box">
-                  <input
-                    required
-                    className="courseSubmit_input"
-                    type="radio"
-                    name="userAge"
-                    onChange={onChange}
-                    value="성인"
-                  />
-                  <label htmlFor="성인">성인</label>
-                  <input
-                    className="courseSubmit_input"
-                    type="radio"
-                    name="userAge"
-                    onChange={onChange}
-                    value="중/고등생"
-                  />
-                  <label htmlFor="중/고등생">중/고등생</label>
-                  <input
-                    className="courseSubmit_input"
-                    type="radio"
-                    name="userAge"
-                    onChange={onChange}
-                    value="초등고학년(4~6학년)"
-                  />
-                  <label htmlFor="초등고학년(4~6학년)">초등고학년(4~6학년)</label>
-                  <input
-                    className="courseSubmit_input"
-                    type="radio"
-                    name="userAge"
-                    onChange={onChange}
-                    value="초등저학년(1~3학년)"
-                  />
-                  <label htmlFor="초등저학년(1~3학년)">초등저학년(1~3학년)</label>
-                  <input
-                    className="courseSubmit_input"
-                    type="radio"
-                    name="userAge"
-                    onChange={onChange}
-                    value="초등생 미만"
-                  />
-                  <label htmlFor="초등생 미만">초등생 미만</label>
+                  <div className="courseSubmit_input_display_age">
+                    <div>
+                      <input
+                        required
+                        className="courseSubmit_input"
+                        type="radio"
+                        name="userAge"
+                        onChange={onChange}
+                        value="성인"
+                      />
+                      <label htmlFor="성인">성인</label>
+                    </div>
+                    <div>
+                      <input
+                        className="courseSubmit_input"
+                        type="radio"
+                        name="userAge"
+                        onChange={onChange}
+                        value="중/고등생"
+                      />
+                      <label htmlFor="중/고등생">중/고등생</label>
+                    </div>
+                    <div>
+                      <input
+                        className="courseSubmit_input"
+                        type="radio"
+                        name="userAge"
+                        onChange={onChange}
+                        value="초등고학년(4~6학년)"
+                      />
+                      <label htmlFor="초등고학년(4~6학년)">초등고학년(4~6학년)</label>
+                    </div>
+                    <div>
+                      <input
+                        className="courseSubmit_input"
+                        type="radio"
+                        name="userAge"
+                        onChange={onChange}
+                        value="초등저학년(1~3학년)"
+                      />
+                      <label htmlFor="초등저학년(1~3학년)">초등저학년(1~3학년)</label>
+                    </div>
+                    <div>
+                      <input
+                        className="courseSubmit_input"
+                        type="radio"
+                        name="userAge"
+                        onChange={onChange}
+                        value="초등생 미만"
+                      />
+                      <label htmlFor="초등생 미만">초등생 미만</label>
+                    </div>
+                  </div>
                 </Div>
               </Div>
               <Div className="courseSubmit_row">
@@ -516,33 +538,39 @@ const CourseSubmit: React.FunctionComponent<ChildProps> = ({ backInfoDisplay }: 
               </Div>
               <div className="courseSubmit_row">
                 <span className="courseSubmit_subtitle">카카오톡 ID</span>
-                <input
-                  className={`courseSubmit_input_opt ${confirmUserKaTalkIDClassName()}`}
-                  type="text"
-                  placeholder="(선택) 국내 연락처가 없으신 분들은 카카오톡으로 연락을 드려요."
-                  name="userKaTalkID"
-                  value={userKaTalkID}
-                  onChange={onChange}
-                />
-                {renderUserKaTalkIDFeedbackMessage()}
+                <div className="courseSubmit_input_display">
+                  <input
+                    className={`courseSubmit_input_opt ${confirmUserKaTalkIDClassName()}`}
+                    type="text"
+                    placeholder="(선택) 국내 연락처가 없으신 분들은 카카오톡으로 연락을 드려요."
+                    name="userKaTalkID"
+                    value={userKaTalkID}
+                    onChange={onChange}
+                  />
+                  {renderUserKaTalkIDFeedbackMessage()}
+                </div>
               </div>
               <div className="courseSubmit_row">
                 <span className="courseSubmit_subtitle">현금영수증 발급번호</span>
-                <input
-                  className={`courseSubmit_input_opt ${confirmPhoneNumberForReceiptClassName()}`}
-                  type="text"
-                  placeholder="(선택) 미기재시 국세청 번호로 발급됩니다."
-                  name="phoneNumberForReceipt"
-                  value={phoneNumberForReceipt}
-                  onChange={onChange}
-                />
-                {renderPhoneNumberForReceiptFeedbackMessage()}
+                <div className="courseSubmit_input_display">
+                  <input
+                    className={`courseSubmit_input_opt ${confirmPhoneNumberForReceiptClassName()}`}
+                    type="text"
+                    placeholder="(선택) 미기재시 국세청 번호로 발급됩니다."
+                    name="phoneNumberForReceipt"
+                    value={phoneNumberForReceipt}
+                    onChange={onChange}
+                  />
+                  {renderPhoneNumberForReceiptFeedbackMessage()}
+                </div>
               </div>
             </Div>
-            <input type="submit" value="제출하기" className="CourseSubmit_next_btn"></input>
-            <button onClick={backInfoDisplay} className="CourseSubmit_prev_btn">
-              이전
-            </button>
+            <div className="CourseSubmit_btn_">
+              <input type="submit" value="제출하기" className="CourseSubmit_next_btn"></input>
+              <button onClick={backInfoDisplay} className="CourseSubmit_prev_btn">
+                이전
+              </button>
+            </div>
           </form>
         </>
       ) : (
