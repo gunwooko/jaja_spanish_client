@@ -122,7 +122,9 @@ const ApplyToPostponeClass: React.FunctionComponent<Props> = ({
           <span className="ApplyToPostponeClass_info">
             *수업유형당 연기 가능 회수: 주 2회 수업: 월 2회 / 주 3회 이상 수업: 월 3회
           </span>
-          <input type="submit" value="연기신청" className="ApplyToPostponeClass_btn" />
+          <div className="ApplyToPostponeClass_btn_container">
+            <input type="submit" value="연기신청" className="ApplyToPostponeClass_btn" />
+          </div>
         </form>
       </Div>
       <div></div>
