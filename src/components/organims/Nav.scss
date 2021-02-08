@@ -20,13 +20,13 @@ $backgroundColor: #42175d;
         height: 80px;
     }
     @include small {
-        background-color: salmon;
+        background-color: $backgroundColor;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
     @include extra-small {
-        background-color: salmon;
+        background-color: $backgroundColor;
         display: flex;
         flex-direction: column;
         align-items: center;
