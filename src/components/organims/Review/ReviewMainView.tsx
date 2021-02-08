@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Div from 'components/atoms/Div';
-import useGetUserObject from 'Hooks/useGetUserObject';
+// import useGetUserObject from 'Hooks/useGetUserObject';
 import { Link } from 'react-router-dom';
 // import ReviewSearching from './ReviewRead/ReviewSearching';
 import ReviewList from 'containers/Review/ReviewList';
 import ReviewPagination from './ReviewRead/ReviewPagination';
 import { dbService } from 'fbase';
+import useLoggedInCheck from 'Hooks/useLoggedInCheck';
 
 const ReviewMainView: React.FunctionComponent = () => {
   // eslint-disable-next-line
@@ -13,7 +14,8 @@ const ReviewMainView: React.FunctionComponent = () => {
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(10);
-  const userObj = useGetUserObject();
+  // const userObj = useGetUserObject();
+  const isLoggedIn = useLoggedInCheck();
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -37,7 +39,7 @@ const ReviewMainView: React.FunctionComponent = () => {
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
-
+  // console.log((userObj));
   return (
     <Div className="ReviewMainView">
       <div></div>
@@ -52,7 +54,7 @@ const ReviewMainView: React.FunctionComponent = () => {
           </Div>
           <ReviewList posts={currentPosts} loading={loading} />
         </Div>
-        {userObj ? (
+        {isLoggedIn ? (
           <Div className="review_writing_btn_form">
             <Link to="/review/writing">
               <button className="review_writing_btn">
