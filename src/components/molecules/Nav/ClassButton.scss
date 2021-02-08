@@ -31,6 +31,7 @@ $backgroundColor: #42175d;
         }
     }
     @include small {
+        display: none;
         button {
             color: $backgroundColor;
             background-color: yellow;
@@ -45,8 +46,12 @@ $backgroundColor: #42175d;
             margin-bottom: 1rem;
             margin-top: 0.5rem;
         }
+        &.active {
+            display: flex;
+        }
     }
     @include extra-small {
+        display: none;
         button {
             color: $backgroundColor;
             background-color: yellow;
@@ -60,6 +65,9 @@ $backgroundColor: #42175d;
             cursor: pointer;
             margin-bottom: 1rem;
             margin-top: 0.5rem;
+        }
+        &.active {
+            display: flex;
         }
     }
 }
