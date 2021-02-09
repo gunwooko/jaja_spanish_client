@@ -31,7 +31,7 @@ const App: React.FunctionComponent = () => (
       <Route path="/review/:id/update" component={ReviewUpdateView}></Route>
       <Route path="/fqa" component={Faq}></Route>
       <Route path="/login" component={LogIn}></Route>
-      <Route path="/mypage" component={MyPage}></Route>
+      <Route path="/mypage" exact component={MyPage}></Route>
       <Route path="/policy/privacy" component={PrivacyPolicy}></Route>
       <Route path="/policy/terms" component={TermsPolicy}></Route>
       <Route path="/submitclass" exact component={SubmitClass}></Route>

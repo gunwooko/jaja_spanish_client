@@ -87,12 +87,12 @@ const MyDetails: React.FunctionComponent<Props> = ({ name_kr, name_en, email, po
         await dbService.collection('users').doc(`${email}`).update({ userEngName: '영문 이름을 적어주세요' });
         onEngNameEditMode();
         window.location.replace('/mypage'); // 새로고침
-        history.replace('/mypage');
+        // history.replace('/mypage');
       } else {
         await dbService.collection('users').doc(`${email}`).update({ userEngName: engName });
         onEngNameEditMode();
         window.location.replace('/mypage'); // 새로고침
-        history.replace('/mypage');
+        // history.replace('/mypage');
       }
     } catch (err) {
       console.error(err.message);
