@@ -2,6 +2,7 @@
   "name": "jaja-spanish-client",
   "version": "0.1.0",
   "private": true,
+  "keywords":["spanish","스페인어","화상스페인어","전화스페인어", "스페인어공부", "스페인어독학", "스페인어회화", "스페인여행","남미여행"],
   "dependencies": {
     "@babel/core": "7.12.3",
     "@pmmmwh/react-refresh-webpack-plugin": "0.4.2",
@@ -176,5 +177,6 @@
     "presets": [
       "react-app"
     ]
-  }
+  },
+  "homepage":"./"
 }

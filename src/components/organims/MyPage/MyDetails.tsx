@@ -33,32 +33,36 @@ const MyDetails: React.FunctionComponent<Props> = ({ name_kr, name_en, email, po
     }
   };
   const onDeleteMode = async () => {
-    if (userObj.loginWith === 'google') {
-      const provider = new firebaseInstance.auth.GoogleAuthProvider();
-      await authService.currentUser?.reauthenticateWithPopup(provider);
-      await dbService
-        .collection('users')
-        .doc('deleted')
-        .collection('user-who-left')
-        .doc(`${userObj.email}`)
-        .set(userObj);
-      await dbService.collection('users').doc(`${userObj.email}`).delete();
-      await authService.currentUser?.delete();
-      history.push('/');
-    } else if (userObj.loginWith === 'facebook') {
-      const provider = new firebaseInstance.auth.FacebookAuthProvider();
-      await authService.currentUser?.reauthenticateWithPopup(provider);
-      await dbService
-        .collection('users')
-        .doc('deleted')
-        .collection('user-who-left')
-        .doc(`${userObj.email}`)
-        .set(userObj);
-      await dbService.collection('users').doc(`${userObj.email}`).delete();
-      await authService.currentUser?.delete();
-      history.push('/');
-    } else if (userObj.loginWith === 'email') {
-      setDeleteMode((prev) => !prev);
+    try {
+      if (userObj.loginWith === 'google') {
+        const provider = new firebaseInstance.auth.GoogleAuthProvider();
+        await authService.currentUser?.reauthenticateWithPopup(provider);
+        await dbService
+          .collection('users')
+          .doc('deleted')
+          .collection('user-who-left')
+          .doc(`${userObj.email}`)
+          .set(userObj);
+        await dbService.collection('users').doc(`${userObj.email}`).delete();
+        await authService.currentUser?.delete();
+        history.push('/');
+      } else if (userObj.loginWith === 'facebook') {
+        const provider = new firebaseInstance.auth.FacebookAuthProvider();
+        await authService.currentUser?.reauthenticateWithPopup(provider);
+        await dbService
+          .collection('users')
+          .doc('deleted')
+          .collection('user-who-left')
+          .doc(`${userObj.email}`)
+          .set(userObj);
+        await dbService.collection('users').doc(`${userObj.email}`).delete();
+        await authService.currentUser?.delete();
+        history.push('/');
+      } else if (userObj.loginWith === 'email') {
+        setDeleteMode((prev) => !prev);
+      }
+    } catch (err) {
+      console.error(err.message);
     }
   };
 
@@ -78,14 +82,20 @@ const MyDetails: React.FunctionComponent<Props> = ({ name_kr, name_en, email, po
   };
 
   const onEngNameChange = async () => {
-    if (engName.length === 0) {
-      await dbService.collection('users').doc(`${email}`).update({ userEngName: '영문 이름을 적어주세요' });
-      onEngNameEditMode();
-      window.location.replace('/mypage'); // 새로고침
-    } else {
-      await dbService.collection('users').doc(`${email}`).update({ userEngName: engName });
-      onEngNameEditMode();
-      window.location.replace('/mypage'); // 새로고침
+    try {
+      if (engName.length === 0) {
+        await dbService.collection('users').doc(`${email}`).update({ userEngName: '영문 이름을 적어주세요' });
+        onEngNameEditMode();
+        window.location.replace('/mypage'); // 새로고침
+        // history.replace('/mypage');
+      } else {
+        await dbService.collection('users').doc(`${email}`).update({ userEngName: engName });
+        onEngNameEditMode();
+        window.location.replace('/mypage'); // 새로고침
+        // history.replace('/mypage');
+      }
+    } catch (err) {
+      console.error(err.message);
     }
   };
   const doesPasswordIsCorrect = () => {
