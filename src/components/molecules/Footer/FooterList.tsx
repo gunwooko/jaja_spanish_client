@@ -23,7 +23,7 @@ const FooterList: React.FunctionComponent = () => (
       {/* <Li className="footer_li_style" text="수강료"></Li> */}
     </Div>
     <Div className="footerList" text="교정서비스">
-      <Link to="/" style={{ textDecoration: 'none' }} onClick={() => alert('카톡체널로 문의해주시기 바랍니다 :)')}>
+      <Link to="/" style={{ textDecoration: 'none' }} onClick={() => alert('깔깔스페인어 카톡 채널로 문의해주세요')}>
         <Li className="footer_li_style" text="첨삭료"></Li>
       </Link>
     </Div>
