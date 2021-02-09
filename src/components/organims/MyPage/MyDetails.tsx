@@ -26,7 +26,7 @@ const MyDetails: React.FunctionComponent<Props> = ({ name_kr, name_en, email, po
 
   const onEngNameEditMode = () => setEngNameEditMode((prev) => !prev);
   const onPasswordEditMode = () => {
-    if (userObj.loginWith === ('facebook' || 'google')) {
+    if (userObj.loginWith === 'facebook' || userObj.loginWith === 'google') {
       alert('페이스북/구글 로그인을 한 경우 비밀번호 변경이 불가능합니다.');
     } else if (userObj.loginWith === 'email') {
       setPasswordEditMode((prev) => !prev);
