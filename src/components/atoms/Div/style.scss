@@ -290,7 +290,7 @@
     .fourth_vw_price_title_1 {
         font-size: 30px;
         margin: 50px 0px 181px 40px;
-
+        font-weight: normal;
         @include medium {
             font-size: 23px;
             margin: 50px 0px 181px 40px;
@@ -308,6 +308,7 @@
     .fourth_vw_price_title_2 {
         font-size: 30px;
         margin: 50px 0px 90px 40px;
+        font-weight: normal;
 
         @include medium {
             font-size: 23px;
