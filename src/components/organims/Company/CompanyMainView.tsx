@@ -25,7 +25,7 @@ const CompanyMainView: React.FunctionComponent = () => (
           지불해야만 배울 수 있었다는 점입니다.
         </div>
         <div>
-          이러한 불편함과 답답함은 저만의 것이 아니었고, 이것을 해결하기 위해 &quot;깔깔 스페인어&quot;라는 공간을 직접
+          이러한 불편함과 답답함은 저만의 것이 아니었고, 이것을 해결하기 위해 &quot;깔깔스페인어&quot;라는 공간을 직접
           만들게 되었습니다.
           <br />
           <span>교육이 사치가 되지 않도록, 모두가 스페인어의 재미와 매력을 알 수 있도록 늘 노력하고자 합니다.</span>
@@ -43,7 +43,7 @@ const CompanyMainView: React.FunctionComponent = () => (
       <Div className="company_vw_4">
         <Div className="company_vw2_text2">
           <div>
-            <span>누구나</span> 재미있게 <span>스페인어</span>를 <br />
+            <span>누구나</span> 재미있게 <span>스페인어를</span> <br />
             <span className="company_span_text_1">마음편히</span>
             <br />
             <span className="company_span_text_1">부담없이</span>
