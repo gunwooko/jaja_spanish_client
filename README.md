@@ -4,6 +4,7 @@
 
 ![깔스시연영상1](https://user-images.githubusercontent.com/39975889/110023351-718ff100-7d70-11eb-90c0-13c9e3e4773c.gif)
 
+[깔깔스페인어로 바로가기](https://bit.ly/3jkKfBZ)
 
 ## DEV
 
