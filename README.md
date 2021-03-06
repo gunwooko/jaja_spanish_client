@@ -7,6 +7,8 @@
 [깔깔스페인어로 바로가기](https://bit.ly/3jkKfBZ)
 
 ## DEV
+### Stack
+React (Hooks), TypeScript, Firebase(Authentication, Cloud Firestore, Hosting), SCSS
 
 ### Folder Structure
 ![폴더1](https://user-images.githubusercontent.com/39975889/110019657-10661e80-7d6c-11eb-9c20-4d18f3c0f9db.png)
