@@ -1,0 +1,17 @@
+@import '../../styles/mixin';
+
+.navbar_toggleBtn {
+    position: absolute;
+    font-size: 25px;
+    top: 22px;
+    right: 35px;
+    color: #fcff02;
+    display: none;
+
+    @include small {
+        display: block;
+    }
+    @include extra-small {
+        display: block;
+    }
+}

@@ -1,0 +1,83 @@
+@import '../styles/mixin';
+
+$backgroundColor: #42175d;
+
+.Nav {
+    @include large {
+        background-color: $backgroundColor;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 80px;
+    }
+    @include medium {
+        background-color: $backgroundColor;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 80px;
+    }
+    @include small {
+        background-color: $backgroundColor;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    @include extra-small {
+        background-color: $backgroundColor;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.Nav.company {
+    background-color: transparent;
+    background-image: url(https://media.vlpt.us/images/gunwooko/post/9f0ddac6-6f2e-4a2d-bb61-730fb6fd6779/pexels-leah-kelley-3935702.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
+.Nav.guide {
+    background-color: transparent;
+    background-image: url(https://media.vlpt.us/images/gunwooko/post/740baef9-f2ee-4d56-9e0f-5e2eeba1f0b6/pexels-julia-m-cameron-4144923.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+    background-size: cover;
+    opacity: 0.9;
+}
+
+.Nav.teachers {
+    background-color: transparent;
+    background-image: url(https://media.vlpt.us/images/gunwooko/post/d0205317-1019-4e51-bbce-12a361bd0b6b/pexels-fauxels-3184405.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    opacity: 0.9;
+}
+
+.Nav.review {
+    background-color: transparent;
+    background-image: url(https://media.vlpt.us/images/gunwooko/post/9d5908f1-e408-4ce8-9cd1-d0ee4cc4b8c3/pexels-freestocksorg-64057.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    background-size: cover;
+    opacity: 0.87;
+}
+
+// .Nav.faq {
+//     background-color: transparent;
+//     background-image: url(https://media.vlpt.us/images/gunwooko/post/4eef4e22-a1bb-477b-a858-0fe1e7672a1c/pexels-ann-h-2789781.jpg);
+//     background-attachment: fixed;
+//     background-repeat: no-repeat;
+//     background-position: 50% 55%;
+//     background-size: cover;
+//     opacity: 0.8;
+// }

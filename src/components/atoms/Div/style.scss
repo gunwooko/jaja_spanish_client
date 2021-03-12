@@ -1,0 +1,2967 @@
+@import '../../styles/mixin';
+
+// Footer
+.footerList {
+    font-weight: bold;
+    margin: 0px 20px 20px 20px;
+    color: #171717;
+
+    @include large {
+        font-size: 20px;
+    }
+    @include medium {
+        font-size: 16px;
+    }
+    @include small {
+    }
+    @include extra-small {
+        // 햄버거 버튼 만들기
+        font-size: 14px;
+        margin: 0px 10px 20px 10px;
+    }
+}
+
+.footerList_BL {
+    font-weight: bold;
+    margin: 81px 20px 20px 0px;
+
+    @include large {
+        font-size: 20px;
+    }
+    @include medium {
+        font-size: 16px;
+    }
+    @include small {
+    }
+    @include extra-small {
+        // 햄버거 버튼 만들기
+    }
+}
+.footerList_BL_detail {
+    margin-bottom: 68px;
+}
+
+.div_footer_Info {
+    margin-left: 15px;
+    margin-bottom: 15px;
+    @include large {
+        font-size: 18px;
+    }
+    @include medium {
+    }
+    @include small {
+        font-size: 15px;
+    }
+    @include extra-small {
+        // 햄버거 버튼 만들기
+        font-size: 13px;
+    }
+}
+
+.kakao {
+    width: 24px;
+    height: 22px;
+    @include extra-small {
+        // 햄버거 버튼 만들기
+        width: 19px;
+        height: 17px;
+    }
+}
+
+// Home page
+.second_vw_title {
+    color: #171717;
+    @include large {
+        font-size: 40px;
+        width: 480px;
+        height: 118px;
+        font-weight: bold;
+        margin-bottom: 40px;
+        line-height: 59px;
+    }
+    @include medium {
+        font-size: 40px;
+        width: 480px;
+        height: 118px;
+        font-weight: bold;
+        margin-bottom: 40px;
+        line-height: 59px;
+    }
+    @include small {
+        font-weight: bold;
+        margin-bottom: 40px;
+        margin-top: 25px;
+        font-size: 35px;
+        line-height: 59px;
+    }
+    @include extra-small {
+        font-weight: bold;
+        margin-bottom: 40px;
+        margin-top: 25px;
+        font-size: 27px;
+        line-height: 59px;
+        // white-space: pre-wrap;
+    }
+}
+
+.second_vw_title2 {
+    // font-size: 40px;
+    // width: 552px;
+    // height: 118px;
+    // font-weight: bold;
+    // margin-bottom: 40px;
+    color: #171717;
+    @include large {
+        font-size: 40px;
+        width: 552px;
+        height: 118px;
+        font-weight: bold;
+        margin-bottom: 40px;
+        line-height: 59px;
+    }
+    @include medium {
+        font-size: 40px;
+        width: 552px;
+        height: 118px;
+        font-weight: bold;
+        margin-bottom: 40px;
+        line-height: 59px;
+    }
+    @include small {
+        font-weight: bold;
+        margin-bottom: 40px;
+        margin-top: 25px;
+        font-size: 35px;
+        line-height: 59px;
+    }
+    @include extra-small {
+        font-weight: bold;
+        margin-bottom: 40px;
+        margin-top: 25px;
+        font-size: 27px;
+        line-height: 59px;
+        // white-space: pre-wrap;
+    }
+}
+
+.second_vw_content {
+    color: #171717;
+    @include large {
+        font-size: 20px;
+        width: 557px;
+        margin-bottom: 24px;
+        line-height: 29px;
+    }
+    @include medium {
+        font-size: 20px;
+        width: 557px;
+        margin-bottom: 24px;
+        line-height: 29px;
+    }
+    @include small {
+        font-size: 20px;
+        // width: 80%;
+        // text-align: center;
+        line-height: 29px;
+    }
+    @include extra-small {
+        font-size: 14px;
+        // width: 100%;
+        // text-align: center;
+        line-height: 29px;
+    }
+
+    // .second_vw_content2 {
+    //     @include large {
+    //         font-size: 20px;
+    //     }
+    //     @include medium {
+    //         font-size: 20px;
+    //     }
+    //     @include small {
+    //         font-size: 20px;
+    //         width: 100%;
+    //         text-align: center;
+    //     }
+    //     @include extra-small {
+    //         font-size: 14px;
+    //         width: 100%;
+    //         text-align: center;
+    //     }
+    // }
+}
+
+.third_vw_1 {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 80px;
+    @include extra-small {
+        font-size: 25px;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+}
+
+.third_vw_2 {
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+    span {
+        color: #a637ea;
+    }
+    @include extra-small {
+        font-size: 25px;
+        text-align: center;
+        font-weight: bold;
+    }
+}
+
+.fourth_vw_28min {
+    @include large {
+        margin: 162px 20px 144px 0px;
+        height: 1118px;
+        width: 586px;
+    }
+    @include medium {
+        margin: 102px 10px 10px 10px;
+    }
+    @include small {
+        margin: 102px 10px 10px 10px;
+    }
+    @include extra-small {
+        margin: 102px 10px 10px 10px;
+    }
+}
+
+.fourth_vw_58min {
+    @include large {
+        margin: 162px 20px 144px 0px;
+        height: 1118px;
+        width: 586px;
+    }
+    @include medium {
+        margin: 102px 10px 10px 10px;
+    }
+    @include small {
+        margin: 102px 10px 10px 10px;
+    }
+    @include extra-small {
+        margin: 102px 10px 10px 10px;
+    }
+}
+
+.fourth_vw_body {
+    border-radius: 0px 0px 20px 20px;
+}
+
+.fourth_vw_title {
+    background-color: #42175d;
+    color: #ffffff;
+    font-size: 55px;
+    font-weight: bold;
+    padding: 85px 287px 45px 40px;
+    border-radius: 20px 20px 0px 0px;
+
+    @include medium {
+        font-size: 35px;
+        padding: 40px 40px 45px 40px;
+    }
+    @include small {
+        font-size: 35px;
+        padding: 40px 40px 45px 40px;
+    }
+
+    @include extra-small {
+        font-size: 27px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    span {
+        color: #fff337;
+    }
+}
+
+.fourth_vw_price {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .fourth_vw_price_title_1 {
+        font-size: 30px;
+        margin: 50px 0px 181px 40px;
+        font-weight: normal;
+        @include medium {
+            font-size: 23px;
+            margin: 50px 0px 181px 40px;
+        }
+        @include small {
+            margin: 50px 0px 90px 40px;
+            font-size: 20px;
+        }
+        @include extra-small {
+            margin: 40px 0px 50px 30px;
+            font-size: 15px;
+        }
+    }
+
+    .fourth_vw_price_title_2 {
+        font-size: 30px;
+        margin: 50px 0px 90px 40px;
+        font-weight: normal;
+
+        @include medium {
+            font-size: 23px;
+            margin: 50px 0px 90px 40px;
+        }
+        @include small {
+            margin: 50px 0px 30px 40px;
+            font-size: 20px;
+        }
+        @include extra-small {
+            margin: 40px 0px 25px 30px;
+            font-size: 15px;
+        }
+    }
+
+    .fourth_vw_price_disc_box_1 {
+        margin-top: 240px;
+        @include medium {
+            margin-top: 230px;
+            margin-right: 10px;
+        }
+        @include small {
+            margin-top: 220px;
+            margin-right: 10px;
+        }
+        @include extra-small {
+            margin-top: 170px;
+            margin-right: 10px;
+        }
+    }
+    .fourth_vw_price_disc_box_2 {
+        margin-top: 240px;
+        @include medium {
+            margin-top: 230px;
+            margin-right: 10px;
+        }
+        @include small {
+            margin-top: 220px;
+            margin-right: 10px;
+        }
+        @include extra-small {
+            margin-top: 170px;
+            margin-right: 10px;
+        }
+    }
+}
+
+.fifth_vw_1 {
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    @include extra-small {
+        font-size: 25px;
+    }
+}
+
+.fifth_vw_2 {
+    color: #ffffff;
+    font-size: 20px;
+    margin: 20px 0px 20px 0px;
+    text-align: center;
+    @include extra-small {
+        font-size: 20px;
+    }
+}
+
+// Company
+.company_vw_container_1 {
+    background-image: url(https://media.vlpt.us/images/gunwooko/post/3646a9bc-a731-497a-973b-cdf7f487dd43/undraw_instant_support_elxh@2x.png);
+
+    .company_vw_1 {
+        font-size: 40px;
+        font-weight: bold;
+        color: #42175d;
+        line-height: 200%;
+        margin-top: 150px;
+        margin-bottom: 180px;
+        div {
+            color: #171717;
+        }
+        @include medium {
+            font-size: 35px;
+        }
+        @include small {
+            font-size: 35px;
+        }
+        @include extra-small {
+            font-size: 20px;
+            margin-bottom: 100px;
+        }
+    }
+
+    .company_vw_2 {
+        font-size: 20px;
+        font-weight: 500;
+        color: #171717;
+        width: 1033px;
+        text-align: left;
+        line-height: 160%;
+        margin-bottom: 125px;
+        div {
+            margin-bottom: 20px;
+            span {
+                color: #a637ea;
+            }
+        }
+
+        @include small {
+            font-size: 17px;
+            width: 95%;
+            margin-left: 1rem;
+        }
+        @include extra-small {
+            font-size: 15px;
+            width: 95%;
+            margin-left: 1rem;
+        }
+    }
+}
+
+.company_vw_container_2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: hsla(0, 0%, 0%, 0.03);
+    align-self: stretch;
+
+    .company_vw_3 {
+        margin-bottom: 65px;
+        margin-top: 91px;
+
+        .company_vw2_text1 {
+            color: #42175d;
+            font-size: 35px;
+            font-weight: 500;
+        }
+
+        @include extra-small {
+            .company_vw2_text1 {
+                color: #42175d;
+                font-size: 25px;
+                font-weight: 500;
+            }
+        }
+    }
+    .company_vw_4 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 90px;
+        .company_vw2_text2 {
+            font-size: 30px;
+            font-weight: 300;
+            background-color: #a637ea;
+            color: #fcf8fe;
+            width: 415px;
+            height: 415px;
+            border: 0;
+            border-radius: 50% 50%;
+            div {
+                padding-top: 150px;
+                span {
+                    font-weight: 500;
+                }
+                .company_span_text_1 {
+                    font-weight: unset;
+                    padding-right: 53px;
+                }
+            }
+
+            @include extra-small {
+                font-size: 23px;
+                width: 315px;
+                height: 315px;
+                div {
+                    padding-top: 110px;
+                }
+            }
+        }
+        @include extra-small {
+            margin-bottom: 40px;
+        }
+    }
+    .company_vw_5 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 115px;
+        .company_vw_5_li {
+            width: 317px;
+            margin-left: 50px;
+            margin-right: 50px;
+            margin-top: 34px;
+            .company_vw_5_title {
+                color: #42175d;
+                font-size: 30px;
+                font-weight: 500;
+                margin-bottom: 18px;
+                text-align: left;
+                @include extra-small {
+                    font-size: 20px;
+                }
+            }
+            .company_vw_5_content {
+                color: #42175d;
+                font-size: 18px;
+                font-weight: 300;
+                margin-bottom: 70px;
+                text-align: left;
+                @include medium {
+                    margin-bottom: 20px;
+                }
+                @include small {
+                    margin-bottom: 20px;
+                }
+                @include extra-small {
+                    margin-bottom: 10px;
+                    font-size: 15px;
+                }
+            }
+            .company_vw_5_extraContent {
+                color: #42175d;
+                font-size: 14px;
+                font-weight: 300;
+                text-align: left;
+            }
+            @include extra-small {
+                margin-top: 20px;
+            }
+        }
+        @include extra-small {
+            margin-bottom: 50px;
+        }
+    }
+}
+
+.rest_first_vw_company_0 {
+    height: 491px;
+    background-image: url(https://media.vlpt.us/images/gunwooko/post/9f0ddac6-6f2e-4a2d-bb61-730fb6fd6779/pexels-leah-kelley-3935702.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+.rest_first_vw_company_1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 50px;
+    color: #ffffff;
+    font-weight: bold;
+    line-height: 74px;
+    @include extra-small {
+        font-size: 35px;
+    }
+}
+
+// Guide
+.rest_first_vw_guide_0 {
+    height: 491px;
+    background-image: url(https://media.vlpt.us/images/gunwooko/post/740baef9-f2ee-4d56-9e0f-5e2eeba1f0b6/pexels-julia-m-cameron-4144923.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+    background-size: cover;
+    opacity: 0.9;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    // z-index: -1;
+    // filter: blur(0.8px);
+}
+
+.rest_first_vw_guide_1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 50px;
+    color: #ffffff;
+    font-weight: bold;
+    line-height: 74px;
+
+    span {
+        font-size: 22px;
+    }
+    @include extra-small {
+        font-size: 35px;
+        span {
+            font-size: 15px;
+        }
+    }
+}
+
+// Teachers
+.rest_first_vw_teachers_0 {
+    height: 491px;
+    background-image: url(https://media.vlpt.us/images/gunwooko/post/d0205317-1019-4e51-bbce-12a361bd0b6b/pexels-fauxels-3184405.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    opacity: 0.9;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+.rest_first_vw_teachers_1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 50px;
+    color: #ffffff;
+    font-weight: bold;
+    line-height: 74px;
+    @include extra-small {
+        font-size: 35px;
+    }
+}
+
+.teachersDetail {
+    .teachersName {
+        color: #171717;
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 2px;
+    }
+    .teachersPais {
+        color: #171717;
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 27px;
+    }
+    .teachersDesc {
+        color: #171717;
+        font-size: 20px;
+        margin-bottom: 40px;
+        margin-right: 91px;
+    }
+    @include small {
+        .teachersName {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 2px;
+        }
+        .teachersPais {
+            font-size: 17px;
+            font-weight: bold;
+            margin-bottom: 2px;
+        }
+        .teachersDesc {
+            margin-bottom: 20px;
+            margin-right: 30px;
+            font-size: 17px;
+        }
+    }
+    @include extra-small {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .teachersName {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 2px;
+        }
+        .teachersPais {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 27px;
+        }
+        .teachersDesc {
+            margin-right: 40px;
+            margin-left: 40px;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+// Review
+.rest_first_vw_review_0 {
+    height: 491px;
+    background-image: url(https://media.vlpt.us/images/gunwooko/post/9d5908f1-e408-4ce8-9cd1-d0ee4cc4b8c3/pexels-freestocksorg-64057.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    background-size: cover;
+    opacity: 0.87;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+.rest_first_vw_review_1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 50px;
+    color: #ffffff;
+    font-weight: bold;
+    line-height: 74px;
+    @include extra-small {
+        font-size: 35px;
+    }
+}
+.rest_first_vw_review_reviewAfter {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.rest_first_vw_review_0_reviewAfter {
+    height: 400px;
+    background-image: url(https://media.vlpt.us/images/gunwooko/post/9d5908f1-e408-4ce8-9cd1-d0ee4cc4b8c3/pexels-freestocksorg-64057.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    background-size: cover;
+    opacity: 0.87;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+.rest_first_vw_review_1_reviewAfter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    font-size: 50px;
+    color: #ffffff;
+    font-weight: bold;
+    @include small {
+        font-size: 40px;
+    }
+    @include extra-small {
+        font-size: 30px;
+    }
+}
+.rest_first_vw_review_2_reviewAfter {
+    font-size: 25px;
+    color: #ffffff;
+    font-weight: normal;
+    margin-top: 20px;
+    @include small {
+        font-size: 20px;
+    }
+    @include extra-small {
+        font-size: 15px;
+    }
+}
+
+// Review - ReviewAfterView
+.ReviewAfterView {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 130px 0px 130px 0px;
+
+    .reviewAfterView_btn {
+        background-color: #42175d;
+        color: #ffffff;
+        font-size: 22px;
+        width: 201px;
+        height: 50px;
+        border: 0;
+        outline: none;
+        cursor: pointer;
+        @include small {
+            font-size: 20px;
+            width: 180px;
+            height: 50px;
+        }
+        @include extra-small {
+            font-size: 17px;
+            width: 150px;
+            height: 44px;
+        }
+    }
+}
+
+// Review - ReviewWritingView
+.ReviewWritingView {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    @include small {
+        grid-template-columns: 1fr 7fr 1fr;
+    }
+    @include extra-small {
+        grid-template-columns: 1fr 13fr 1fr;
+    }
+    .ReviewWritingView_container {
+        margin: 90px 0px 20px 0px;
+        @include small {
+            margin: 50px 0px 20px 0px;
+        }
+        @include extra-small {
+            margin: 30px 0px 20px 0px;
+        }
+        .reviewWritingView_h2 {
+            color: #42175d;
+            font-size: 30px;
+            font-weight: normal;
+            margin-bottom: 15px;
+
+            span {
+                font-weight: bold;
+            }
+            @include small {
+                font-size: 24px;
+            }
+            @include extra-small {
+                font-size: 17px;
+            }
+        }
+        .reviewWritingView_h3 {
+            background-color: #fcf8fe;
+            color: #42175d;
+            font-size: 23px;
+            font-weight: normal;
+            padding: 18px 0px 18px 16px;
+            margin-bottom: 15px;
+
+            span {
+                font-weight: bold;
+            }
+            div {
+                font-size: 19px;
+                color: #171717;
+            }
+            @include small {
+                font-size: 17px;
+                div {
+                    font-size: 14px;
+                    color: #171717;
+                }
+            }
+            @include extra-small {
+                font-size: 14px;
+                div {
+                    font-size: 10px;
+                    color: #171717;
+                }
+            }
+        }
+
+        // Review - ReviewWritingForm
+        .ReviewWritingForm {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .ReviewWriting_input_title {
+                line-height: 50px;
+                padding-left: 10px;
+                font-size: 20px;
+                @include small {
+                    font-size: 17px;
+                }
+                @include extra-small {
+                    font-size: 14px;
+                }
+            }
+            .ReviewWriting_input_content {
+                height: 616px;
+                margin-top: 15px;
+                margin-bottom: 15px;
+                padding-top: 10px;
+                padding-left: 10px;
+                font-size: 20px;
+                vertical-align: top;
+                @include small {
+                    font-size: 17px;
+                    height: 416px;
+                }
+                @include extra-small {
+                    font-size: 14px;
+                    height: 316px;
+                }
+            }
+            .ReviewWriting_input_btn_form {
+                text-align: right;
+
+                .ReviewWriting_input_btn {
+                    background-color: #42175d;
+                    width: 129px;
+                    height: 50px;
+                    color: #ffffff;
+                    font-size: 22px;
+                    border: 0;
+                    outline: none;
+                    cursor: pointer;
+                    @include small {
+                        width: 100px;
+                        height: 40px;
+                        font-size: 17px;
+                    }
+                    @include extra-small {
+                        width: 70px;
+                        height: 34px;
+                        font-size: 13px;
+                    }
+                }
+                // Review Update
+                .ReviewUpdate_input_btn {
+                    background-color: #42175d;
+                    width: 129px;
+                    height: 50px;
+                    color: #ffffff;
+                    font-size: 22px;
+                    margin: 5px;
+                    border: 0;
+                    outline: none;
+                    cursor: pointer;
+                    @include small {
+                        width: 100px;
+                        height: 40px;
+                        font-size: 17px;
+                    }
+                    @include extra-small {
+                        width: 70px;
+                        height: 34px;
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+        .ReviewWriting_goBack_btn {
+            background-color: #42175d;
+            width: 129px;
+            height: 50px;
+            color: #ffffff;
+            font-size: 22px;
+            margin: 5px;
+            border: 0;
+            outline: none;
+            cursor: pointer;
+            @include small {
+                width: 100px;
+                height: 40px;
+                font-size: 17px;
+            }
+            @include extra-small {
+                width: 70px;
+                height: 34px;
+                font-size: 13px;
+            }
+        }
+
+        .reviewRead_box {
+            .reviewRead_title {
+                font-size: 30px;
+                font-weight: bold;
+                margin-bottom: 60px;
+                text-align: center;
+                @include small {
+                    font-size: 23px;
+                    margin-bottom: 35px;
+                }
+                @include extra-small {
+                    font-size: 17px;
+                    margin-bottom: 20px;
+                }
+            }
+            .reviewRead_detail {
+                font-size: 18px;
+                color: #707070;
+                margin-bottom: 9px;
+                @include small {
+                    font-size: 12px;
+                }
+                @include extra-small {
+                    font-size: 8px;
+                }
+                .reviewRead_detail_name {
+                    margin-left: 5px;
+                    margin-right: 50px;
+                }
+                .reviewRead_detail_date {
+                    margin-right: 10px;
+                }
+                .reviewRead_detail_time {
+                    margin-right: 50px;
+                }
+            }
+            .reviewRead_content_box {
+                border-top: 1px solid #42175d;
+                border-bottom: 1px solid #42175d;
+                margin-bottom: 50px;
+
+                .reviewRead_content {
+                    margin-top: 50px;
+                    margin-bottom: 50px;
+                    font-size: 20px;
+                    color: #171717;
+                    text-align: left;
+                    @include small {
+                        margin-top: 34px;
+                        margin-bottom: 34px;
+                        font-size: 15px;
+                    }
+                    @include extra-small {
+                        margin-top: 20px;
+                        margin-bottom: 20px;
+                        font-size: 11px;
+                    }
+                }
+            }
+        }
+        .reviewRead_btn_container {
+            text-align: right;
+            margin-bottom: 95px;
+            @include extra-small {
+                text-align: center;
+            }
+            .reviewRead_btn {
+                width: 100px;
+                height: 50px;
+                background-color: #42175d;
+                color: #ffffff;
+                font-size: 22px;
+                border: 0;
+                margin: 5px;
+                outline: none;
+                cursor: pointer;
+                @include small {
+                    width: 80px;
+                    height: 40px;
+                    font-size: 18px;
+                }
+                @include extra-small {
+                    width: 55px;
+                    height: 35px;
+                    font-size: 13px;
+                }
+            }
+            .reviewRead_btn_delete {
+                background-color: transparent;
+                color: #42175d;
+                font-size: 22px;
+                border: 0;
+                margin: 5px;
+                outline: none;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+// Review - ReviewMainView
+.ReviewMainView {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    @include medium {
+        grid-template-columns: 1fr 6fr 1fr;
+    }
+    @include small {
+        grid-template-columns: 1fr 8fr 1fr;
+    }
+    @include extra-small {
+        grid-template-columns: 1fr 14fr 1fr;
+    }
+    .review_container {
+        margin-top: 127px;
+
+        .review_box {
+            border-top: 2px solid #42175d;
+            border-bottom: 0.5px solid #42175d;
+            .review_main_title {
+                display: grid;
+                grid-template-columns: 1fr 9fr 1fr 2fr 1fr;
+                padding: 5px;
+                text-align: center;
+
+                .review_title_each {
+                    font-size: 20px;
+                    font-weight: bold;
+                    white-space: nowrap;
+                    @include medium {
+                        font-size: 16px;
+                    }
+                    @include small {
+                        font-size: 14px;
+                    }
+                    @include extra-small {
+                        font-size: 12px;
+                    }
+                }
+            }
+            .review_line {
+                display: grid;
+                grid-template-columns: 1fr 9fr 1fr 2fr 1fr;
+                // border-top: 1px solid #42175d;
+                border-bottom: 0.5px solid #dddddf;
+                padding: 12px;
+                text-align: center;
+                align-items: center;
+
+                .review_title {
+                    text-align: left;
+                    padding-left: 20px;
+                    cursor: pointer;
+                    text-decoration: none;
+                }
+                .review_title:link {
+                    text-decoration: none;
+                    color: black;
+                }
+                .review_title:visited {
+                    text-decoration: none;
+                    color: black;
+                }
+                .review_writer {
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+                @include medium {
+                    font-size: 14px;
+                }
+                @include small {
+                    font-size: 12px;
+                }
+                @include extra-small {
+                    font-size: 10px;
+                }
+            }
+        }
+        .review_writing_btn_form {
+            text-align: right;
+            margin-top: 10px;
+            .review_writing_btn {
+                background-color: #42175d;
+                width: 129px;
+                height: 50px;
+                color: #ffffff;
+                font-size: 22px;
+                border: 0;
+                outline: none;
+                cursor: pointer;
+                i {
+                    padding-right: 15px;
+                }
+                @include small {
+                    font-size: 16px;
+                    width: 100px;
+                    height: 35px;
+                }
+                @include extra-small {
+                    font-size: 13px;
+                    width: 85px;
+                    height: 35px;
+                    i {
+                        padding-right: 7px;
+                    }
+                }
+            }
+        }
+
+        .reviewPagination_ul {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 92px;
+            justify-content: center;
+            .reviewPagination_li {
+                list-style-type: none;
+                color: #171717;
+                font-size: 22px;
+                font-weight: 500;
+                margin-left: 32px;
+                margin-right: 32px;
+                cursor: pointer;
+            }
+            .reviewPagination_li_selected {
+                list-style-type: none;
+                color: #ffffff;
+                font-size: 22px;
+                font-weight: 500;
+                margin-left: 32px;
+                margin-right: 32px;
+                cursor: pointer;
+                background-color: #42175d;
+                border: none;
+                border-radius: 50%;
+                width: 33px;
+                height: 33px;
+                text-align: center;
+                @include small {
+                    font-size: 16px;
+                    width: 27px;
+                    height: 27px;
+                }
+                @include extra-small {
+                    font-size: 13px;
+                    width: 21px;
+                    height: 21px;
+                }
+            }
+        }
+        .review_search_container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 270px;
+
+            .review_search_select {
+                width: 159px;
+                height: 50px;
+                border: 1px solid #dddddf;
+                font-size: 22px;
+                background-color: #ffffff;
+                margin-right: 19px;
+                padding-left: 19px;
+            }
+            .review_search_input {
+                width: 249px;
+                height: 50px;
+                border: 1px solid #dddddf;
+                font-size: 22px;
+                padding-left: 10px;
+            }
+            .review_search_btn {
+                width: 101px;
+                height: 50px;
+                background-color: #fcf8fe;
+                color: #42175d;
+                font-size: 22px;
+                text-align: center;
+                border: 1px solid #42175d;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+// Policy
+.policy_vw_title {
+    display: grid;
+    grid-template-columns: 5fr 6fr;
+    font-size: 40px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 120px;
+}
+.policy_vw_content {
+    display: grid;
+    grid-template-columns: 1.5fr 6fr 1.5fr;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    text-align: left;
+}
+
+// FAQ
+.rest_first_vw_faq_0 {
+    height: 491px;
+    background-color: #f4eff7;
+    background-image: url(https://media.vlpt.us/images/gunwooko/post/819586d1-938b-4f8d-a8eb-407574870dd3/undraw_respond_8wjt@2x.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 75% 30%;
+    // background-size: cover;
+    // opacity: 0.8;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+.rest_first_vw_faq_1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    div {
+        font-size: 50px;
+        color: #42175d;
+        font-weight: bold;
+        @include extra-small {
+            font-size: 35px;
+        }
+    }
+}
+
+.FaqPage {
+    .faq_btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 20px;
+        .faq_btn_selected {
+            background-color: transparent;
+            border: 0;
+            border-bottom: 1px solid black;
+            outline: none;
+            font-size: larger;
+            font-weight: bold;
+            padding: 5px 15px;
+            cursor: pointer;
+            margin: 0px 5px;
+
+            &:hover {
+                font-weight: bold;
+                border-color: #42175d;
+                border-bottom: 1px solid black;
+            }
+            &:active {
+                font-weight: bold;
+                border-color: #42175d;
+                border-bottom: 1px;
+            }
+        }
+        .faq_btn_unselected {
+            background-color: transparent;
+            border: 0;
+            border-bottom: 1px solid black;
+            outline: none;
+            font-size: larger;
+            padding: 5px 15px;
+            cursor: pointer;
+            margin: 0px 5px;
+
+            &:hover {
+                font-weight: bold;
+                border-color: #42175d;
+                border-bottom: 1px solid black;
+            }
+            &:active {
+                font-weight: bold;
+                border-color: #42175d;
+                border-bottom: 1px;
+            }
+        }
+    }
+}
+
+.faq_main_vw {
+    display: block;
+    width: 80%;
+    margin: 0px auto;
+
+    .faq_main_vw_li {
+        border-top: 2px solid gray;
+        margin: 40px 0px;
+    }
+    .faq_main_vw_title {
+        font-size: 25px;
+        font-weight: bold;
+        padding: 20px 0px;
+        color: #171717;
+    }
+    .faq_main_vw_content {
+        font-size: 19px;
+        line-height: 40px;
+        color: #171717;
+    }
+}
+
+.FaqLastView {
+    height: 115px;
+    background-color: #ece4f0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .faq_last_vw_content_1 {
+        font-size: 20px;
+        color: #42175d;
+    }
+    .faq_last_vw_content_2 {
+        font-size: 30px;
+        color: #42175d;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    img {
+        width: 133px;
+        height: 103px;
+    }
+}
+
+// Notice View
+.notice_main_vw {
+    display: block;
+    width: 80%;
+    margin: 0px auto;
+
+    .notice_main_vw_li {
+        border-top: 2px solid gray;
+        margin: 40px 0px;
+    }
+    .notice_main_vw_title {
+        font-size: 25px;
+        font-weight: bold;
+        padding: 20px 0px;
+        color: #171717;
+    }
+    .notice_main_vw_content {
+        font-size: 19px;
+        line-height: 40px;
+        color: #171717;
+    }
+}
+
+// MyPage - MyDetails
+.MyDetails_form {
+    display: flex;
+    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    @include small {
+        grid-template-columns: 1fr 7fr 1fr;
+    }
+    @include extra-small {
+        grid-template-columns: 1fr 20fr 1fr;
+    }
+    .MyDetails {
+        .myDetails_title {
+            color: #42175d;
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            margin-top: 106px;
+            @include small {
+                font-size: 26px;
+            }
+            @include extra-small {
+                font-size: 22px;
+            }
+        }
+
+        .myDetails_box {
+            .myDetails_row {
+                box-shadow: 0px 1px 0px #dddddf;
+                max-width: 1180px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                height: 55px;
+
+                .myDetails_subtitle {
+                    display: inline-flex;
+                    align-items: center;
+                    background-color: #fcf8fe;
+                    font-weight: bold;
+                    font-size: 20px;
+                    text-align: left;
+                    height: 55px;
+                    width: 157px;
+                    padding-left: 21px;
+                    @include small {
+                        font-size: 17px;
+                    }
+                    @include extra-small {
+                        font-size: 14px;
+                        width: 90px;
+                        padding-left: 10px;
+                    }
+                }
+
+                .myDetails_info {
+                    display: inline-flex;
+                    align-items: center;
+                    font-size: 20px;
+                    text-align: center;
+                    height: 55px;
+                    flex-grow: 2;
+                    padding-left: 20px;
+                    @include small {
+                        font-size: 15px;
+                    }
+                    @include extra-small {
+                        font-size: 14px;
+                        padding-left: 11px;
+                    }
+                }
+                .myDetails_info_editMode {
+                    margin-left: 20px;
+                    font-size: 20px;
+
+                    &.is-valid {
+                        border: 1px solid #2aa646;
+                        box-shadow: 1px 1px 1px #2aa646;
+                    }
+                    &.is-valid:focus {
+                        outline: none;
+                    }
+                    &.is-invalid {
+                        border: 1px solid #d85350;
+                        box-shadow: 3px 3px 10px #d85350;
+                    }
+                    &.is-invalid:focus {
+                        outline: none;
+                    }
+                    @include small {
+                        font-size: 15px;
+                    }
+                    @include extra-small {
+                        font-size: 14px;
+                        margin-left: 4px;
+                    }
+                }
+
+                .myDetails_btn {
+                    color: #a637ea;
+                    background-color: transparent;
+                    font-size: 20px;
+                    outline: none;
+                    border: 0;
+                    padding-right: 21px;
+                    cursor: pointer;
+                    @include small {
+                        font-size: 17px;
+                    }
+                    @include extra-small {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+        .myDetails_input_deleteMode {
+            margin-top: 9px;
+            margin-left: 350px;
+            padding-left: 20px;
+            line-height: 20px;
+        }
+        .myDatails_withdrawal_btn {
+            color: #707070;
+            background-color: transparent;
+            font-size: 20px;
+            outline: none;
+            border: 0;
+            padding-right: 30px;
+            margin-top: 9px;
+            cursor: pointer;
+            float: right;
+            @include small {
+                font-size: 17px;
+            }
+            @include extra-small {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+// MyPage - MyClass
+.MyClass_form {
+    display: flex;
+    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    @include small {
+        grid-template-columns: 1fr 7fr 1fr;
+    }
+    @include extra-small {
+        grid-template-columns: 1fr 20fr 1fr;
+    }
+    .MyClass {
+        .myClass_title {
+            color: #42175d;
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            margin-top: 63px;
+            @include small {
+                font-size: 26px;
+            }
+            @include extra-small {
+                font-size: 22px;
+            }
+        }
+        .myClass_box {
+            .myClass_row {
+                box-shadow: 0px 1px 0px #dddddf;
+                max-width: 1180px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                height: 55px;
+
+                .myClass_subtitle {
+                    display: inline-flex;
+                    align-items: center;
+                    background-color: #fcf8fe;
+                    font-weight: bold;
+                    font-size: 20px;
+                    text-align: left;
+                    height: 55px;
+                    width: 157px;
+                    padding-left: 21px;
+                    @include small {
+                        font-size: 17px;
+                    }
+                    @include extra-small {
+                        font-size: 14px;
+                        width: 90px;
+                        padding-left: 10px;
+                    }
+                }
+
+                .myClass_info {
+                    display: inline-flex;
+                    align-items: center;
+                    font-size: 20px;
+                    text-align: center;
+                    height: 55px;
+                    flex-grow: 2;
+                    padding-left: 20px;
+                    @include small {
+                        font-size: 15px;
+                    }
+                    @include extra-small {
+                        font-size: 14px;
+                        padding-left: 11px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// MyPage - MyPaymentDetails /  PostponedClassDetails
+.MyPaymentDetails_form {
+    display: flex;
+    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    @include medium {
+        grid-template-columns: 1fr 7fr 1fr;
+    }
+    @include small {
+        grid-template-columns: 1fr 7fr 1fr;
+    }
+    @include extra-small {
+        grid-template-columns: 1fr 20fr 1fr;
+    }
+    .MyPaymentDetails {
+        margin-bottom: 80px;
+        .myPayment_title {
+            color: #42175d;
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            margin-top: 63px;
+            @include small {
+                font-size: 26px;
+            }
+            @include extra-small {
+                font-size: 22px;
+            }
+        }
+        .myPayment_none {
+            font-size: 15px;
+            font-weight: 500;
+            color: #42175d;
+        }
+        .myPayment_box {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            // display: grid;
+            // grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            .myPayment_col {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .myPayment_subtitle {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: #fcf8fe;
+                    font-weight: bold;
+                    font-size: 20px;
+                    height: 55px;
+                    box-shadow: 0px 1px 0px #dddddf;
+                    width: 240px;
+                    @include medium {
+                        font-size: 17px;
+                        width: 210px;
+                    }
+                    @include small {
+                        font-size: 17px;
+                        width: 120px;
+                    }
+                    @include extra-small {
+                        font-size: 12px;
+                        width: 75px;
+                    }
+                }
+                // postponedClass
+                .myPayment_subtitle_2 {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: #fcf8fe;
+                    font-weight: bold;
+                    font-size: 20px;
+                    height: 55px;
+                    box-shadow: 0px 1px 0px #dddddf;
+                    width: 300px;
+                    @include medium {
+                        font-size: 17px;
+                        width: 210px;
+                    }
+                    @include small {
+                        font-size: 15px;
+                        width: 160px;
+                    }
+                    @include extra-small {
+                        font-size: 9px;
+                        width: 75px;
+                    }
+                }
+
+                .myPayment_info {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 20px;
+                    height: 55px;
+                    width: 100%;
+                    box-shadow: 0px 1px 0px #dddddf;
+                    @include medium {
+                        font-size: 17px;
+                    }
+                    @include small {
+                        font-size: 15px;
+                    }
+                    @include extra-small {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+        .myPayment_btn {
+            color: #707070;
+            background-color: transparent;
+            font-size: 20px;
+            outline: none;
+            border: 0;
+            padding-right: 30px;
+            margin-top: 9px;
+            cursor: pointer;
+            float: right;
+            @include small {
+                font-size: 17px;
+            }
+            @include extra-small {
+                font-size: 14px;
+            }
+        }
+        // postponedClass
+        .myPostponedDetail_btn {
+            color: #707070;
+            background-color: transparent;
+            font-size: 20px;
+            outline: none;
+            border: 0;
+            padding-right: 30px;
+            margin-top: 9px;
+            margin-bottom: 290px;
+            cursor: pointer;
+            float: right;
+            @include small {
+                font-size: 17px;
+            }
+            @include extra-small {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+// MyPage - ApplyToPostponedClass
+.ApplyToPostponedClass_form {
+    display: flex;
+    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    @include medium {
+        grid-template-columns: 1fr 7fr 1fr;
+    }
+    @include small {
+        grid-template-columns: 1fr 7fr 1fr;
+    }
+    @include extra-small {
+        grid-template-columns: 1fr 20fr 1fr;
+    }
+    .ApplyToPostponeClass {
+        .ApplyToPostponeClass_title {
+            color: #42175d;
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            margin-top: 106px;
+            @include medium {
+                font-size: 26px;
+            }
+            @include small {
+                font-size: 26px;
+            }
+            @include extra-small {
+                font-size: 22px;
+            }
+        }
+        .ApplyToPostponeClass_box {
+            display: flex;
+            flex-direction: column;
+            // align-items: stretch;
+            justify-content: stretch;
+            @include medium {
+                width: 100%;
+            }
+            @include small {
+                width: 60%;
+            }
+            @include extra-small {
+                width: 40%;
+            }
+            .ApplyToPostponeClass_row {
+                box-shadow: 0px 1px 0px #dddddf;
+                max-width: 1180px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                height: 55px;
+                // @include medium {
+                //     width: 100%;
+                // }
+                // @include small {
+                //     width: 60%;
+                // }
+                // @include extra-small {
+                //     width: 40%;
+                // }
+                .ApplyToPostponeClass_subtitle {
+                    display: inline-flex;
+                    align-items: center;
+                    background-color: #fcf8fe;
+                    font-weight: bold;
+                    font-size: 20px;
+                    text-align: left;
+                    height: 55px;
+                    width: 157px;
+                    padding-left: 21px;
+                    @include medium {
+                        font-size: 17px;
+                        width: 130px;
+                    }
+                    @include small {
+                        font-size: 15px;
+                        width: 110px;
+                        padding-left: 5px;
+                    }
+                    @include extra-small {
+                        font-size: 9px;
+                        width: 80px;
+                        padding-left: 2px;
+                    }
+                }
+
+                .applyToPostponeSelect {
+                    font-size: 20px;
+                    padding: 13px 70px 13px 15px;
+                    outline: none;
+                    border: 0;
+                    background-color: transparent;
+                    color: #a637ea;
+                    &:focus {
+                        cursor: pointer;
+                    }
+                    @include medium {
+                        font-size: 17px;
+                    }
+                    @include small {
+                        font-size: 14px;
+                        padding: 13px 70px 13px 15px;
+                    }
+                    @include extra-small {
+                        font-size: 10px;
+                        padding: 7px 0px 7px 10px;
+                    }
+                }
+                .applyToPostponeInput {
+                    max-width: 1000px;
+                    width: 900px;
+                    border: 0;
+                    padding: 13px 70px 13px 15px;
+                    font-size: 20px;
+                    @include medium {
+                        font-size: 17px;
+                    }
+                    @include small {
+                        font-size: 14px;
+                        padding: 13px 70px 13px 15px;
+                    }
+                    @include extra-small {
+                        font-size: 10px;
+                        padding: 7px 0px 7px 10px;
+                    }
+                }
+                .applyToPostponeInput:focus {
+                    outline: none;
+                }
+
+                .applyToPostponeInput_date {
+                    color: #a637ea;
+                    border: 0;
+                    padding: 3px 0px 3px 15px;
+                    font-size: 20px;
+                    margin-right: 40px;
+                    @include medium {
+                        font-size: 17px;
+                    }
+                    @include small {
+                        font-size: 14px;
+                    }
+                    @include extra-small {
+                        font-size: 10px;
+                        padding: 3px 0px 3px 10px;
+                        margin-right: 4px;
+                    }
+                }
+                .applyToPostponeInput_date:focus {
+                    outline: none;
+                }
+            }
+            .ApplyToPostponeClass_btn_container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-end;
+
+                @include small {
+                    justify-content: center;
+                }
+                @include extra-small {
+                    justify-content: center;
+                }
+                .ApplyToPostponeClass_btn {
+                    color: #ffffff;
+                    background-color: #42175d;
+                    font-size: 22px;
+                    border: 0;
+                    outline: none;
+                    cursor: pointer;
+                    padding: 8px 18px;
+                    float: right;
+                    margin-top: 21px;
+
+                    @include small {
+                        font-size: 17px;
+                        padding: 8px 18px;
+                    }
+                    @include extra-small {
+                        font-size: 13px;
+                        padding: 8px 13px;
+                    }
+                }
+            }
+        }
+
+        .ApplyToPostponeClass_info {
+            color: #a637ea;
+            font-size: 20px;
+            margin-top: 14px;
+            @include small {
+                font-size: 15px;
+            }
+            @include extra-small {
+                font-size: 9px;
+            }
+        }
+    }
+}
+
+// Login - auth
+.authBtns {
+    display: flex;
+    flex-direction: column;
+    // width: 100%;
+    // max-width: 320px;
+
+    .authBtn_facebook {
+        font-size: 19px;
+        font-weight: 900px;
+        background-color: #2f4d8a;
+        color: #ffffff;
+        height: 55px;
+        width: 480px;
+        max-width: 480px;
+        border-radius: 3px;
+        border: 1px solid #dddddf;
+        cursor: pointer;
+        outline: none;
+        margin-top: 15px;
+        @include extra-small {
+            width: 270px;
+            max-width: 270px;
+            font-size: 16px;
+            height: 40px;
+        }
+    }
+    .authBtn_google {
+        font-size: 19px;
+        font-weight: 900px;
+        background-color: transparent;
+        height: 55px;
+        width: 480px;
+        max-width: 480px;
+        border-radius: 3px;
+        border: 1px solid #dddddf;
+        cursor: pointer;
+        outline: none;
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include extra-small {
+            width: 270px;
+            max-width: 270px;
+            font-size: 16px;
+            height: 40px;
+        }
+    }
+
+    i {
+        margin-right: 10px;
+    }
+    img {
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+    }
+}
+
+.authForm {
+    display: flex;
+    flex-direction: column;
+    @include extra-small {
+        align-items: center;
+    }
+
+    .authInput {
+        width: 480px;
+        max-width: 480px;
+        height: 55px;
+        border-radius: 3px;
+        border: 1px solid #dddddf;
+        margin-bottom: 10px;
+        font-size: 19px;
+        &.is-valid {
+            border: 1px solid #2aa646;
+            box-shadow: 1px 1px 1px #2aa646;
+        }
+        &.is-valid:focus {
+            outline: none;
+        }
+        &.is-invalid {
+            border: 1px solid #d85350;
+            box-shadow: 3px 3px 10px #d85350;
+        }
+        &.is-invalid:focus {
+            outline: none;
+        }
+        @include extra-small {
+            width: 270px;
+            max-width: 270px;
+            font-size: 12px;
+            height: 40px;
+        }
+    }
+    .authInput:focus {
+        outline: 0.6px solid gray;
+    }
+    .invalid-feedback {
+        color: #d85350;
+        @include extra-small {
+            font-size: 12px;
+        }
+    }
+
+    .authSubmit {
+        font-size: 19px;
+        font-weight: 500;
+        height: 55px;
+        width: 480px;
+        max-width: 480px;
+        border-radius: 3px;
+        border: 0;
+        background: #a637ea;
+        color: white;
+        margin-top: 10px;
+        cursor: pointer;
+        outline: none;
+        @include extra-small {
+            width: 270px;
+            max-width: 270px;
+            font-size: 16px;
+            height: 40px;
+        }
+    }
+}
+.authError {
+    color: tomato;
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 12px;
+}
+.authSwitch {
+    color: #04aaff;
+    cursor: pointer;
+    margin-top: 13px;
+    margin-bottom: 30px;
+    font-size: 16px;
+
+    .authSwitch_msj {
+        color: #333333;
+    }
+
+    .authSwich_btn {
+        text-decoration: underline;
+        margin-left: 5px;
+    }
+    @include extra-small {
+        font-size: 13px;
+    }
+}
+.authLine {
+    font-size: 14px;
+    color: #707070;
+    @include extra-small {
+        font-size: 11px;
+    }
+}
+.authPolicy {
+    font-size: 15px;
+    color: #b2b2b2;
+    margin-bottom: 19px;
+    a {
+        color: #707070;
+        text-decoration: underline;
+    }
+    @include extra-small {
+        font-size: 8px;
+    }
+}
+
+// ClassGuide
+.classGuide_vw_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 60px 0px 60px 0px;
+    background-image: url(https://media.vlpt.us/images/gunwooko/post/3d9755fd-bae4-45e8-9287-7ba293db230e/%EA%B7%B8%EB%A3%B9%20200@2x.png);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include medium {
+        background: none;
+    }
+    @include small {
+        background: none;
+    }
+    @include extra-small {
+        background: none;
+    }
+
+    .classGuide_vw_box {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 60px 0px 60px 0px;
+        flex-wrap: wrap;
+
+        .classGuide_vw_step {
+            margin: 0px 90px 30px 90px;
+
+            .classGuide_vw_title {
+                color: #171717;
+                font-weight: bold;
+                font-size: 60px;
+                text-align: right;
+                margin-bottom: 6px;
+                @include small {
+                    font-size: 48px;
+                }
+                @include extra-small {
+                    font-size: 33px;
+                }
+            }
+            .classGuide_vw_subtitle {
+                color: #42175d;
+                font-weight: bold;
+                font-size: 40px;
+                text-align: right;
+                margin-bottom: 40px;
+                @include extra-small {
+                    font-size: 27px;
+                }
+            }
+            .classGuide_vw_contents {
+                color: #333333;
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 40px;
+                text-align: right;
+                margin-bottom: 24px;
+                @include small {
+                    font-size: 20px;
+                }
+                @include extra-small {
+                    font-size: 13px;
+                    margin-bottom: 0px;
+                }
+            }
+            .classGuide_vw_btn_div {
+                text-align: right;
+            }
+            .classGuide_vw_btn {
+                background-color: transparent;
+                color: #a637ea;
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 35px;
+                text-align: right;
+                border: 0;
+                outline: none;
+                cursor: pointer;
+                @include small {
+                    font-size: 20px;
+                }
+                @include extra-small {
+                    font-size: 13px;
+                }
+            }
+
+            .classGuide_vw_title_2 {
+                color: #171717;
+                font-weight: bold;
+                font-size: 60px;
+                text-align: left;
+                margin-bottom: 6px;
+                @include small {
+                    font-size: 48px;
+                }
+                @include extra-small {
+                    font-size: 33px;
+                }
+            }
+            .classGuide_vw_subtitle_2 {
+                color: #42175d;
+                font-weight: bold;
+                font-size: 40px;
+                text-align: left;
+                margin-bottom: 40px;
+                @include extra-small {
+                    font-size: 27px;
+                }
+            }
+            .classGuide_vw_contents_2 {
+                color: #333333;
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 40px;
+                text-align: left;
+                margin-bottom: 24px;
+                @include small {
+                    font-size: 20px;
+                }
+                @include extra-small {
+                    font-size: 13px;
+                    margin-bottom: 0px;
+                }
+            }
+            .classGuide_vw_btn_div_2 {
+                text-align: left;
+            }
+            .classGuide_vw_btn_2 {
+                background-color: transparent;
+                color: #a637ea;
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 35px;
+                text-align: left;
+                border: 0;
+                outline: none;
+                cursor: pointer;
+                @include small {
+                    font-size: 20px;
+                }
+                @include extra-small {
+                    font-size: 13px;
+                }
+            }
+        }
+        .classGuide_vw_img {
+            width: 500px;
+            height: 360px;
+            margin: 0px 90px 0px 90px;
+            @include small {
+                width: 410px;
+                height: 270px;
+            }
+            @include extra-small {
+                width: 310px;
+                height: 200px;
+            }
+        }
+        @include small {
+            margin: 30px 0px 30px 0px;
+        }
+        @include extra-small {
+            margin: 10px 0px 10px 0px;
+        }
+    }
+}
+
+// SubmitClass - afterView
+// .SubmitClassAfterView_container {
+//     display: grid;
+//     grid-template-columns: 1fr 3fr 1fr;
+
+.SubmitClassAfterView_box {
+    background-color: #fcf8fe;
+    margin: 70px 0px;
+    padding: 99px 108px;
+    @include small {
+        margin: 50px 0px;
+        padding: 89px 78px;
+    }
+    @include extra-small {
+        margin: 30px 0px;
+        padding: 10px 15px;
+    }
+    .submitClassAfterView_phrase_1 {
+        color: #42175d;
+        font-size: 50px;
+        font-weight: bold;
+        margin-bottom: 40px;
+        @include small {
+            font-size: 40px;
+        }
+        @include extra-small {
+            font-size: 30px;
+        }
+    }
+    .submitClassAfterView_phrase_2 {
+        color: #42175d;
+        font-size: 22px;
+        margin-bottom: 26px;
+        .submitClassAfterView_emphasis {
+            font-weight: bold;
+        }
+        @include small {
+            font-size: 18px;
+        }
+        @include extra-small {
+            font-size: 14px;
+        }
+    }
+}
+// }
+
+// SubmitClass - SubmitClassMainView
+.SubmitClassMainView {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    @include small {
+        grid-template-columns: 1fr 8fr 1fr;
+    }
+    @include extra-small {
+        grid-template-columns: 1fr 14fr 1fr;
+    }
+    .SubmitClassMainView_container {
+        margin-top: 120px;
+        margin-bottom: 190px;
+        @include extra-small {
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+        // CourseInfomation
+        .CourseInfomation_btn {
+            background-color: #42175d;
+            font-size: 22px;
+            color: #ffffff;
+            border: 0;
+            outline: none;
+            text-align: center;
+            padding: 9px 30px;
+            float: right;
+            @include extra-small {
+                font-size: 15px;
+                padding: 9px 25px;
+            }
+        }
+        // CourseSubmit / CourseSubmitCompleted - btn
+        .CourseSubmit_btn_ {
+            display: flex;
+            flex-direction: row-reverse;
+
+            @include extra-small {
+                justify-content: center;
+            }
+            .CourseSubmit_prev_btn {
+                background-color: #42175d;
+                font-size: 22px;
+                color: #ffffff;
+                border: 0;
+                outline: none;
+                text-align: center;
+                padding: 9px 30px;
+                float: right;
+                @include small {
+                    font-size: 17px;
+                    padding: 9px 25px;
+                }
+                @include extra-small {
+                    font-size: 12px;
+                    padding: 9px 20px;
+                }
+            }
+            .CourseSubmit_next_btn {
+                background-color: #42175d;
+                font-size: 22px;
+                color: #ffffff;
+                border: 0;
+                outline: none;
+                text-align: center;
+                padding: 9px 30px;
+                float: right;
+                margin-left: 30px;
+                @include small {
+                    font-size: 17px;
+                    padding: 9px 25px;
+                }
+                @include extra-small {
+                    font-size: 12px;
+                    padding: 9px 20px;
+                }
+            }
+        }
+    }
+}
+
+// SubmitClass - nav
+.SubmitClassNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 114px;
+    @include extra-small {
+        margin-bottom: 44px;
+    }
+    span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .hr1 {
+            border: 2px solid #42175d;
+            border-radius: 8px;
+            width: 150px;
+            @include small {
+                width: 4rem;
+            }
+            @include extra-small {
+                width: 1rem;
+            }
+        }
+        .hr2 {
+            border: 2px solid #42175d;
+            border-radius: 8px;
+            width: 150px;
+            &.infomation {
+                border: 2px solid #f4eff7;
+            }
+            @include small {
+                width: 4rem;
+            }
+            @include extra-small {
+                width: 1rem;
+            }
+        }
+        .hr3 {
+            border: 2px solid #42175d;
+            border-radius: 8px;
+            width: 150px;
+            &.infomation {
+                border: 2px solid #f4eff7;
+            }
+            &.submit {
+                border: 2px solid #f4eff7;
+            }
+            @include small {
+                width: 4rem;
+            }
+            @include extra-small {
+                width: 1rem;
+            }
+        }
+        .hr4 {
+            border: 2px solid #42175d;
+            border-radius: 8px;
+            width: 150px;
+            &.infomation {
+                border: 2px solid #f4eff7;
+            }
+            &.submit {
+                border: 2px solid #f4eff7;
+            }
+            &.submitCompleted {
+                border: 2px solid #f4eff7;
+            }
+            @include small {
+                width: 4rem;
+            }
+            @include extra-small {
+                width: 1rem;
+            }
+        }
+    }
+    .submitClassNav_btn1 {
+        background-color: #42175d;
+        color: #ffffff;
+        font-size: 22px;
+        outline: none;
+        border: 10px double #f4eff7;
+        width: 122px;
+        height: 122px;
+        border-radius: 100%;
+
+        @include extra-small {
+            width: 92px;
+            height: 92px;
+            font-size: 14px;
+        }
+    }
+    .submitClassNav_btn2 {
+        background-color: #42175d;
+        color: #ffffff;
+        font-size: 22px;
+        outline: none;
+        border: 10px double #f4eff7;
+        width: 122px;
+        height: 122px;
+        border-radius: 100%;
+        &.infomation {
+            background-color: #f4eff7;
+            border: 10px double #ffffff;
+        }
+        @include extra-small {
+            width: 92px;
+            height: 92px;
+            font-size: 14px;
+        }
+    }
+    .submitClassNav_btn3 {
+        background-color: #42175d;
+        color: #ffffff;
+        font-size: 22px;
+        outline: none;
+        border: 10px double #f4eff7;
+        width: 122px;
+        height: 122px;
+        border-radius: 100%;
+        &.infomation {
+            background-color: #f4eff7;
+            border: 10px double #ffffff;
+        }
+        &.submit {
+            background-color: #f4eff7;
+            border: 10px double #ffffff;
+        }
+        @include extra-small {
+            width: 92px;
+            height: 92px;
+            font-size: 14px;
+        }
+    }
+}
+
+// SubmitClass - CourseInfomation
+.CourseInfomation {
+    .courseInfo_title {
+        color: #42175d;
+        font-size: 36px;
+        span {
+            font-weight: bold;
+        }
+        @include extra-small {
+            font-size: 28px;
+        }
+    }
+    .courseInfo_box {
+        .courseInfo_subtitle {
+            color: #42175d;
+            font-size: 30px;
+            font-weight: 30px;
+            @include extra-small {
+                font-size: 24px;
+            }
+        }
+        .courseInfo_content {
+            color: #1d1d1d;
+            font-size: 25px;
+            margin-bottom: 30px;
+            span {
+                font-weight: bold;
+            }
+            @include small {
+                font-size: 23px;
+            }
+            @include extra-small {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+// SubmitClass - CourseSubmit
+
+.courseSubmit_title {
+    color: #42175d;
+    font-size: 36px;
+    margin-bottom: 30px;
+    span {
+        font-weight: bold;
+    }
+    @include extra-small {
+        font-size: 22px;
+    }
+}
+.courseSubmit_box {
+    margin-bottom: 70px;
+    @include extra-small {
+        margin-bottom: 40px;
+    }
+    .courseSubmit_row {
+        max-width: 1180px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 55px;
+        border-bottom: 1px solid #dddddf;
+
+        @include medium {
+            width: 870px;
+        }
+        @include small {
+            width: 760px;
+        }
+        @include extra-small {
+            width: 380px;
+        }
+        .courseSubmit_subtitle {
+            color: #171717;
+            font-size: 20px;
+            display: inline-flex;
+            align-items: center;
+            background-color: #fcf8fe;
+            font-weight: 500;
+            text-align: left;
+            height: 55px;
+            width: 210px;
+            padding-left: 21px;
+            @include small {
+                width: 170px;
+                font-size: 17px;
+                padding-left: 11px;
+            }
+            @include extra-small {
+                width: 110px;
+                font-size: 11px;
+                padding-left: 2px;
+            }
+        }
+        .courseSubmit_input_box {
+            margin-left: 20px;
+
+            select {
+                outline: none;
+                font-size: 17px;
+                max-width: 35rem;
+                @include medium {
+                    max-width: 33rem;
+                }
+                @include small {
+                    max-width: 27rem;
+                    font-size: 14px;
+                }
+                @include extra-small {
+                    max-width: 13rem;
+                    font-size: 10px;
+                }
+            }
+            .courseSubmit_input_display_age {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                @include small {
+                    font-size: 14px;
+                }
+                @include extra-small {
+                    font-size: 10px;
+                }
+            }
+        }
+        .courseSubmit_input_box_completed {
+            margin-left: 20px;
+            font-size: 20px;
+            text-align: left;
+            padding-left: 20px;
+            @include small {
+                font-size: 18px;
+            }
+            @include extra-small {
+                margin-left: 2px;
+                font-size: 12px;
+                padding-left: 4px;
+            }
+        }
+        .courseSubmit_input_display {
+            display: flex;
+            flex-direction: column;
+            .courseSubmit_input {
+                display: inline-flex;
+                align-items: center;
+                font-size: 20px;
+                text-align: left;
+                padding-left: 20px;
+                border: 0;
+                outline: none;
+                margin-left: 30px;
+                @include small {
+                    padding-left: 10px;
+                    margin-left: 10px;
+                }
+                @include extra-small {
+                    padding-left: 2px;
+                    margin-left: 0px;
+                }
+                &.is-valid {
+                    border: 1px solid #2aa646;
+                    box-shadow: 1px 1px 10px #2aa646;
+                    @include small {
+                        padding-left: 10px;
+                        margin-left: 10px;
+                    }
+                    @include extra-small {
+                        padding-left: 2px;
+                        margin-left: 0px;
+                    }
+                }
+                &.is-valid:focus {
+                    outline: none;
+                }
+                &.is-invalid {
+                    border: 1px solid #d85350;
+                    box-shadow: 3px 3px 10px #d85350;
+                    @include small {
+                        padding-left: 10px;
+                        margin-left: 10px;
+                    }
+                    @include extra-small {
+                        padding-left: 2px;
+                        margin-left: 0px;
+                    }
+                }
+                &.is-valid:focus {
+                    outline: none;
+                }
+            }
+            .invalid-feedback {
+                color: #d85350;
+                margin-left: 25px;
+                margin-top: 2px;
+                @include small {
+                    font-size: 14px;
+                    margin-left: 10px;
+                }
+                @include extra-small {
+                    display: flex;
+                    flex-direction: column;
+                    font-size: 10px;
+                    margin-left: 0px;
+                }
+            }
+            .courseSubmit_input_opt {
+                font-size: 20px;
+                text-align: left;
+                margin-left: 20px;
+                border: 0;
+                outline: none;
+                width: 28em;
+                @include small {
+                    width: 27em;
+                    font-size: 15px;
+                }
+                @include extra-small {
+                    width: 15rem;
+                    font-size: 5px;
+                    margin-left: 1px;
+                }
+                &.is-valid {
+                    border: 1px solid #2aa646;
+                }
+                &.is-valid:focus {
+                    outline: none;
+                }
+                &.is-invalid {
+                    border: 1px solid #d85350;
+                }
+                &.is-valid:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+    .courseSubmit_mini_notice {
+        color: #a637ea;
+        font-size: 20px;
+        padding-left: 21px;
+        @include small {
+            font-size: 16px;
+        }
+        @include extra-small {
+            font-size: 10px;
+        }
+    }
+}
+
+.CourseSubmitCompleted {
+    .courseSubmit_title {
+        color: #42175d;
+        font-size: 36px;
+        margin-bottom: 30px;
+        span {
+            font-weight: bold;
+        }
+    }
+    .courseSubmit_box {
+        margin-bottom: 70px;
+        .courseSubmit_row {
+            max-width: 1180px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: 55px;
+            border-bottom: 1px solid #dddddf;
+
+            .courseSubmit_subtitle {
+                color: #171717;
+                font-size: 20px;
+                display: inline-flex;
+                align-items: center;
+                background-color: #fcf8fe;
+                font-weight: 500;
+                text-align: left;
+                height: 55px;
+                width: 210px;
+                padding-left: 21px;
+                @include extra-small {
+                    font-size: 12px;
+                    padding-left: 11px;
+                    width: 130px;
+                }
+            }
+            .courseSubmit_input_box {
+                margin-left: 20px;
+                select {
+                    outline: none;
+                    font-size: 17px;
+                }
+                @include extra-small {
+                    margin-left: 2px;
+                }
+            }
+            .courseSubmit_input {
+                display: inline-flex;
+                align-items: center;
+                font-size: 20px;
+                text-align: left;
+                padding-left: 20px;
+                border: 0;
+                outline: none;
+                margin-left: 30px;
+                @include extra-small {
+                    padding-left: 2px;
+                    margin-left: 5px;
+                    font-size: 13px;
+                }
+                &.is-valid {
+                    border: 1px solid #2aa646;
+                    box-shadow: 1px 1px 10px #2aa646;
+                }
+                &.is-valid:focus {
+                    outline: none;
+                }
+                &.is-invalid {
+                    border: 1px solid #d85350;
+                    box-shadow: 3px 3px 10px #d85350;
+                }
+                &.is-valid:focus {
+                    outline: none;
+                }
+            }
+            .invalid-feedback {
+                color: #d85350;
+                margin-left: 15px;
+            }
+            .courseSubmit_input_opt {
+                font-size: 20px;
+                text-align: left;
+                margin-left: 20px;
+                border: 0;
+                outline: none;
+                width: 50%;
+
+                &.is-valid {
+                    border: 1px solid #2aa646;
+                }
+                &.is-valid:focus {
+                    outline: none;
+                }
+                &.is-invalid {
+                    border: 1px solid #d85350;
+                }
+                &.is-valid:focus {
+                    outline: none;
+                }
+                // @include small {
+                //     font-size: 16px;
+                // }
+                // @include extra-small {
+                //     font-size: 12px;
+                // }
+            }
+        }
+        .courseSubmit_mini_notice {
+            color: #a637ea;
+            font-size: 20px;
+            padding-left: 21px;
+        }
+    }
+}

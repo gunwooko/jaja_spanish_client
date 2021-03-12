@@ -1,0 +1,58 @@
+@import '../../styles/mixin';
+
+.mainLogoComponent {
+    @include large {
+        margin-right: 270px;
+        label {
+            img {
+                width: '250px';
+                height: '50px';
+                color: #ffffff;
+                cursor: pointer;
+            }
+        }
+    }
+    @include medium {
+        margin-right: 90px;
+        label {
+            img {
+                width: '250px';
+                height: '50px';
+                color: #ffffff;
+                cursor: pointer;
+            }
+        }
+    }
+    @include small {
+        margin-right: 10px;
+        width: 100%;
+        padding-left: 2rem;
+        padding-top: 1rem;
+        label {
+            img {
+                width: '250px';
+                height: '50px';
+                color: #ffffff;
+                cursor: pointer;
+            }
+        }
+    }
+    @include extra-small {
+        // margin-right: 10px;
+        width: 100%;
+        // padding-left: 2rem;
+        padding-top: 1rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        label {
+            img {
+                width: '250px';
+                height: '50px';
+                color: #ffffff;
+                cursor: pointer;
+            }
+        }
+    }
+}

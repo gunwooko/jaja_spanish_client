@@ -1,0 +1,77 @@
+@import '../../styles/mixin';
+
+// Footer
+.footer_li_style {
+    list-style: none;
+    color: #707070;
+    margin: 20px 0px 20px 0px;
+    font-weight: normal;
+
+    @include large {
+        font-size: 20px;
+    }
+    @include medium {
+        font-size: 15px;
+    }
+    @include small {
+    }
+    @include extra-small {
+        // 햄버거 버튼 만들기
+        font-size: 13px;
+    }
+}
+
+.footer_licence_style {
+    list-style: none;
+    color: #707070;
+    margin: 0px 0px 0px 0px;
+    font-weight: normal;
+
+    @include large {
+        font-size: 20px;
+    }
+    @include medium {
+        font-size: 15px;
+    }
+    @include small {
+        font-size: 10px;
+    }
+    @include extra-small {
+        // 햄버거 버튼 만들기
+        font-size: 6px;
+    }
+}
+
+// Home page
+
+.fourth_vw_price_list {
+    list-style: none;
+    font-size: 30px;
+    margin-top: 40px;
+
+    @include extra-small {
+        font-size: 20px;
+    }
+
+    span {
+        font-size: 40px;
+        font-weight: bold;
+        @include extra-small {
+            font-size: 20px;
+        }
+    }
+}
+
+.fourth_vw_price_disc {
+    list-style: none;
+    font-size: 30px;
+    text-decoration: line-through;
+    text-decoration-color: #ff0000;
+    margin-bottom: 56px;
+    margin-left: 19px;
+
+    @include extra-small {
+        font-size: 17px;
+        margin-bottom: 45px;
+    }
+}

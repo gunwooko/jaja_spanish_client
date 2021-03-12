@@ -1,0 +1,26 @@
+@import './variables';
+
+@mixin extra-small {
+    // 햄버거버튼 만들기
+    @media (min-width: 0) and (max-width: #{$breakpoint-small - 1px}) {
+        @content;
+    }
+}
+
+@mixin small {
+    @media (min-width: #{$breakpoint-small}) and (max-width: #{$breakpoint-medium - 1px}) {
+        @content;
+    }
+}
+
+@mixin medium {
+    @media (min-width: #{$breakpoint-medium}) and (max-width: #{$breakpoint-large - 1px}) {
+        @content;
+    }
+}
+
+@mixin large {
+    @media (min-width: #{$breakpoint-large}) {
+        @content;
+    }
+}

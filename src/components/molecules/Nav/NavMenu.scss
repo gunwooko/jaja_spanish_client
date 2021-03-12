@@ -1,0 +1,67 @@
+@import '../../styles/mixin';
+
+.navMenu {
+    @include large {
+        p {
+            display: inline;
+            color: #ffffff;
+            font-weight: bold;
+            margin: 15px;
+            &:hover {
+                color: #fff337;
+                border-bottom: 1px solid #fff337;
+            }
+        }
+    }
+    @include medium {
+        p {
+            display: inline;
+            color: #ffffff;
+            font-weight: bold;
+            margin: 15px;
+            &:hover {
+                color: #fff337;
+                border-bottom: 1px solid #fff337;
+            }
+        }
+    }
+    @include small {
+        display: flex;
+        flex-direction: column;
+        display: none;
+        p {
+            // display: inline;
+            color: #ffffff;
+            font-weight: bold;
+            margin: 1rem;
+
+            &:hover {
+                color: #fff337;
+                border-bottom: 1px solid #fff337;
+            }
+        }
+        &.active {
+            display: flex;
+        }
+    }
+    @include extra-small {
+        display: flex;
+        flex-direction: column;
+        display: none;
+        p {
+            // display: inline;
+            color: #ffffff;
+            font-weight: bold;
+            margin: 1rem;
+            font-size: 12px;
+
+            &:hover {
+                color: #fff337;
+                border-bottom: 1px solid #fff337;
+            }
+        }
+        &.active {
+            display: flex;
+        }
+    }
+}

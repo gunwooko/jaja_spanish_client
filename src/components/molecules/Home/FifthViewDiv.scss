@@ -1,0 +1,22 @@
+.FifthViewDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #42175d;
+    height: 530px;
+
+    .fifth_vw_btn {
+        background-color: #fff337;
+        color: #42175d;
+        font-size: 22px;
+        font-weight: bold;
+        border-radius: 100px;
+        border: 0;
+        outline: none;
+        opacity: 1;
+        padding: 19px 69px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+}
